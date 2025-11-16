@@ -4,13 +4,19 @@ import Cities from "./pages/Cities";
 import Map from "./pages/Map";
 import Calendar from "./pages/Calendar";
 import Settings from "./pages/Settings";
+import AppLayout from "./AppLayout";
 
 const router = createBrowserRouter([
-  { path: "/", element: <Home /> },
-  { path: "/cities", element: <Cities /> },
-  { path: "/map", element: <Map /> },
-  { path: "/calendar", element: <Calendar /> },
-  { path: "/settings", element: <Settings /> },
+  {
+    element: <AppLayout />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/cities", element: <Cities /> },
+      { path: "/map", element: <Map /> },
+      { path: "/calendar", element: <Calendar /> },
+      { path: "/settings", element: <Settings /> },
+    ],
+  },
 ]);
 
 function App() {
@@ -18,3 +24,5 @@ function App() {
 }
 
 export default App;
+
+// #2f0d68
