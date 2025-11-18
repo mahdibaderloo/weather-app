@@ -24,7 +24,7 @@ export default function NavbarItem({ item }: NavbarItemProp) {
       >
         <img src={image} alt="Logo" />
       </NavLink>
-      <span>{title}</span>
+      <span className="text-violet-950 font-medium mt-1">{title}</span>
     </li>
   );
 }
