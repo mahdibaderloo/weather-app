@@ -1,4 +1,4 @@
-import stormy from "../assets/snowy.png";
+import stormy from "../assets/stormy.png";
 
 export default function Home() {
   return (
