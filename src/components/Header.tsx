@@ -2,6 +2,7 @@ import searchImage from "../assets/search.svg";
 import lightImage from "../assets/light.svg";
 // import darkImage from "../assets/dark.svg";
 import profileImage from "../assets/profile.svg";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -18,9 +19,12 @@ export default function Header() {
         <div className="w-14 h-14 flex items-center justify-center bg-linear-to-r from-violet-500/85 to-violet-600/85 rounded-full cursor-pointer shadow">
           <img src={lightImage} alt="Theme icon" className="w-10" />
         </div>
-        <div className="w-14 h-14 flex items-center justify-center bg-linear-to-r from-violet-500/85 to-violet-600/85 rounded-full cursor-pointer shadow">
+        <Link
+          to="/profile"
+          className="w-14 h-14 flex items-center justify-center bg-linear-to-r from-violet-500/85 to-violet-600/85 rounded-full cursor-pointer shadow"
+        >
           <img src={profileImage} alt="Profile icon" className="w-10" />
-        </div>
+        </Link>
       </div>
     </header>
   );

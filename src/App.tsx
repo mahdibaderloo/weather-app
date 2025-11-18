@@ -5,6 +5,7 @@ import Map from "./pages/Map";
 import Calendar from "./pages/Calendar";
 import Settings from "./pages/Settings";
 import AppLayout from "./AppLayout";
+import Profile from "./pages/Profile";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
       { path: "/map", element: <Map /> },
       { path: "/calendar", element: <Calendar /> },
       { path: "/settings", element: <Settings /> },
+      { path: "/profile", element: <Profile /> },
     ],
   },
 ]);
