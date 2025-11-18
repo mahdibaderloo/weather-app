@@ -1,8 +1,8 @@
-import logoImage from "../assets/weather-app.png";
-import calendarImage from "../assets/calendar.svg";
-import listImage from "../assets/list.svg";
-import mapImage from "../assets/map.svg";
-import settingsImage from "../assets/settings.svg";
+import logoImage from "../../assets/weather-app.png";
+import calendarImage from "../../assets/calendar.svg";
+import listImage from "../../assets/list.svg";
+import mapImage from "../../assets/map.svg";
+import settingsImage from "../../assets/settings.svg";
 import NavbarItem from "./NavbarItem";
 
 interface Items {
