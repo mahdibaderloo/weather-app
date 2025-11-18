@@ -3,7 +3,7 @@ import calendarImage from "../assets/calendar.svg";
 import listImage from "../assets/list.svg";
 import mapImage from "../assets/map.svg";
 import settingsImage from "../assets/settings.svg";
-import NavbarItem from "../features/navbar/NavbarItem";
+import NavbarItem from "./NavbarItem";
 
 interface Items {
   id: number;
