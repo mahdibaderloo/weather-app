@@ -4,9 +4,9 @@ import lightImage from "../assets/light.svg";
 import profileImage from "../assets/profile.svg";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function MainHeader() {
   return (
-    <header className="flex items-center justify-between w-full fixed mt-8 ml-32 2xl:max-w-[1360px]">
+    <header className="flex items-center justify-between w-full mt-8 pr-8">
       <form className="bg-linear-to-r from-violet-200/85 to-violet-500/85 flex items-center gap-2 w-[40%] h-14 p-2 rounded-4xl shadow">
         <img src={searchImage} alt="Search icon" className="w-16" />
         <input
