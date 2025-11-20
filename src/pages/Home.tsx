@@ -92,7 +92,15 @@ export default function Home() {
         </section>
       </div>
 
-      <section className="relative z-50 p-4 bg-linear-to-b from-violet-400/15 to-violet-800/40 rounded-4xl w-full h-fit flex justify-between mt-6"></section>
+      <section className="relative z-50 p-4 bg-linear-to-b from-violet-400/15 to-violet-800/40 rounded-4xl w-full h-fit flex justify-between mt-6">
+        <p className="font-semibold text-xl text-violet-200">
+          Today's Forecast
+        </p>
+
+        <ul>
+          <li></li>
+        </ul>
+      </section>
     </div>
   );
 }
