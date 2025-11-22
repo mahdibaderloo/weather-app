@@ -18,7 +18,7 @@ export default function NavbarItem({ item }: NavbarItemProp) {
         to={url}
         className={({ isActive }) =>
           isActive
-            ? "bg-linear-to-r from-violet-500 to-violet-600 p-4 w-18 rounded-full shadow"
+            ? "bg-linear-to-r from-violet-500 to-violet-800 p-4 w-18 rounded-full shadow"
             : "bg-linear-to-r from-violet-500 to-violet-300 p-4 w-18 rounded-full transition-all delay-150"
         }
       >

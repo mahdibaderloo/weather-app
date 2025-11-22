@@ -22,7 +22,7 @@ const items: Items[] = [
 
 export default function Navbar() {
   return (
-    <nav className="w-22 h-[852px] bg-linear-to-r from-violet-600/75 to-violet-500/50 px-4 rounded-full mt-8 shadow">
+    <nav className="w-22 h-[852px] bg-linear-to-r from-violet-900/75 to-violet-500/50 px-4 rounded-full mt-8 shadow">
       <div className="blur-2xl" />
       <ul className="w-full h-full flex flex-col gap-8 pt-2">
         {items.map((item) => (
