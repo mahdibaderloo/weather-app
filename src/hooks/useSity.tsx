@@ -6,6 +6,10 @@ async function fetchCityName(lat: number, lon: number) {
   );
   const data = await res.json();
 
+  if (!data) {
+    throw new Error("An error occurred while retrieving information.");
+  }
+
   return (
     data.address.city ||
     data.address.town ||

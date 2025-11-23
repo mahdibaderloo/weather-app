@@ -1,4 +1,4 @@
-import WeatherMap from "../components/WeatherMap";
+import WeatherMap from "../features/map/WeatherMap";
 
 export default function Map() {
   return (
