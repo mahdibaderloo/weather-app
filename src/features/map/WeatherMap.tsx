@@ -1,5 +1,4 @@
 import { MapContainer, TileLayer } from "react-leaflet";
-import { useEffect, useState } from "react";
 import MapEvents from "./MapEvents";
 
 import L from "leaflet";
@@ -8,12 +7,15 @@ import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import { useCity } from "../../hooks/useCity";
 import MarkerWithPopup from "./MarkerWithoutPopup";
 import { useLocationStore } from "../../store/LocationStore";
+import { useWeather } from "../../hooks/useWeather";
 
 const DefaultIcon = L.icon({ iconUrl: markerIcon, shadowUrl: markerShadow });
 L.Marker.prototype.options.icon = DefaultIcon;
 
 export default function WeatherMap() {
   const { lat, lon, city, setLocation } = useLocationStore();
+  const { data } = useWeather(lat, lon);
+  console.log(data);
 
   const { data: cityName, isLoading } = useCity(lat, lon);
 
