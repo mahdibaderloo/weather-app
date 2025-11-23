@@ -26,8 +26,6 @@ export default function Map() {
     });
   }
 
-  console.log(coords);
-
   return (
     <>
       <button
@@ -37,7 +35,7 @@ export default function Map() {
         Get My Location
       </button>
 
-      <WeatherMap />
+      <WeatherMap lat={coords.lat} lon={coords.lon} />
     </>
   );
 }
