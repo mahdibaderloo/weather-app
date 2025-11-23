@@ -19,7 +19,7 @@ async function fetchCityName(lat: number, lon: number) {
   );
 }
 
-export function useCityQuery(lat?: number, lon?: number) {
+export function useCity(lat?: number, lon?: number) {
   return useQuery({
     queryKey: ["cityName", lat, lon],
     queryFn: () => fetchCityName(lat!, lon!),
