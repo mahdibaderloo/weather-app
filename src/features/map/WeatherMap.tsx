@@ -7,20 +7,15 @@ import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import { useCity } from "../../hooks/useCity";
 import MarkerWithPopup from "./MarkerWithoutPopup";
+import { useLocationStore } from "../../store/LocationStore";
 
 const DefaultIcon = L.icon({ iconUrl: markerIcon, shadowUrl: markerShadow });
 L.Marker.prototype.options.icon = DefaultIcon;
 
-export default function WeatherMap({ lat, lon }: { lat: number; lon: number }) {
-  const [position, setPosition] = useState<{ lat: number; lon: number } | null>(
-    null
-  );
+export default function WeatherMap() {
+  const { lat, lon, city, setLocation } = useLocationStore();
 
-  useEffect(() => {
-    setPosition({ lat, lon });
-  }, [lat, lon]);
-
-  const { data: city, isLoading } = useCity(position?.lat, position?.lon);
+  const { data: cityName, isLoading } = useCity(lat, lon);
 
   return (
     <>
@@ -30,22 +25,22 @@ export default function WeatherMap({ lat, lon }: { lat: number; lon: number }) {
         </p>
       ) : (
         <MapContainer
-          center={[position?.lat || 35.6892, position?.lon || 51.389]}
+          center={[lat, lon]}
           zoom={16}
           style={{ height: "50%", borderRadius: "2rem" }}
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
           <MapEvents
-            onSelect={(lat, lon) => {
-              setPosition({ lat, lon });
+            onSelect={(newLat, newLon) => {
+              setLocation(newLat, newLon);
             }}
           />
 
-          {position && (
+          {cityName && (
             <MarkerWithPopup
-              lat={position.lat}
-              lon={position.lon}
+              lat={lat}
+              lon={lon}
               city={city}
               isLoading={isLoading}
             />

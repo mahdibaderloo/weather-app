@@ -9,9 +9,9 @@ interface LocationState {
 }
 
 export const useLocationStore = create<LocationState>((set) => ({
-  lat: 35,6892,
-  lon: 51.3890,
+  lat: 35.6892,
+  lon: 51.389,
   city: "Tehran",
-  setLocation: (lat, lon) => set({lat, lon}),
-  setCity: (city) => set({city})
+  setLocation: (lat, lon) => set({ lat, lon }),
+  setCity: (city) => set({ city }),
 }));

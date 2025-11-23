@@ -1,16 +1,8 @@
-import { useState } from "react";
 import WeatherMap from "../features/map/WeatherMap";
+import { useLocationStore } from "../store/LocationStore";
 
 export default function Map() {
-  const [coords, setCoords] = useState<{
-    lat: number;
-    lon: number;
-    city?: string;
-  }>({
-    lat: 35.6892,
-    lon: 51.389,
-    city: "Tehran",
-  });
+  const setLocation = useLocationStore((state) => state.setLocation);
 
   function handleGetLocation() {
     if (!navigator.geolocation) {
@@ -19,10 +11,7 @@ export default function Map() {
     }
 
     navigator.geolocation.getCurrentPosition((pos) => {
-      setCoords({
-        lat: pos.coords.latitude,
-        lon: pos.coords.longitude,
-      });
+      setLocation(pos.coords.latitude, pos.coords.longitude);
     });
   }
 
@@ -35,7 +24,7 @@ export default function Map() {
         Get My Location
       </button>
 
-      <WeatherMap lat={coords.lat} lon={coords.lon} />
+      <WeatherMap />
     </>
   );
 }
