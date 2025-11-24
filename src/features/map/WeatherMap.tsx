@@ -7,14 +7,19 @@ import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import { useCity } from "../../hooks/useCity";
 import MarkerWithPopup from "./MarkerWithoutPopup";
 import { useLocationStore } from "../../store/LocationStore";
+import { useEffect } from "react";
 
 const DefaultIcon = L.icon({ iconUrl: markerIcon, shadowUrl: markerShadow });
 L.Marker.prototype.options.icon = DefaultIcon;
 
 export default function WeatherMap() {
-  const { lat, lon, city, setLocation } = useLocationStore();
+  const { lat, lon, city, setLocation, setCity } = useLocationStore();
 
   const { data: cityName, isLoading } = useCity(lat, lon);
+
+  useEffect(() => {
+    if (cityName) setCity(cityName);
+  }, [cityName, setCity]);
 
   return (
     <>

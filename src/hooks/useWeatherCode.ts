@@ -1,4 +1,4 @@
-export function useWeatherCode() {
+export function useWeatherCode(weatherCode: number) {
   const map: Record<number, string> = {
     0: "Sunny",
     1: "Sunny",
@@ -29,9 +29,5 @@ export function useWeatherCode() {
     99: "Stormy",
   };
 
-  const translate = (code: number): string => {
-    return map[code] || "Unspecified";
-  };
-
-  return { translate };
+  return map[weatherCode] || "Unspecified";
 }

@@ -1,10 +1,16 @@
 import rainy from "../assets/rainy.png";
 import rainyIcon from "../assets/rainy.svg";
 import InformationSection from "../features/home/InformationSection";
+import { useWeather } from "../hooks/useWeather";
 import { useLocationStore } from "../store/LocationStore";
 
 export default function Home() {
   const { city, lat, lon } = useLocationStore();
+  const { data, isLoading } = useWeather(lat, lon);
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className="w-full h-full relative p-8">
@@ -15,7 +21,12 @@ export default function Home() {
       />
 
       <div className="w-full flex justify-between gap-1">
-        <InformationSection city={city} />
+        <InformationSection
+          city={city}
+          data={data?.current}
+          max={Math.ceil(data?.daily.temperature_2m_max[0])}
+          min={Math.ceil(data?.daily.temperature_2m_min[0])}
+        />
         <section className="relative z-50 p-4 bg-linear-to-r from-violet-400/35 to-violet-800/60 rounded-4xl w-[49%] h-fit flex flex-col">
           <p className="font-semibold text-xl text-violet-200">
             3-Day Forecast

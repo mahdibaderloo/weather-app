@@ -1,8 +1,26 @@
 import locationIcon from "../../assets/location.svg";
 import rainyIcon from "../../assets/rainy.svg";
+import { useWeatherCode } from "../../hooks/useWeatherCode";
 import { getFormattedDate, getWeekday } from "../../utils/date";
 
-export default function InformationSection({ city }) {
+interface InformationProps {
+  city: string | undefined;
+  data: {
+    temperature: number;
+  };
+  max: number;
+  min: number;
+}
+
+export default function InformationSection({
+  city,
+  data,
+  max,
+  min,
+}: InformationProps) {
+  console.log(data);
+  const weather = useWeatherCode(data?.weathercode);
+
   return (
     <section className="relative z-50 p-4 bg-linear-to-r from-violet-800/60 to-violet-400/35 rounded-4xl w-[49%] h-fit flex justify-between">
       {/* <div className="absolute blur-sm w-full h-full" /> */}
@@ -22,9 +40,11 @@ export default function InformationSection({ city }) {
         </div>
 
         <div>
-          <p className="font-bold text-7xl text-violet-100">15°C</p>
+          <p className="font-bold text-7xl text-violet-100">
+            {Math.floor(data?.temperature)}°C
+          </p>
           <p className="text-lg font-semibold text-violet-300">
-            High: 20 Low: 9
+            High: {max} Low: {min}
           </p>
         </div>
       </div>
@@ -41,7 +61,7 @@ export default function InformationSection({ city }) {
 
         <div className="flex flex-col items-end">
           <img src={rainyIcon} alt="Icon" className="w-60" />
-          <p className="font-semibold text-3xl text-violet-950">Rainy</p>
+          <p className="font-semibold text-3xl text-violet-950">{weather}</p>
         </div>
       </div>
     </section>
