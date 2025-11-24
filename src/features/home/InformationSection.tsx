@@ -1,5 +1,6 @@
 import locationIcon from "../../assets/location.svg";
 import rainyIcon from "../../assets/rainy.svg";
+import { getFormattedDate, getWeekday } from "../../utils/date";
 
 export default function InformationSection({ city }) {
   return (
@@ -14,7 +15,7 @@ export default function InformationSection({ city }) {
         </div>
 
         <div>
-          <p className="font-bold text-5xl text-violet-100">Sunday</p>
+          <p className="font-bold text-5xl text-violet-100">{getWeekday()}</p>
           <span className="text-lg font-semibold text-violet-300">
             {getFormattedDate()}
           </span>

@@ -1,0 +1,37 @@
+export function useWeatherCode() {
+  const map: Record<number, string> = {
+    0: "Sunny",
+    1: "Sunny",
+    2: "Patly Cloudy",
+    3: "Cloudy",
+
+    45: "Fog",
+    48: "Fog",
+
+    51: "Rainy",
+    53: "Rainy",
+    55: "Rainy",
+
+    61: "Rainy",
+    63: "Rainy",
+    65: "Rainy",
+
+    71: "Snowy",
+    73: "Snowy",
+    75: "Snowy",
+
+    80: "Stormy",
+    81: "Stormy",
+    82: "Stormy",
+
+    95: "Stormy",
+    96: "Stormy",
+    99: "Stormy",
+  };
+
+  const translate = (code: number): string => {
+    return map[code] || "Unspecified";
+  };
+
+  return { translate };
+}
