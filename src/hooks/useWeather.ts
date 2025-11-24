@@ -1,22 +1,22 @@
 import { useQuery } from "@tanstack/react-query";
 
-interface WeatherData {
-  current: {
-    temperature: number;
-    weathercode: number;
-  };
-  hourly: {
-    time: string[];
-    temperature: number[];
-    weathercode: number[];
-  };
-  daily: {
-    time: string[];
-    temp_max: number[];
-    temp_min: number[];
-    weathercode: number[];
-  };
-}
+// interface WeatherData {
+//   current: {
+//     temperature: number;
+//     weathercode: number;
+//   };
+//   hourly: {
+//     time: string[];
+//     temperature: number[];
+//     weathercode: number[];
+//   };
+//   daily: {
+//     time: string[];
+//     temp_max: number[];
+//     temp_min: number[];
+//     weathercode: number[];
+//   };
+// }
 
 export function useWeather(lat?: number, lon?: number) {
   return useQuery({
@@ -33,7 +33,7 @@ export function useWeather(lat?: number, lon?: number) {
         current: data.current_weather,
         hourly: data.hourly,
         daily: data.daily,
-      } as WeatherData;
+      };
     },
     enabled: !!lat && !!lon,
     refetchInterval: 60_000,
