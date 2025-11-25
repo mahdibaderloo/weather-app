@@ -14,7 +14,11 @@ export default function Home() {
   );
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <p className="flex justify-center items-center text-4xl font-bold w-full h-[50%] text-violet-950">
+        Loading...
+      </p>
+    );
   }
 
   return (
