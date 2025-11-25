@@ -1,4 +1,5 @@
 import { useWeatherCode } from "../../hooks/useWeatherCode";
+import { getIndexesHoursLater } from "../../utils/date";
 import { weatherIcon } from "../../utils/weatherIcon";
 
 interface DataProp {
@@ -9,15 +10,13 @@ interface DataProp {
   };
 }
 
-const hours = [1, 3, 5, 7, 9];
-
 export default function HourlyForecast({ data }: DataProp) {
   return (
     <section className="relative z-50 p-4 bg-linear-to-b from-violet-400/35 to-violet-800/60 rounded-4xl w-full h-fit flex flex-col gap-6 justify-between mt-6">
       <p className="font-semibold text-xl text-violet-200">Today's Forecast</p>
 
       <ul className="flex items-center justify-center gap-2">
-        {hours.map((hour) => {
+        {getIndexesHoursLater(data.time).map((hour) => {
           const weatherCode = data.weathercode[hour];
           const weatherName = useWeatherCode(weatherCode);
           const icon = weatherIcon(weatherName)?.icon;
@@ -34,7 +33,11 @@ export default function HourlyForecast({ data }: DataProp) {
                   {weatherName}
                 </p>
                 <p className="bg-violet-300 text-violet-950 font-medium py-1 px-2 rounded-xl">
-                  12:00 pm
+                  {hour > 11
+                    ? `${hour}:00 pm`
+                    : hour < 10
+                    ? `0${hour}:00 am`
+                    : `${hour}:00 am`}
                 </p>
               </div>
 

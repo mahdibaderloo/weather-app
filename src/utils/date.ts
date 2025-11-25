@@ -22,3 +22,20 @@ export function getNextDay(count = 0) {
     return days[day + count];
   }
 }
+
+export function getIndexesHoursLater(dataTime: string[]) {
+  const hoursAhead = [2, 4, 6, 8, 10];
+  const now = new Date();
+  const results: number[] = [];
+
+  for (let h of hoursAhead) {
+    const future = new Date(now.getTime() + h * 60 * 60 * 1000);
+    const formatted = "2025-11-25T".concat(
+      future.toTimeString().slice(0, 3).concat("00")
+    );
+    const index = dataTime.indexOf(formatted);
+    results.push(index);
+  }
+
+  return results;
+}
