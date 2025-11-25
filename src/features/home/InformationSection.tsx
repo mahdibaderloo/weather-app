@@ -27,7 +27,7 @@ export default function InformationSection({
       <div className="flex flex-col gap-10">
         <div className="flex items-center gap-2 bg-violet-950 w-fit rounded-2xl pr-6 pl-1 py-1">
           <img src={locationIcon} alt="Location icon" className="w-8" />
-          <p className="font-semibold text-lg text-violet-200">
+          <p className="font-semibold text-lg text-violet-200 w-fit">
             {city || "City"}
           </p>
         </div>
@@ -40,16 +40,20 @@ export default function InformationSection({
         </div>
 
         <div>
-          <p className="font-bold text-7xl text-violet-100">
+          <p className="font-bold text-6xl text-violet-100">
             {Math.floor(data?.temperature)}°C
           </p>
           <p className="text-lg font-semibold text-violet-300">
             High: {max} Low: {min}
           </p>
         </div>
+
+        <p className="text-lg font-semibold text-violet-200">
+          Wind Speed: {Math.floor(data?.windspeed)} km/h
+        </p>
       </div>
 
-      <div className="flex flex-col items-end gap-10">
+      <div className="flex flex-col justify-between items-end gap-10">
         <div className="w-fit flex items-center justify-between bg-violet-200/40 rounded-full cursor-pointer">
           <span className="w-8 h-8 rounded-full font-medium flex justify-center items-center text-violet-950">
             F
