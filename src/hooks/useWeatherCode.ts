@@ -1,4 +1,4 @@
-export function useWeatherCode(weatherCode: number) {
+export function useWeatherCode(weatherCode: number, windSpeed: number) {
   const map: Record<number, string> = {
     0: "Sunny",
     1: "Sunny",
@@ -28,6 +28,8 @@ export function useWeatherCode(weatherCode: number) {
     96: "Stormy",
     99: "Stormy",
   };
+
+  if (windSpeed && windSpeed > 15) return "Windy";
 
   return map[weatherCode] || "Unspecified";
 }

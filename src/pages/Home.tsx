@@ -1,13 +1,17 @@
-import rainy from "../assets/rainy.png";
-import rainyIcon from "../assets/rainy.svg";
 import DailyForecast from "../features/home/DailyForecast";
 import InformationSection from "../features/home/InformationSection";
 import { useWeather } from "../hooks/useWeather";
+import { useWeatherCode } from "../hooks/useWeatherCode";
 import { useLocationStore } from "../store/LocationStore";
+import { weatherIcon } from "../utils/weatherIcon";
 
 export default function Home() {
   const { city, lat, lon } = useLocationStore();
   const { data, isLoading } = useWeather(lat, lon);
+  const weather = useWeatherCode(
+    data?.current?.weathercode,
+    data?.current?.windspeed
+  );
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -16,7 +20,7 @@ export default function Home() {
   return (
     <div className="w-full h-full relative p-8">
       <img
-        src={rainy}
+        src={weatherIcon(weather)?.image}
         alt="Background"
         className="w-[99%] rounded-4xl shadow blur-[1px] absolute inset-0 object-cover"
       />
@@ -39,7 +43,7 @@ export default function Home() {
 
         <ul className="flex items-center justify-center gap-2">
           <li className="flex flex-col items-center gap-2 bg-linear-to-b from-violet-400/75 to-violet-600/40 rounded-2xl w-fit p-4">
-            <img src={rainyIcon} alt="icon" className="w-24" />
+            <img src={weatherIcon(weather)?.icon} alt="icon" className="w-24" />
 
             <div className="flex items-center justify-center gap-2 ">
               <p className="bg-violet-300 text-violet-950 font-medium py-1 px-2 rounded-xl">
@@ -53,7 +57,7 @@ export default function Home() {
             <p className="text-violet-300 font-bold text-5xl">15°</p>
           </li>
           <li className="flex flex-col items-center gap-2 bg-linear-to-b from-violet-400/75 to-violet-600/40 rounded-2xl w-fit p-4">
-            <img src={rainyIcon} alt="icon" className="w-24" />
+            <img src={weatherIcon(weather)?.icon} alt="icon" className="w-24" />
 
             <div className="flex items-center justify-center gap-2 ">
               <p className="bg-violet-300 text-violet-950 font-medium py-1 px-2 rounded-xl">
@@ -67,7 +71,7 @@ export default function Home() {
             <p className="text-violet-300 font-bold text-5xl">16°</p>
           </li>
           <li className="flex flex-col items-center gap-2 bg-linear-to-b from-violet-400/75 to-violet-600/40 rounded-2xl w-fit p-4">
-            <img src={rainyIcon} alt="icon" className="w-24" />
+            <img src={weatherIcon(weather)?.icon} alt="icon" className="w-24" />
 
             <div className="flex items-center justify-center gap-2 ">
               <p className="bg-violet-300 text-violet-950 font-medium py-1 px-2 rounded-xl">
@@ -81,7 +85,7 @@ export default function Home() {
             <p className="text-violet-300 font-bold text-5xl">13°</p>
           </li>
           <li className="flex flex-col items-center gap-2 bg-linear-to-b from-violet-400/75 to-violet-600/40 rounded-2xl w-fit p-4">
-            <img src={rainyIcon} alt="icon" className="w-24" />
+            <img src={weatherIcon(weather)?.icon} alt="icon" className="w-24" />
 
             <div className="flex items-center justify-center gap-2 ">
               <p className="bg-violet-300 text-violet-950 font-medium py-1 px-2 rounded-xl">
@@ -95,7 +99,7 @@ export default function Home() {
             <p className="text-violet-300 font-bold text-5xl">12°</p>
           </li>
           <li className="flex flex-col items-center gap-2 bg-linear-to-b from-violet-400/75 to-violet-600/40 rounded-2xl w-fit p-4">
-            <img src={rainyIcon} alt="icon" className="w-24" />
+            <img src={weatherIcon(weather)?.icon} alt="icon" className="w-24" />
 
             <div className="flex items-center justify-center gap-2 ">
               <p className="bg-violet-300 text-violet-950 font-medium py-1 px-2 rounded-xl">

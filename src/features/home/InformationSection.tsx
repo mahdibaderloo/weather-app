@@ -1,7 +1,7 @@
 import locationIcon from "../../assets/location.svg";
-import rainyIcon from "../../assets/rainy.svg";
 import { useWeatherCode } from "../../hooks/useWeatherCode";
 import { getFormattedDate, getWeekday } from "../../utils/date";
+import { weatherIcon } from "../../utils/weatherIcon";
 
 interface InformationProps {
   city: string | undefined;
@@ -19,7 +19,7 @@ export default function InformationSection({
   min,
 }: InformationProps) {
   console.log(data);
-  const weather = useWeatherCode(data?.weathercode);
+  const weather = useWeatherCode(data?.weathercode, data?.windspeed);
 
   return (
     <section className="relative z-50 p-4 bg-linear-to-r from-violet-800/60 to-violet-400/35 rounded-4xl w-[49%] h-fit flex justify-between">
@@ -60,7 +60,7 @@ export default function InformationSection({
         </div>
 
         <div className="flex flex-col items-end">
-          <img src={rainyIcon} alt="Icon" className="w-60" />
+          <img src={weatherIcon(weather)?.icon} alt="Icon" className="w-60" />
           <p className="font-semibold text-3xl text-violet-950">{weather}</p>
         </div>
       </div>
