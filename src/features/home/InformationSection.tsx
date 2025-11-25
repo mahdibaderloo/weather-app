@@ -7,6 +7,8 @@ interface InformationProps {
   city: string | undefined;
   data: {
     temperature: number;
+    weathercode: number;
+    windspeed: number;
   };
   max: number;
   min: number;
@@ -18,7 +20,8 @@ export default function InformationSection({
   max,
   min,
 }: InformationProps) {
-  const weather = useWeatherCode(data?.weathercode, data?.windspeed);
+  const weather = useWeatherCode(data.weathercode, data?.windspeed);
+  const icon = weatherIcon(weather)?.icon;
 
   return (
     <section className="relative z-50 p-4 bg-linear-to-r from-violet-800/60 to-violet-400/35 rounded-4xl w-[49%] h-fit flex justify-between">
@@ -63,7 +66,7 @@ export default function InformationSection({
         </div>
 
         <div className="flex flex-col items-end">
-          <img src={weatherIcon(weather)?.icon} alt="Icon" className="w-60" />
+          <img src={icon} alt="Icon" className="w-60" />
           <p className="font-semibold text-3xl text-violet-950">{weather}</p>
         </div>
       </div>
