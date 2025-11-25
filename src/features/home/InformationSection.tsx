@@ -18,7 +18,6 @@ export default function InformationSection({
   max,
   min,
 }: InformationProps) {
-  console.log(data);
   const weather = useWeatherCode(data?.weathercode, data?.windspeed);
 
   return (

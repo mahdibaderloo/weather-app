@@ -6,8 +6,14 @@ export function getFormattedDate() {
   const date = new Date();
 
   const day = date.getDate();
-  const month = date.toLocaleString("en-US", { month: "short" }); // Nov
+  const month = date.toLocaleString("en-US", { month: "short" });
   const year = date.getFullYear();
 
   return `${day} ${month}, ${year}`;
+}
+
+export function getNextDay(count = 0) {
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const day = new Date().getDay();
+  return days[day + count];
 }

@@ -12,6 +12,7 @@ export default function Home() {
     data?.current?.weathercode,
     data?.current?.windspeed
   );
+  console.log(data?.daily);
 
   if (isLoading) {
     return (

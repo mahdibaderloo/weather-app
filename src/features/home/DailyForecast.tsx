@@ -7,7 +7,7 @@ export default function DailyForecast() {
 
       <ul className="mt-6 divide-y-2 divide-violet-950 mb-7">
         <li className="flex items-center justify-between text-violet-300 text-xl font-semibold py-4">
-          <p className="w-20">Today</p>
+          <p className="w-20">Tomorrow</p>
           <div className="flex items-center">
             <img src={rainyIcon} alt="icon" className="w-14" />
             <span>Rainy</span>
