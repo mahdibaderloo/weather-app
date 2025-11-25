@@ -15,5 +15,10 @@ export function getFormattedDate() {
 export function getNextDay(count = 0) {
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const day = new Date().getDay();
-  return days[day + count];
+
+  if (count === 1) {
+    return "Tomorrow";
+  } else {
+    return days[day + count];
+  }
 }

@@ -1,4 +1,4 @@
-export function useWeatherCode(weatherCode: number, windSpeed: number) {
+export function useWeatherCode(weatherCode: number, windSpeed?: number) {
   const map: Record<number, string> = {
     0: "Sunny",
     1: "Sunny",

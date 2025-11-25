@@ -38,7 +38,7 @@ export default function Home() {
           min={Math.ceil(data?.daily.temperature_2m_min[0])}
         />
 
-        <DailyForecast />
+        <DailyForecast data={data?.daily} />
       </div>
 
       <section className="relative z-50 p-4 bg-linear-to-b from-violet-400/35 to-violet-800/60 rounded-4xl w-full h-fit flex flex-col gap-6 justify-between mt-6">
