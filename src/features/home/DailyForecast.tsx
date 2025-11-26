@@ -33,7 +33,9 @@ export default function DailyForecast({ data }: DataProp) {
 
               <div className="flex items-center">
                 <img src={icon} alt="icon" className="w-14 mr-2" />
-                <span>{weatherName}</span>
+                <span>
+                  {weatherName === "Partly Cloudy" ? "Cloudy" : weatherName}
+                </span>
               </div>
 
               <p>

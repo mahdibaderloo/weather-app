@@ -18,7 +18,7 @@ const information = [
   { id: "Sunny", image: sunnyImage, icon: sunnyIcon },
   { id: "Windy", image: windyImage, icon: windyIcon },
   {
-    id: "Patly Cloudy",
+    id: "Partly Cloudy",
     image: partlyCloudyImage,
     icon: partlyCloudyIcon,
   },

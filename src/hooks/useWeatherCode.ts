@@ -2,7 +2,7 @@ export function useWeatherCode(weatherCode: number, windSpeed?: number) {
   const map: Record<number, string> = {
     0: "Sunny",
     1: "Sunny",
-    2: "Patly Cloudy",
+    2: "Partly Cloudy",
     3: "Cloudy",
 
     45: "Fog",

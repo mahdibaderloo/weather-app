@@ -29,7 +29,7 @@ export default function InformationSection({
       <div className="flex flex-col gap-10">
         <div className="flex items-center gap-2 bg-violet-950 w-fit rounded-2xl pr-6 pl-1 py-1">
           <img src={locationIcon} alt="Location icon" className="w-8" />
-          <p className="font-semibold text-lg text-violet-200 w-fit">
+          <p className="font-semibold text-lg text-violet-200 w-fit truncate">
             {city || "City"}
           </p>
         </div>
