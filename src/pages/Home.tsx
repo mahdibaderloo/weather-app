@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import DailyForecast from "../features/home/DailyForecast";
 import HourlyForecast from "../features/home/HourlyForecast";
 import InformationSection from "../features/home/InformationSection";
@@ -7,12 +8,16 @@ import { useLocationStore } from "../store/LocationStore";
 import { weatherIcon } from "../utils/weatherIcon";
 
 export default function Home() {
-  const { city, lat, lon } = useLocationStore();
+  const { city, lat, lon, cityList, addCity } = useLocationStore();
   const { data, isLoading } = useWeather(lat, lon);
   const weather = useWeatherCode(
     data?.current?.weathercode,
     data?.current?.windspeed
   );
+
+  useEffect(() => {
+    addCity({ name: city, lat, lon });
+  }, [city]);
 
   if (isLoading) {
     return (

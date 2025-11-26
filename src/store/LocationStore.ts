@@ -1,14 +1,20 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
+interface CityItem {
+  name: string;
+  lat: number;
+  lon: number;
+}
+
 interface LocationState {
   lat: number;
   lon: number;
   city?: string;
-  cityList: string[];
+  cityList: CityItem[];
   setLocation: (lat: number, lon: number) => void;
   setCity: (city: string) => void;
-  addCity: (city: string) => void;
+  addCity: (item: CityItem) => void;
 }
 
 export const useLocationStore = create<LocationState>()(
@@ -22,10 +28,11 @@ export const useLocationStore = create<LocationState>()(
       setLocation: (lat, lon) => set({ lat, lon }),
       setCity: (city) => set({ city }),
 
-      addCity: (city) =>
-        set((state) => ({
-          cityList: [...state.cityList, city],
-        })),
+      addCity: (item) =>
+        set((state) => {
+          if (state.cityList.some((c) => c.name === item.name)) return state;
+          return { cityList: [...state.cityList, item] };
+        }),
     }),
     {
       name: "cities",
