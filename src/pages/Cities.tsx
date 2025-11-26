@@ -1,12 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useLocationStore } from "../store/LocationStore";
-import { useWeather } from "../hooks/useWeather";
-import { useWeatherCode } from "../hooks/useWeatherCode";
-import { weatherIcon } from "../utils/weatherIcon";
+import CityItem from "../features/city/CityItem";
 
 export default function Cities() {
-  const navigate = useNavigate();
-  const { cityList, setLocation, setCity } = useLocationStore();
+  const { cityList } = useLocationStore();
 
   return (
     <div className="w-full h-full flex flex-col p-2 gap-8">
@@ -21,52 +18,12 @@ export default function Cities() {
       </div>
       <ul className="flex flex-col gap-2 overflow-y-auto">
         {cityList.length > 0 ? (
-          cityList.map((city) => {
-            const { data, isLoading } = useWeather(city.lat, city.lon);
-            const weather = useWeatherCode(
-              data?.current.weathercode,
-              data?.current.windspeed
-            );
-            const icon = weatherIcon(weather);
-
-            function handleSetLocation() {
-              setLocation(city.lat, city.lon);
-              setCity(city.name);
-              navigate("/");
-            }
-
-            if (isLoading)
-              return (
-                <p
-                  key={city.name}
-                  className="flex justify-center items-center text-4xl font-bold w-full h-[50%] text-violet-950"
-                >
-                  Loading...
-                </p>
-              );
-
-            return (
-              <li
-                key={city.name}
-                onClick={handleSetLocation}
-                className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 flex items-center justify-between rounded-full px-4 py-2 cursor-pointer"
-              >
-                <p className="text-3xl text-violet-200 font-bold w-80 truncate text-left">
-                  {city.name}
-                </p>
-                <div className="flex items-center gap-2">
-                  <img src={icon?.icon} alt="icon" className="w-14" />
-                  <p className="text-xl text-violet-950 font-semibold">
-                    {weather}
-                  </p>
-                </div>
-                <img src="" alt="delete icon" />
-              </li>
-            );
-          })
+          cityList.map((city) => (
+            <CityItem name={city.name} lat={city.lat} lon={city.lon} />
+          ))
         ) : (
           <li className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 rounded-full flex items-center justify-center p-2 cursor-pointer text-2xl font-bold">
-            <Link to="/map">+ Add city</Link>
+            No cities added. <Link to="/map">+ Add city</Link>
           </li>
         )}
       </ul>
