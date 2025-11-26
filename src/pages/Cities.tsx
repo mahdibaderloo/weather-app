@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useLocationStore } from "../store/LocationStore";
 import { useWeather } from "../hooks/useWeather";
 import { useWeatherCode } from "../hooks/useWeatherCode";
 import { weatherIcon } from "../utils/weatherIcon";
 
 export default function Cities() {
-  const { cityList } = useLocationStore();
+  const navigate = useNavigate();
+  const { cityList, setLocation, setCity } = useLocationStore();
+
   return (
     <div className="w-full h-full flex flex-col p-2 gap-8">
       <div className="flex justify-between items-center p-4">
@@ -27,6 +29,12 @@ export default function Cities() {
             );
             const icon = weatherIcon(weather);
 
+            function handleSetLocation() {
+              setLocation(city.lat, city.lon);
+              setCity(city.name);
+              navigate("/");
+            }
+
             if (isLoading)
               return (
                 <p
@@ -40,6 +48,7 @@ export default function Cities() {
             return (
               <li
                 key={city.name}
+                onClick={handleSetLocation}
                 className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 flex items-center justify-between rounded-full px-4 py-2 cursor-pointer"
               >
                 <p className="text-3xl text-violet-200 font-bold w-80 truncate text-left">
