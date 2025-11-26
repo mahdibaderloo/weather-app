@@ -8,7 +8,7 @@ import { useLocationStore } from "../store/LocationStore";
 import { weatherIcon } from "../utils/weatherIcon";
 
 export default function Home() {
-  const { city, lat, lon, cityList, addCity } = useLocationStore();
+  const { city, lat, lon, addCity } = useLocationStore();
   const { data, isLoading } = useWeather(lat, lon);
   const weather = useWeatherCode(
     data?.current?.weathercode,
@@ -16,8 +16,9 @@ export default function Home() {
   );
 
   useEffect(() => {
+    if (!city) return;
     addCity({ name: city, lat, lon });
-  }, [city]);
+  }, [city, lat, lon, addCity]);
 
   if (isLoading) {
     return (
