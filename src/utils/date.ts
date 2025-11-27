@@ -14,13 +14,13 @@ export function getFormattedDate() {
 
 export function getNextDay(count = 0) {
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const day = new Date().getDay();
+  let day = new Date().getDay();
 
   if (count === 1) {
     return "Tomorrow";
-  } else {
-    return days[day + count];
   }
+  const index = (day + count) % 7;
+  return days[index];
 }
 
 export function getIndexesHoursLater(dataTime: string[]) {
