@@ -19,10 +19,18 @@ export default function Cities() {
       <ul className="flex flex-col gap-2 overflow-y-auto">
         {cityList.length > 0 ? (
           cityList.map((city) => (
-            <CityItem name={city.name} lat={city.lat} lon={city.lon} />
+            <CityItem
+              key={city.name}
+              name={city.name}
+              lat={city.lat}
+              lon={city.lon}
+            />
           ))
         ) : (
-          <li className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 rounded-full flex items-center justify-center p-2 cursor-pointer text-2xl font-bold">
+          <li
+            key="there is no city"
+            className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 rounded-full flex items-center justify-center p-2 cursor-pointer text-2xl font-bold"
+          >
             No cities added. <Link to="/map">+ Add city</Link>
           </li>
         )}

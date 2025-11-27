@@ -4,6 +4,8 @@ import { useWeatherCode } from "../../hooks/useWeatherCode";
 import { weatherIcon } from "../../utils/weatherIcon";
 import { useLocationStore } from "../../store/LocationStore";
 
+import deleteIcon from "../../assets/delete.svg";
+
 interface CityProp {
   name: string;
   lat: number;
@@ -29,17 +31,13 @@ export default function CityItem({ name, lat, lon }: CityProp) {
 
   if (isLoading)
     return (
-      <p
-        key={name}
-        className="flex justify-center items-center text-4xl font-bold w-full h-[50%] text-violet-950"
-      >
+      <p className="flex justify-center items-center text-4xl font-bold w-full h-[50%] text-violet-950">
         Loading...
       </p>
     );
 
   return (
     <li
-      key={name}
       onClick={handleSetLocation}
       className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 flex items-center justify-between rounded-full px-4 py-2 cursor-pointer"
     >
@@ -50,7 +48,7 @@ export default function CityItem({ name, lat, lon }: CityProp) {
         <img src={icon?.icon} alt="icon" className="w-14" />
         <p className="text-xl text-violet-950 font-semibold">{weather}</p>
       </div>
-      <img src="" alt="delete icon" />
+      <img src={deleteIcon} className="w-10" alt="delete icon" />
     </li>
   );
 }
