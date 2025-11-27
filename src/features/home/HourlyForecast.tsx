@@ -1,7 +1,5 @@
-import { useWeatherCode } from "../../hooks/useWeatherCode";
 import { getIndexesHoursLater } from "../../utils/date";
-import { timeAmOrPm } from "../../utils/time";
-import { weatherIcon } from "../../utils/weatherIcon";
+import HourlyItem from "./HourlyItem";
 
 interface DataProp {
   data: {
@@ -18,32 +16,7 @@ export default function HourlyForecast({ data }: DataProp) {
 
       <ul className="flex items-center justify-center gap-2">
         {getIndexesHoursLater(data.time).map((hour) => {
-          const weatherCode = data.weathercode[hour];
-          const weatherName = useWeatherCode(weatherCode);
-          const icon = weatherIcon(weatherName)?.icon;
-          const time = data.time[hour].slice(11);
-
-          return (
-            <li
-              key={hour}
-              className="flex flex-col items-center gap-4 bg-linear-to-b from-violet-400/75 to-violet-600/40 rounded-2xl w-[20%] p-2"
-            >
-              <img src={icon} alt="icon" className="w-24" />
-
-              <div className="w-full flex items-center justify-center gap-2 ">
-                <p className="bg-violet-300 text-violet-950 font-medium py-1 px-2 rounded-xl w-1/2 truncate text-center">
-                  {weatherName === "Partly Cloudy" ? "Cloudy" : weatherName}
-                </p>
-                <p className="bg-violet-300 text-violet-950 font-medium py-1 px-1 rounded-xl w-1/2 text-center">
-                  {timeAmOrPm(time)}
-                </p>
-              </div>
-
-              <p className="text-violet-300 font-bold text-5xl">
-                {Math.floor(data?.temperature_2m[hour])}°
-              </p>
-            </li>
-          );
+          return <HourlyItem key={hour} data={data} hour={hour} />;
         })}
       </ul>
     </section>
