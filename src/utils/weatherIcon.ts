@@ -13,6 +13,7 @@ import cloudyIcon from "../assets/cloudy.svg";
 import rainyIcon from "../assets/rainy.svg";
 import stormyIcon from "../assets/stormy.svg";
 import snowyIcon from "../assets/snowy.svg";
+import fogIcon from "../assets/fog.svg";
 
 const information = [
   { id: "Sunny", image: sunnyImage, icon: sunnyIcon },
@@ -26,6 +27,7 @@ const information = [
   { id: "Rainy", image: rainyImage, icon: rainyIcon },
   { id: "Stormy", image: stormyImage, icon: stormyIcon },
   { id: "Snowy", image: snowyImage, icon: snowyIcon },
+  { id: "Fog", image: snowyImage, icon: fogIcon },
 ];
 
 export function weatherIcon(weather: string) {
