@@ -26,7 +26,8 @@ export default function InformationSection({
   const icon = weatherIcon(weather)?.icon;
   const { unit, toggleUnit } = useTemperatureUnitStore();
   const temp = useToggleUnitValue(data?.temperature);
-  console.log(data?.temperature);
+  const maxTemp = useToggleUnitValue(max);
+  const minTemp = useToggleUnitValue(min);
 
   function handleToggleUnit() {
     toggleUnit();
@@ -55,7 +56,7 @@ export default function InformationSection({
             {Math.floor(temp)}°{unit}
           </p>
           <p className="text-lg font-semibold text-violet-300">
-            High: {max} Low: {min}
+            High: {Math.floor(maxTemp)} Low: {Math.floor(minTemp)}
           </p>
         </div>
 
@@ -69,10 +70,18 @@ export default function InformationSection({
           className="w-fit flex items-center justify-between bg-violet-200/40 rounded-full cursor-pointer"
           onClick={handleToggleUnit}
         >
-          <span className="w-8 h-8 rounded-full font-medium flex justify-center items-center text-violet-950">
+          <span
+            className={`w-8 h-8 rounded-full font-medium flex justify-center items-center transition-all ${
+              unit === "F" ? "bg-violet-950 text-violet-200" : "text-violet-950"
+            }`}
+          >
             F
           </span>
-          <span className="w-8 h-8 rounded-full font-medium flex justify-center items-center bg-violet-950 text-violet-200">
+          <span
+            className={`w-8 h-8 rounded-full font-medium flex justify-center items-center transition-all ${
+              unit === "C" ? "bg-violet-950 text-violet-200" : "text-violet-950"
+            }`}
+          >
             C
           </span>
         </div>
