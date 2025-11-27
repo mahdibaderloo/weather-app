@@ -16,12 +16,12 @@ export default function MainHeader() {
         />
       </form>
       <div className="flex items-center gap-4">
-        <div className="w-14 h-14 flex items-center justify-center bg-linear-to-r from-violet-600/65 to-violet-900/95 rounded-full cursor-pointer shadow">
+        <div className="w-14 h-14 flex items-center justify-center bg-linear-to-l from-violet-500/85 to-violet-900/95 rounded-full cursor-pointer shadow">
           <img src={lightImage} alt="Theme icon" className="w-10" />
         </div>
         <Link
           to="/profile"
-          className="w-14 h-14 flex items-center justify-center bg-linear-to-r from-violet-600/65 to-violet-900/95 rounded-full cursor-pointer shadow"
+          className="w-14 h-14 flex items-center justify-center bg-linear-to-r from-violet-500/85 to-violet-900/95 rounded-full cursor-pointer shadow"
         >
           <img src={profileImage} alt="Profile icon" className="w-10" />
         </Link>

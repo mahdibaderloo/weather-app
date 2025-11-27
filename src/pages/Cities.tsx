@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useLocationStore } from "../store/LocationStore";
+import { useLocationStore } from "../store/locationStore";
 import CityItem from "../features/city/CityItem";
 
 export default function Cities() {

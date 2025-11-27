@@ -6,7 +6,7 @@ import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
 import { useCity } from "../../hooks/useCity";
 import MarkerWithPopup from "./MarkerWithoutPopup";
-import { useLocationStore } from "../../store/LocationStore";
+import { useLocationStore } from "../../store/locationStore";
 import { useEffect } from "react";
 
 const DefaultIcon = L.icon({ iconUrl: markerIcon, shadowUrl: markerShadow });

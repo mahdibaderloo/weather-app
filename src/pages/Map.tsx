@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import WeatherMap from "../features/map/WeatherMap";
-import { useLocationStore } from "../store/LocationStore";
+import { useLocationStore } from "../store/locationStore";
 
 export default function Map() {
   const setLocation = useLocationStore((state) => state.setLocation);

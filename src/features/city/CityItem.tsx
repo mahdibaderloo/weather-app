@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useWeather } from "../../hooks/useWeather";
 import { useWeatherCode } from "../../hooks/useWeatherCode";
 import { weatherIcon } from "../../utils/weatherIcon";
-import { useLocationStore } from "../../store/LocationStore";
+import { useLocationStore } from "../../store/locationStore";
 
 import deleteIcon from "../../assets/delete.svg";
 import type React from "react";

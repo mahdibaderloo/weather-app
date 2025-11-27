@@ -4,7 +4,7 @@ import HourlyForecast from "../features/home/HourlyForecast";
 import InformationSection from "../features/home/InformationSection";
 import { useWeather } from "../hooks/useWeather";
 import { useWeatherCode } from "../hooks/useWeatherCode";
-import { useLocationStore } from "../store/LocationStore";
+import { useLocationStore } from "../store/locationStore";
 import { weatherIcon } from "../utils/weatherIcon";
 
 export default function Home() {
