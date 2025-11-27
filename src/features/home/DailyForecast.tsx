@@ -1,6 +1,4 @@
-import { useWeatherCode } from "../../hooks/useWeatherCode";
-import { getNextDay } from "../../utils/date";
-import { weatherIcon } from "../../utils/weatherIcon";
+import DailyItem from "./DailyItem";
 
 interface DataProp {
   data: {
@@ -20,32 +18,7 @@ export default function DailyForecast({ data }: DataProp) {
 
       <ul className="mt-6 divide-y-2 divide-violet-950 mb-7">
         {days.map((day) => {
-          const weatherCode = data.weathercode[day];
-          const weatherName = useWeatherCode(weatherCode);
-          const icon = weatherIcon(weatherName)?.icon;
-
-          return (
-            <li
-              key={day}
-              className="flex items-center justify-between text-violet-300 text-xl font-semibold py-4"
-            >
-              <p className="w-20">{getNextDay(day)}</p>
-
-              <div className="flex items-center">
-                <img src={icon} alt="icon" className="w-14 mr-2" />
-                <span>
-                  {weatherName === "Partly Cloudy" ? "Cloudy" : weatherName}
-                </span>
-              </div>
-
-              <p>
-                {Math.floor(data.temperature_2m_max[day])} /{" "}
-                <span className="text-violet-400">
-                  {Math.floor(data.temperature_2m_min[day])}
-                </span>
-              </p>
-            </li>
-          );
+          return <DailyItem key={day} data={data} day={day} />;
         })}
       </ul>
     </section>
