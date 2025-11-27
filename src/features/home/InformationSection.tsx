@@ -1,5 +1,6 @@
 import locationIcon from "../../assets/location.svg";
 import { useWeatherCode } from "../../hooks/useWeatherCode";
+import { useTemperatureUnitStore } from "../../store/temperatureUnitStore";
 import { getFormattedDate, getWeekday } from "../../utils/date";
 import { weatherIcon } from "../../utils/weatherIcon";
 
@@ -22,6 +23,7 @@ export default function InformationSection({
 }: InformationProps) {
   const weather = useWeatherCode(data.weathercode, data?.windspeed);
   const icon = weatherIcon(weather)?.icon;
+  const { unit, toggleUnit } = useTemperatureUnitStore();
 
   return (
     <section className="relative z-50 p-4 bg-linear-to-r from-violet-800/60 to-violet-400/35 rounded-4xl w-[49%] h-fit flex justify-between">
@@ -43,7 +45,7 @@ export default function InformationSection({
 
         <div>
           <p className="font-bold text-6xl text-violet-100">
-            {Math.floor(data?.temperature)}°C
+            {Math.floor(data?.temperature)}°{unit}
           </p>
           <p className="text-lg font-semibold text-violet-300">
             High: {max} Low: {min}
@@ -56,7 +58,10 @@ export default function InformationSection({
       </div>
 
       <div className="flex flex-col justify-between items-end gap-10">
-        <div className="w-fit flex items-center justify-between bg-violet-200/40 rounded-full cursor-pointer">
+        <div
+          className="w-fit flex items-center justify-between bg-violet-200/40 rounded-full cursor-pointer"
+          onClick={() => toggleUnit()}
+        >
           <span className="w-8 h-8 rounded-full font-medium flex justify-center items-center text-violet-950">
             F
           </span>

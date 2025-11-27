@@ -1,11 +1,11 @@
 import { create } from "zustand";
 
 interface UnitType {
-  unit: "c" | "f";
+  unit: "C" | "F";
   toggleUnit: () => void;
 }
 
 export const useTemperatureUnitStore = create<UnitType>()((set) => ({
-  unit: "c",
-  toggleUnit: () => set((state) => ({ unit: state.unit === "c" ? "f" : "c" })),
+  unit: "C",
+  toggleUnit: () => set((state) => ({ unit: state.unit === "C" ? "F" : "C" })),
 }));
