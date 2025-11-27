@@ -11,7 +11,6 @@ interface DataProp {
 }
 
 export default function HourlyForecast({ data }: DataProp) {
-  console.log(data);
   return (
     <section className="relative z-50 p-4 bg-linear-to-b from-violet-400/35 to-violet-800/60 rounded-4xl w-full h-fit flex flex-col gap-6 justify-between mt-6">
       <p className="font-semibold text-xl text-violet-200">Today's Forecast</p>

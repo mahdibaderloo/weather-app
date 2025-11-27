@@ -30,7 +30,12 @@ export function getIndexesHoursLater(dataTime: string[]) {
 
   for (let h of hoursAhead) {
     const future = new Date(now.getTime() + h * 60 * 60 * 1000);
-    const formatted = future.toISOString().slice(0, 14).concat("00");
+    const year = future.getFullYear();
+    const month = (future.getMonth() + 1).toString().padStart(2, "0");
+    const day = future.getDate().toString().padStart(2, "0");
+    const hour = future.getHours().toString().padStart(2, "0");
+
+    const formatted = `${year}-${month}-${day}T${hour}:00`;
     const index = dataTime.indexOf(formatted);
     results.push(index);
   }
