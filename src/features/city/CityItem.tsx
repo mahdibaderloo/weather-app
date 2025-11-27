@@ -5,6 +5,7 @@ import { weatherIcon } from "../../utils/weatherIcon";
 import { useLocationStore } from "../../store/LocationStore";
 
 import deleteIcon from "../../assets/delete.svg";
+import type React from "react";
 
 interface CityProp {
   name: string;
@@ -14,7 +15,7 @@ interface CityProp {
 
 export default function CityItem({ name, lat, lon }: CityProp) {
   const navigate = useNavigate();
-  const { setLocation, setCity } = useLocationStore();
+  const { setLocation, setCity, removeCity } = useLocationStore();
 
   const { data, isLoading } = useWeather(lat, lon);
   const weather = useWeatherCode(
@@ -27,6 +28,11 @@ export default function CityItem({ name, lat, lon }: CityProp) {
     setLocation(lat, lon);
     setCity(name);
     navigate("/");
+  }
+
+  function handleDeleteCity(e: React.MouseEvent) {
+    e.stopPropagation();
+    removeCity(name);
   }
 
   if (isLoading)
@@ -48,7 +54,12 @@ export default function CityItem({ name, lat, lon }: CityProp) {
         <img src={icon?.icon} alt="icon" className="w-14" />
         <p className="text-xl text-violet-950 font-semibold">{weather}</p>
       </div>
-      <img src={deleteIcon} className="w-10" alt="delete icon" />
+      <img
+        src={deleteIcon}
+        className="w-10 z-20"
+        alt="delete icon"
+        onClick={handleDeleteCity}
+      />
     </li>
   );
 }

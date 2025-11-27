@@ -15,6 +15,7 @@ interface LocationState {
   setLocation: (lat: number, lon: number) => void;
   setCity: (city: string) => void;
   addCity: (item: CityItem) => void;
+  removeCity: (city: string) => void;
 }
 
 export const useLocationStore = create<LocationState>()(
@@ -32,6 +33,14 @@ export const useLocationStore = create<LocationState>()(
         set((state) => {
           if (state.cityList.some((c) => c.name === item.name)) return state;
           return { cityList: [...state.cityList, item] };
+        }),
+
+      removeCity: (city) =>
+        set((state) => {
+          if (!state.cityList.some((c) => c.name === city)) return state;
+          return {
+            cityList: state.cityList.filter((item) => item.name !== city),
+          };
         }),
     }),
     {
