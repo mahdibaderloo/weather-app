@@ -1,5 +1,6 @@
 import { useWeatherCode } from "../../hooks/useWeatherCode";
 import { getIndexesHoursLater } from "../../utils/date";
+import { timeAmOrPm } from "../../utils/time";
 import { weatherIcon } from "../../utils/weatherIcon";
 
 interface DataProp {
@@ -20,6 +21,7 @@ export default function HourlyForecast({ data }: DataProp) {
           const weatherCode = data.weathercode[hour];
           const weatherName = useWeatherCode(weatherCode);
           const icon = weatherIcon(weatherName)?.icon;
+          const time = data.time[hour].slice(11);
 
           return (
             <li
@@ -33,11 +35,7 @@ export default function HourlyForecast({ data }: DataProp) {
                   {weatherName === "Partly Cloudy" ? "Cloudy" : weatherName}
                 </p>
                 <p className="bg-violet-300 text-violet-950 font-medium py-1 px-1 rounded-xl w-1/2 text-center">
-                  {hour > 11
-                    ? `${hour}:00 pm`
-                    : hour < 10
-                    ? `0${hour}:00 am`
-                    : `${hour}:00 am`}
+                  {timeAmOrPm(time)}
                 </p>
               </div>
 
