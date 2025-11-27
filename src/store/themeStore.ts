@@ -2,16 +2,17 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 type Theme = {
-  theme: string;
-  setTheme: (theme: string) => void;
+  theme: "light" | "dark";
+  toggleTheme: () => void;
 };
 
-export const themeStore = create<Theme>()(
+export const useThemeStore = create<Theme>()(
   persist(
     (set) => ({
       theme: "light",
 
-      setTheme: (theme) => set({ theme }),
+      toggleTheme: () =>
+        set((state) => ({ theme: state.theme === "dark" ? "light" : "dark" })),
     }),
     {
       name: "weather-theme",
