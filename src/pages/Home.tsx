@@ -6,10 +6,12 @@ import { useWeather } from "../hooks/useWeather";
 import { useWeatherCode } from "../hooks/useWeatherCode";
 import { useLocationStore } from "../store/locationStore";
 import { weatherIcon } from "../utils/weatherIcon";
+import { useDateStore } from "../store/dateStore";
 
 export default function Home() {
   const { city, lat, lon, addCity } = useLocationStore();
-  const { data, isLoading } = useWeather(lat, lon);
+  const { selectedDate } = useDateStore();
+  const { data, isLoading } = useWeather({ lat, lon, startDate: selectedDate });
   const weather = useWeatherCode(
     data?.current?.weathercode,
     data?.current?.windspeed
