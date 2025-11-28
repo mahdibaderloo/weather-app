@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { DayPicker } from "react-day-picker";
-import "react-day-picker/dist/style.css";
 import { Link } from "react-router-dom";
 import { useLocationStore } from "../store/locationStore";
+import "react-day-picker/dist/style.css";
 
 export default function Calendar() {
   const [selected, setSelected] = useState<Date | undefined>();
@@ -10,7 +10,6 @@ export default function Calendar() {
 
   return (
     <div className="flex flex-col justify-center gap-10">
-      {/* Header Button */}
       <div className="w-full flex justify-between">
         <Link
           to="/"
@@ -21,7 +20,6 @@ export default function Calendar() {
         </Link>
       </div>
 
-      {/* Calendar Card */}
       <div className="p-6 rounded-3xl shadow bg-white/30 backdrop-blur-xl w-fit mx-auto">
         <DayPicker
           mode="single"
