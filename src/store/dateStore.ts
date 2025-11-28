@@ -1,12 +1,12 @@
 import { create } from "zustand";
 
-interface Date {
-  date: string;
-  setDate: (date: string) => void;
+interface DateStore {
+  selectedDate: Date;
+  setSelectedDate: (date: Date) => void;
 }
 
-export const useDateStore = create<Date>()((set) => ({
-  date: new Date().getDate().toLocaleString(),
+export const useDateStore = create<DateStore>()((set) => ({
+  selectedDate: new Date(),
 
-  setDate: (date) => set({ date }),
+  setSelectedDate: (date) => set({ selectedDate: date }),
 }));

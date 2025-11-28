@@ -1,6 +1,7 @@
 import locationIcon from "../../assets/location.svg";
 import { useToggleUnitValue } from "../../hooks/toggleUnitValue";
 import { useWeatherCode } from "../../hooks/useWeatherCode";
+import { useDateStore } from "../../store/dateStore";
 import { useTemperatureUnitStore } from "../../store/temperatureUnitStore";
 import { getFormattedDate, getWeekday } from "../../utils/date";
 import { weatherIcon } from "../../utils/weatherIcon";
@@ -28,6 +29,7 @@ export default function InformationSection({
   const temp = useToggleUnitValue(data?.temperature);
   const maxTemp = useToggleUnitValue(max);
   const minTemp = useToggleUnitValue(min);
+  const { selectedDate } = useDateStore() || new Date();
 
   function handleToggleUnit() {
     toggleUnit();
@@ -47,7 +49,7 @@ export default function InformationSection({
         <div>
           <p className="font-bold text-5xl text-violet-100">{getWeekday()}</p>
           <span className="text-lg font-semibold text-violet-300">
-            {getFormattedDate()}
+            {getFormattedDate(selectedDate)}
           </span>
         </div>
 

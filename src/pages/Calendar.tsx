@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import { Link } from "react-router-dom";
 import { useLocationStore } from "../store/locationStore";
 import "react-day-picker/dist/style.css";
+import { useDateStore } from "../store/dateStore";
 
 export default function Calendar() {
-  const [selected, setSelected] = useState<Date | undefined>();
+  const [selected, setSelected] = useState<Date | undefined>(new Date());
   const { city } = useLocationStore();
+  const { setSelectedDate } = useDateStore();
+
+  useEffect(
+    function () {
+      setSelectedDate(selected!);
+    },
+    [selected]
+  );
 
   return (
     <div className="flex flex-col justify-center gap-10">
