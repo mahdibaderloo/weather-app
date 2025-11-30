@@ -20,3 +20,16 @@ export function getAQIFromPM25(pm25: number): number {
   }
   return -1;
 }
+
+export function getAqiStatus(aqi: number) {
+  if (aqi <= 50) return { status: "Good", color: "from-green-800" };
+  if (aqi <= 100) return { status: "Moderate", color: "from-yellow-400" };
+  if (aqi <= 150)
+    return {
+      status: "Unhealthy for Sensitive Groups",
+      color: "from-yellow-600",
+    };
+  if (aqi <= 200) return { status: "Unhealthy", color: "from-red-600" };
+  if (aqi <= 300) return { status: "Very Unhealthy", color: "from-violet-900" };
+  else return { status: "Hazardous", color: "from-red-900" };
+}

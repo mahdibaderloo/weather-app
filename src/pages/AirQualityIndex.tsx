@@ -6,7 +6,6 @@ import { useLocationStore } from "../store/locationStore";
 export default function AirQualityIndex() {
   const { lat, lon } = useLocationStore();
   const { data, isLoading } = useAQI({ lat, lon });
-  console.log(data);
 
   if (isLoading) {
     return (
@@ -29,7 +28,6 @@ export default function AirQualityIndex() {
       <h3 className="font-bold text-4xl text-violet-950">Air Quality Index</h3>
 
       <div className="w-full flex gap-4 mt-8 justify-center">
-        <AQIBox data={data?.hourly} />
         <AQIBox data={data?.hourly} />
       </div>
 
