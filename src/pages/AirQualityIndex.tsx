@@ -1,3 +1,4 @@
+import Help from "../features/aqi/Help";
 import { getFormattedDate } from "../utils/date";
 
 export default function AirQualityIndex() {
@@ -35,38 +36,7 @@ export default function AirQualityIndex() {
         </div>
       </div>
 
-      <div className="mt-16 flex flex-col justify-center items-center">
-        <ul className="w-[85%] grid grid-cols-6 rounded-3xl overflow-hidden">
-          <li className="bg-green-800 flex justify-center items-center text-white text-lg font-medium px-2 py-1">
-            Clean
-          </li>
-          <li className="bg-yellow-400 flex justify-center items-center text-white text-lg font-medium px-2 py-1">
-            Acceptable
-          </li>
-          <li className="bg-yellow-600 flex flex-col justify-center items-center text-white text-lg font-medium px-2 py-1">
-            Unhealthy <span className="text-sm">(for sensitive groups)</span>
-          </li>
-          <li className="bg-red-600 flex justify-center items-center text-white text-lg font-medium px-2 py-1">
-            Unhealthy
-          </li>
-          <li className="bg-violet-900 flex justify-center items-center text-white text-lg font-medium px-2 py-1">
-            unhealthy
-          </li>
-          <li className="bg-red-900 flex justify-center items-center text-white text-lg font-medium px-2 py-1">
-            Dangerous
-          </li>
-        </ul>
-
-        <ul className="w-[85%] grid grid-cols-6 mt-4">
-          <li className="text-violet-200 text-lg font-medium">0</li>
-          <li className="text-violet-200 text-lg font-medium">50</li>
-          <li className="text-violet-200 text-lg font-medium">100</li>
-          <li className="text-violet-200 text-lg font-medium">150</li>
-          <li className="text-violet-200 text-lg font-medium">200</li>
-          <li className="text-violet-200 text-lg font-medium">+300</li>
-          {/* <li className="text-white text-lg font-medium px-3 py-1">+</li> */}
-        </ul>
-      </div>
+      <Help />
     </div>
   );
 }
