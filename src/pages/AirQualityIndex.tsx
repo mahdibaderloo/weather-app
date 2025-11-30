@@ -4,8 +4,9 @@ export default function AirQualityIndex() {
   return (
     <div className="w-full h-full flex flex-col p-4">
       <h3 className="font-bold text-4xl text-violet-950">Air Quality Index</h3>
+
       <div className="w-full flex gap-4 mt-8 justify-center">
-        <div className="w-[35%] flex flex-col bg-linear-to-b from-red-900/90 to-violet-400/45 text-violet-50 rounded-4xl p-8">
+        <div className="w-[35%] flex flex-col bg-linear-to-b from-yellow-400 to-violet-400/45 text-violet-50 rounded-4xl p-8">
           <p className="font-semibold text-2xl pb-4 border-b-2 border-white/20">
             Air quality index now
           </p>
@@ -32,6 +33,29 @@ export default function AirQualityIndex() {
             {getFormattedDate(new Date())} - 12:40
           </p>
         </div>
+      </div>
+
+      <div className="mt-16 flex justify-center">
+        <ul className="w-[85%] grid grid-cols-6 rounded-3xl overflow-hidden">
+          <li className="bg-green-800 flex justify-center items-center text-white text-lg font-medium px-2 py-1">
+            Clean
+          </li>
+          <li className="bg-yellow-400 flex justify-center items-center text-white text-lg font-medium px-2 py-1">
+            Acceptable
+          </li>
+          <li className="bg-yellow-600 flex flex-col justify-center items-center text-white text-lg font-medium px-2 py-1">
+            Unhealthy <span className="text-sm">(for sensitive groups)</span>
+          </li>
+          <li className="bg-red-600 flex justify-center items-center text-white text-lg font-medium px-2 py-1">
+            Unhealthy
+          </li>
+          <li className="bg-violet-900 flex justify-center items-center text-white text-lg font-medium px-2 py-1">
+            unhealthy
+          </li>
+          <li className="bg-red-900 flex justify-center items-center text-white text-lg font-medium px-2 py-1">
+            Dangerous
+          </li>
+        </ul>
       </div>
     </div>
   );
