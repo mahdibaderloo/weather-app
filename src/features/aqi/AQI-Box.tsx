@@ -1,6 +1,13 @@
 import { getFormattedDate } from "../../utils/date";
 
-export default function AQIBox() {
+export default function AQIBox({ data }) {
+  const { time, us_aqi, pm2_5, pm10 } = data;
+  const aqiNow = us_aqi[us_aqi?.length - 1];
+  const timeNow = time[time?.length - 1];
+
+  const mainPollutant =
+    pm2_5[pm2_5.length - 1] > pm10[pm10?.length - 1] ? "PM2.5" : "PM10";
+
   return (
     <div className="w-[35%] flex flex-col bg-linear-to-b from-yellow-400 to-violet-400/45 text-violet-50 rounded-4xl p-8">
       <p className="font-semibold text-2xl pb-4 border-b-2 border-white/20">

@@ -1,14 +1,15 @@
 const helpTitles = [
-  { title: "Clean", class: "bg-green-800", desc: null },
-  { title: "Acceptable", class: "bg-yellow-400", desc: null },
+  { id: 1, title: "Good", class: "bg-green-800", desc: null },
+  { id: 2, title: "Moderate", class: "bg-yellow-400", desc: null },
   {
+    id: 3,
     title: "Unhealthy",
     class: "bg-yellow-600 flex-col",
     desc: "(for sensitive groups)",
   },
-  { title: "Unhealthy", class: "bg-red-600", desc: null },
-  { title: "Very Unhealthy", class: "bg-violet-900", desc: null },
-  { title: "Dangerous", class: "bg-red-900", desc: null },
+  { id: 4, title: "Unhealthy", class: "bg-red-600", desc: null },
+  { id: 5, title: "Very Unhealthy", class: "bg-violet-900", desc: null },
+  { id: 6, title: "Hazardous", class: "bg-red-900", desc: null },
 ];
 
 const helpIndexes = [0, 50, 100, 150, 200, 300];
@@ -21,6 +22,7 @@ export default function Help() {
           if (t.desc) {
             return (
               <li
+                key={t.id}
                 className={`flex justify-center items-center text-white text-lg font-medium px-2 py-1 ${t.class}`}
               >
                 Unhealthy{" "}
@@ -30,6 +32,7 @@ export default function Help() {
           } else {
             return (
               <li
+                key={t.id}
                 className={`flex justify-center items-center text-white text-lg font-medium px-2 py-1 ${t.class}`}
               >
                 {t.title}
