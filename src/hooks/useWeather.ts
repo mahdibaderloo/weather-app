@@ -25,8 +25,8 @@ export function useWeather({ lat, lon, startDate }: UseWeatherProps) {
       );
 
       if (!res.ok) throw new Error("Failed to fetch weather");
-
       const data = await res.json();
+      console.log(data);
 
       return {
         current: data.current_weather,
@@ -34,7 +34,7 @@ export function useWeather({ lat, lon, startDate }: UseWeatherProps) {
         daily: data.daily,
       };
     },
-    enabled: !!lat && !!lon && !!startDate,
+    enabled: !!lat && !!lon,
     refetchInterval: 60_000,
   });
 }

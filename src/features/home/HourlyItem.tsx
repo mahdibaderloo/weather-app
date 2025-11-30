@@ -16,7 +16,7 @@ export default function HourlyItem({ data, hour }: HourlyProps) {
   const weatherCode = data.weathercode[hour];
   const weatherName = useWeatherCode(weatherCode);
   const icon = weatherIcon(weatherName)?.icon;
-  const time = data.time[hour].slice(11);
+  const time = data?.time[hour].slice(11);
 
   const temp = useToggleUnitValue(data?.temperature_2m[hour]);
 

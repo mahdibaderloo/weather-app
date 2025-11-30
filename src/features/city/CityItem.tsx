@@ -6,6 +6,7 @@ import { useLocationStore } from "../../store/locationStore";
 
 import deleteIcon from "../../assets/delete.svg";
 import type React from "react";
+import { useDateStore } from "../../store/dateStore";
 
 interface CityProp {
   name: string;
@@ -16,8 +17,8 @@ interface CityProp {
 export default function CityItem({ name, lat, lon }: CityProp) {
   const navigate = useNavigate();
   const { setLocation, setCity, removeCity } = useLocationStore();
-
-  const { data, isLoading } = useWeather(lat, lon);
+  const { selectedDate } = useDateStore();
+  const { data, isLoading } = useWeather({ lat, lon, startDate: selectedDate });
   const weather = useWeatherCode(
     data?.current.weathercode,
     data?.current.windspeed

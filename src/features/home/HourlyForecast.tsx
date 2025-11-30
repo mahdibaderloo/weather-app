@@ -16,7 +16,7 @@ export default function HourlyForecast({ data }: DataProp) {
 
       <ul className="flex items-center justify-center gap-2">
         {getIndexesHoursLater(data.time).map((hour) => {
-          return <HourlyItem key={hour} data={data} hour={hour} />;
+          return <HourlyItem key={data.time[hour]} data={data} hour={hour} />;
         })}
       </ul>
     </section>
