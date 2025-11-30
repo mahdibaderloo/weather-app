@@ -6,6 +6,7 @@ import Calendar from "./pages/Calendar";
 import Settings from "./pages/Settings";
 import AppLayout from "./AppLayout";
 import Profile from "./pages/Profile";
+import AirQualityIndex from "./pages/AirQualityIndex";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
       { path: "/cities", element: <Cities /> },
       { path: "/map", element: <Map /> },
       { path: "/calendar", element: <Calendar /> },
+      { path: "/air-quality", element: <AirQualityIndex /> },
       { path: "/settings", element: <Settings /> },
       { path: "/profile", element: <Profile /> },
     ],
