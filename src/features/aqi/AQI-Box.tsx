@@ -10,10 +10,13 @@ interface AQIBoxProps {
 }
 
 export default function AQIBox({ data }: AQIBoxProps) {
+  const hour = new Date().getHours();
+  const minutes = new Date().getMinutes();
+
   const { time, pm2_5 } = data;
-  const pm25 = pm2_5[0];
+  const pm25 = pm2_5[hour];
   const aqi = getAQIFromPM25(pm25);
-  const timeNow = time[time?.length - 1];
+  const timeNow = time[hour];
 
   return (
     <div
@@ -29,7 +32,7 @@ export default function AQIBox({ data }: AQIBoxProps) {
         {getAqiStatus(aqi).status}
       </p>
       <p className="text-lg font-medium mt-1 text-white/80">
-        {timeNow.replace("T", " ")}
+        {`${timeNow.slice(0, 10)} ${hour}:${minutes}`}
       </p>
     </div>
   );
