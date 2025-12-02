@@ -4,14 +4,17 @@ import CityItem from "../features/city/CityItem";
 
 export default function Cities() {
   const { cityList } = useLocationStore();
+  let cities = [];
 
   return (
     <div className="w-full h-full flex flex-col p-2 gap-8">
       <div className="flex justify-between items-center p-4">
-        <p className="font-bold text-4xl text-violet-950">City List</p>
+        <p className="font-bold text-4xl text-violet-950 dark:text-violet-800">
+          City List
+        </p>
         <Link
           to="/map"
-          className="bg-linear-to-r from-violet-900/90 to-violet-800/65 text-violet-100 text-lg font-medium w-fit px-8 py-3 rounded-4xl cursor-pointer shadow hover:bg-violet-950 transition-all"
+          className="bg-linear-to-r from-violet-900/90 to-violet-950 dark:from-violet-900/90 dark:to-slate-950/30 text-violet-100 text-lg font-medium w-fit px-8 py-3 rounded-4xl cursor-pointer shadow hover:bg-violet-950 transition-all"
         >
           + Add City
         </Link>

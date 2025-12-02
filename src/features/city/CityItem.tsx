@@ -1,12 +1,15 @@
+import type React from "react";
+
 import { useNavigate } from "react-router-dom";
 import { useWeather } from "../../hooks/useWeather";
 import { useWeatherCode } from "../../hooks/useWeatherCode";
 import { weatherIcon } from "../../utils/weatherIcon";
 import { useLocationStore } from "../../store/locationStore";
+import { useDateStore } from "../../store/dateStore";
 
 import deleteIcon from "../../assets/delete.svg";
-import type React from "react";
-import { useDateStore } from "../../store/dateStore";
+import deleteIconDark from "../../assets/delete-dark.svg";
+import { useThemeStore } from "../../store/themeStore";
 
 interface CityProp {
   name: string;
@@ -19,6 +22,7 @@ export default function CityItem({ name, lat, lon }: CityProp) {
   const { setLocation, setCity, removeCity } = useLocationStore();
   const { selectedDate } = useDateStore();
   const { data, isLoading } = useWeather({ lat, lon, startDate: selectedDate });
+  const { theme } = useThemeStore();
   const weather = useWeatherCode(
     data?.current.weathercode,
     data?.current.windspeed
@@ -46,7 +50,7 @@ export default function CityItem({ name, lat, lon }: CityProp) {
   return (
     <li
       onClick={handleSetLocation}
-      className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 flex items-center justify-between rounded-full px-4 py-2 cursor-pointer"
+      className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 flex items-center justify-between rounded-full px-4 py-2 cursor-pointer"
     >
       <p className="text-3xl text-violet-200 font-bold w-80 truncate text-left">
         {name}
@@ -56,7 +60,7 @@ export default function CityItem({ name, lat, lon }: CityProp) {
         <p className="text-xl text-violet-950 font-semibold">{weather}</p>
       </div>
       <img
-        src={deleteIcon}
+        src={theme === "dark" ? deleteIconDark : deleteIcon}
         className="w-10 z-20"
         alt="delete icon"
         onClick={handleDeleteCity}
