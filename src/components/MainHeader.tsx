@@ -1,4 +1,5 @@
-import searchImage from "../assets/search.svg";
+import searchIcon from "../assets/search.svg";
+import searchIconDark from "../assets/search-dark.svg";
 import lightIcon from "../assets/light.svg";
 import darkIcon from "../assets/dark.svg";
 import profileImage from "../assets/profile.svg";
@@ -26,17 +27,21 @@ export default function MainHeader() {
 
   return (
     <header className="flex items-center justify-between w-full mt-8 pr-8">
-      <form className="bg-linear-to-r from-violet-200/85 to-violet-900/85 flex items-center gap-2 w-[40%] h-14 p-2 rounded-4xl shadow">
-        <img src={searchImage} alt="Search icon" className="w-16" />
+      <form className="bg-linear-to-r from-violet-200/85 to-violet-900/85 dark:from-violet-950/85 dark:to-slate-900 flex items-center gap-2 w-[40%] h-14 p-2 rounded-4xl shadow">
+        <img
+          src={theme === "dark" ? searchIconDark : searchIcon}
+          alt="Search icon"
+          className="w-16"
+        />
         <input
           type="text"
-          className="w-full h-full outline-none border-none text-violet-950 text-lg font-medium"
+          className="w-full h-full outline-none border-none text-violet-950 dark:text-violet-100 text-lg font-medium"
           placeholder="Search city"
         />
       </form>
       <div className="flex items-center gap-4">
         <div
-          className="w-14 h-14 flex items-center justify-center bg-linear-to-l from-violet-500/85 to-violet-900/95 rounded-full cursor-pointer shadow"
+          className="w-14 h-14 flex items-center justify-center bg-linear-to-l from-violet-500/85 to-violet-900/95 dark:from-violet-950 dark:to-slate-900 rounded-full cursor-pointer shadow"
           onClick={handleToggleTheme}
         >
           <img
@@ -47,7 +52,7 @@ export default function MainHeader() {
         </div>
         <Link
           to="/profile"
-          className="w-14 h-14 flex items-center justify-center bg-linear-to-r from-violet-500/85 to-violet-900/95 rounded-full cursor-pointer shadow"
+          className="w-14 h-14 flex items-center justify-center bg-linear-to-r from-violet-500/85 to-violet-900/95 dark:from-violet-950 dark:to-slate-900 rounded-full cursor-pointer shadow"
         >
           <img src={profileImage} alt="Profile icon" className="w-10" />
         </Link>
