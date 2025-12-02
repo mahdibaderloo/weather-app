@@ -8,13 +8,14 @@ import { useCity } from "../../hooks/useCity";
 import MarkerWithPopup from "./MarkerWithoutPopup";
 import { useLocationStore } from "../../store/locationStore";
 import { useEffect } from "react";
+import { useThemeStore } from "../../store/themeStore";
 
 const DefaultIcon = L.icon({ iconUrl: markerIcon, shadowUrl: markerShadow });
 L.Marker.prototype.options.icon = DefaultIcon;
 
 export default function WeatherMap() {
   const { lat, lon, city, setLocation, setCity } = useLocationStore();
-
+  const { theme } = useThemeStore();
   const { data: cityName, isLoading } = useCity(lat, lon);
 
   useEffect(() => {
@@ -32,6 +33,11 @@ export default function WeatherMap() {
           center={[lat, lon]}
           zoom={16}
           style={{ height: "50%", borderRadius: "2rem" }}
+          className={
+            theme === "dark"
+              ? `h-[50%] rounded-2xl filter invert-90 hue-rotate-180 brightness-75 contrast-125`
+              : ""
+          }
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 

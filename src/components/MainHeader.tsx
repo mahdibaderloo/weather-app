@@ -3,12 +3,13 @@ import searchIconDark from "../assets/search-dark.svg";
 import lightIcon from "../assets/light.svg";
 import darkIcon from "../assets/dark.svg";
 import profileImage from "../assets/profile.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useThemeStore } from "../store/themeStore";
 import { useEffect } from "react";
 
 export default function MainHeader() {
   const { theme, toggleTheme } = useThemeStore();
+  const navigate = useNavigate();
 
   useEffect(
     function () {
@@ -23,6 +24,7 @@ export default function MainHeader() {
 
   function handleToggleTheme() {
     toggleTheme();
+    navigate(0);
   }
 
   return (

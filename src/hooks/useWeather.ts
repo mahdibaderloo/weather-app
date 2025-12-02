@@ -26,7 +26,6 @@ export function useWeather({ lat, lon, startDate }: UseWeatherProps) {
 
       if (!res.ok) throw new Error("Failed to fetch weather");
       const data = await res.json();
-      console.log(data);
 
       return {
         current: data.current_weather,
