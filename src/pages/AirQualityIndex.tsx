@@ -5,7 +5,7 @@ import { useLocationStore } from "../store/locationStore";
 
 export default function AirQualityIndex() {
   const { lat, lon } = useLocationStore();
-  const { data, isLoading } = useAQI({ lat, lon });
+  const { data, isLoading, dataUpdatedAt } = useAQI({ lat, lon });
 
   if (isLoading) {
     return (
@@ -17,7 +17,7 @@ export default function AirQualityIndex() {
 
   if (!data) {
     return (
-      <p className="flex justify-center items-center text-4xl font-bold w-full h-[50%] text-violet-950">
+      <p className="flex justify-center items-center text-4xl font-bold w-full h-[50%] text-violet-950 dark:text-violet-600">
         No air quality data available.
       </p>
     );
@@ -25,10 +25,12 @@ export default function AirQualityIndex() {
 
   return (
     <div className="w-full h-full flex flex-col p-4">
-      <h3 className="font-bold text-4xl text-violet-950">Air Quality Index</h3>
+      <h3 className="font-bold text-4xl text-violet-950 dark:text-violet-800">
+        Air Quality Index
+      </h3>
 
       <div className="w-full flex gap-4 mt-8 justify-center">
-        <AQIBox data={data?.hourly} />
+        <AQIBox data={data?.hourly} fetchTime={dataUpdatedAt} />
       </div>
 
       <Help />

@@ -44,7 +44,10 @@ export default function Help() {
 
       <ul className="w-[85%] grid grid-cols-6 mt-4">
         {helpIndexes.map((i) => (
-          <li key={i} className="text-violet-200 text-lg font-medium">
+          <li
+            key={i}
+            className="text-violet-200 dark:text-violet-950 text-lg font-medium"
+          >
             {i === 300 ? "+300" : i}
           </li>
         ))}

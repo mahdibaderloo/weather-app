@@ -7,11 +7,13 @@ interface AQIBoxProps {
     time: string[];
     us_aqi: number[];
   };
+  fetchTime: number;
 }
 
-export default function AQIBox({ data }: AQIBoxProps) {
-  const hour = new Date().getHours();
-  const minutes = new Date().getMinutes();
+export default function AQIBox({ data, fetchTime }: AQIBoxProps) {
+  const date = new Date(fetchTime);
+  const hour = date.getHours();
+  const minutes = date.getMinutes();
 
   const { time, pm2_5 } = data;
   const pm25 = pm2_5[hour];
@@ -22,16 +24,16 @@ export default function AQIBox({ data }: AQIBoxProps) {
     <div
       className={`w-[35%] flex flex-col bg-linear-to-b ${
         getAqiStatus(aqi).color
-      } to-violet-400/45 text-violet-50 rounded-4xl p-8`}
+      } to-violet-400/45 dark:to-slate-900 text-violet-50 dark:text-slate-950 rounded-4xl p-8`}
     >
       <p className="font-semibold text-2xl pb-4 border-b-2 border-white/20">
         Air quality index now
       </p>
-      <p className="mt-4 mx-auto text-7xl font-bold">{aqi}</p>
-      <p className="text-lg font-medium mt-4 text-white/80">
+      <p className="mt-4 mx-auto text-8xl font-bold">{aqi}</p>
+      <p className="text-lg font-medium mt-4 text-white/80 dark:text-slate-950/80">
         {getAqiStatus(aqi).status}
       </p>
-      <p className="text-lg font-medium mt-1 text-white/80">
+      <p className="text-lg font-medium mt-1 text-white/80 dark:text-slate-950/80">
         {`${timeNow.slice(0, 10)} ${hour}:${minutes}`}
       </p>
     </div>
