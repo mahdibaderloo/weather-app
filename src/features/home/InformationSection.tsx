@@ -36,10 +36,10 @@ export default function InformationSection({
   }
 
   return (
-    <section className="relative z-50 p-4 bg-linear-to-r from-violet-800/60 to-violet-400/35 rounded-4xl w-[49%] h-fit flex justify-between">
+    <section className="relative z-50 p-4 bg-linear-to-r from-violet-800/60 to-violet-400/35 dark:from-slate-950/95 dark:to-slate-950/50 rounded-4xl w-[49%] h-fit flex justify-between">
       {/* <div className="absolute blur-sm w-full h-full" /> */}
       <div className="flex flex-col gap-10">
-        <div className="flex items-center gap-2 bg-violet-950 w-fit rounded-2xl pr-6 pl-1 py-1">
+        <div className="flex items-center gap-2 bg-violet-950 dark:bg-linear-to-l dark:from-slate-950/95 dark:to-slate-950/30 w-fit rounded-2xl pr-6 pl-1 py-1">
           <img src={locationIcon} alt="Location icon" className="w-8" />
           <p className="font-semibold text-lg text-violet-200 w-fit truncate">
             {city || "City"}
@@ -74,14 +74,18 @@ export default function InformationSection({
         >
           <span
             className={`w-8 h-8 rounded-full font-medium flex justify-center items-center transition-all ${
-              unit === "F" ? "bg-violet-950 text-violet-200" : "text-violet-950"
+              unit === "F"
+                ? "bg-violet-950 text-violet-200 dark:bg-linear-to-r dark:from-slate-950/95 dark:to-slate-950/30"
+                : "text-violet-950 dark:text-slate-950"
             }`}
           >
             F
           </span>
           <span
             className={`w-8 h-8 rounded-full font-medium flex justify-center items-center transition-all ${
-              unit === "C" ? "bg-violet-950 text-violet-200" : "text-violet-950"
+              unit === "C"
+                ? "bg-violet-950 text-violet-200 dark:bg-linear-to-r dark:from-slate-950/95 dark:to-slate-950/30"
+                : "text-violet-950 dark:text-slate-950"
             }`}
           >
             C

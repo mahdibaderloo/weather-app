@@ -4,7 +4,6 @@ import CityItem from "../features/city/CityItem";
 
 export default function Cities() {
   const { cityList } = useLocationStore();
-  let cities = [];
 
   return (
     <div className="w-full h-full flex flex-col p-2 gap-8">
@@ -32,7 +31,7 @@ export default function Cities() {
         ) : (
           <li
             key="there is no city"
-            className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 text-red-800 rounded-full flex items-center justify-center py-5 text-2xl font-bold"
+            className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 text-red-800 rounded-full flex items-center justify-center py-5 text-2xl font-bold"
           >
             No cities added!
           </li>
