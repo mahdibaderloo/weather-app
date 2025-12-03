@@ -34,7 +34,9 @@ export default function AQIBox({ data, fetchTime }: AQIBoxProps) {
         {getAqiStatus(aqi).status}
       </p>
       <p className="text-lg font-medium mt-1 text-white/80 dark:text-slate-950/80">
-        {`${timeNow.slice(0, 10)} ${hour}:${minutes}`}
+        {`${timeNow.slice(0, 10)} ${hour}:${
+          minutes < 10 ? `0${minutes}` : minutes
+        }`}
       </p>
     </div>
   );
