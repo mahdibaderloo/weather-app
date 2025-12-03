@@ -1,11 +1,20 @@
+import { useThemeStore } from "../store/themeStore";
+
 import arrowsIcon from "../assets/arrows.svg";
 import arrowRightIcon from "../assets/arrow-right.svg";
 import arrowsDarkIcon from "../assets/arrows-dark.svg";
 import arrowRightDarkIcon from "../assets/arrow-right-dark.svg";
-import { useThemeStore } from "../store/themeStore";
 
 export default function Settings() {
   const { theme } = useThemeStore();
+
+  function handleClickFeedback() {
+    window.open(
+      "https://github.com/mahdibaderloo/weather-app",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  }
 
   return (
     <div className="w-full h-full flex flex-col p-4">
@@ -53,7 +62,10 @@ export default function Settings() {
         <p className="font-bold text-2xl text-violet-950/80 dark:text-violet-800/80">
           About Weather App
         </p>
-        <li className="w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer">
+        <li
+          className="w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer"
+          onClick={handleClickFeedback}
+        >
           <p className="text-violet-200 font-semibold text-xl">Feedback</p>
           <img
             src={theme === "dark" ? arrowRightDarkIcon : arrowRightIcon}
