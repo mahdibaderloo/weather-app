@@ -13,6 +13,7 @@ export default function Settings() {
   const { theme } = useThemeStore();
   const { unit, toggleUnit } = useTemperatureUnitStore();
   const { isOpen, setOpen, setClose } = useModalStore();
+  const { windUnitFullName } = useTemperatureUnitStore();
 
   function handleClickFeedback() {
     window.open(
@@ -60,11 +61,11 @@ export default function Settings() {
             Wind speed units
           </p>
           <div
-            className="flex items-center gap-2 cursor-pointer"
+            className="flex items-center gap-2 cursor-pointer select-none"
             onClick={handleOpenModal}
           >
             <span className="text-violet-950 dark:text-violet-800 font-medium">
-              Kilometers per hour (km/h)
+              {windUnitFullName}
             </span>
             <img
               src={theme === "dark" ? arrowsDarkIcon : arrowsIcon}
