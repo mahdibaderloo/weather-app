@@ -1,15 +1,13 @@
 import { useThemeStore } from "../store/themeStore";
+import { useTemperatureUnitStore } from "../store/temperatureUnitStore";
 
 import arrowsIcon from "../assets/arrows.svg";
 import arrowRightIcon from "../assets/arrow-right.svg";
 import arrowsDarkIcon from "../assets/arrows-dark.svg";
 import arrowRightDarkIcon from "../assets/arrow-right-dark.svg";
-import { useTemperatureUnitStore } from "../store/temperatureUnitStore";
 import SettingsModal from "../features/settings/SettingsModal";
-import { useState } from "react";
 
 export default function Settings() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const { theme } = useThemeStore();
   const { unit, toggleUnit } = useTemperatureUnitStore();
 
@@ -55,7 +53,7 @@ export default function Settings() {
           </p>
           <div
             className="flex items-center gap-2 cursor-pointer"
-            onClick={() => setIsModalOpen((m) => !m)}
+            onClick={() => {}}
           >
             <span className="text-violet-950 dark:text-violet-800 font-medium">
               Kilometers per hour (km/h)
