@@ -1,6 +1,7 @@
 import locationIcon from "../../assets/location.svg";
 import { useToggleUnitValue } from "../../hooks/useToggleUnitValue";
 import { useWeatherCode } from "../../hooks/useWeatherCode";
+import useWindSpeedUnit from "../../hooks/useWindSpeedUnit";
 import { useDateStore } from "../../store/dateStore";
 import { useTemperatureUnitStore } from "../../store/temperatureUnitStore";
 import { getFormattedDate, getWeekday } from "../../utils/date";
@@ -25,11 +26,12 @@ export default function InformationSection({
 }: InformationProps) {
   const weather = useWeatherCode(data.weathercode, data?.windspeed);
   const icon = weatherIcon(weather)?.icon;
-  const { unit, toggleUnit } = useTemperatureUnitStore();
+  const { unit, toggleUnit, windUnit } = useTemperatureUnitStore();
   const temp = useToggleUnitValue(data?.temperature);
   const maxTemp = useToggleUnitValue(max);
   const minTemp = useToggleUnitValue(min);
   const { selectedDate } = useDateStore() || new Date();
+  const windSpeed = useWindSpeedUnit(data?.windspeed);
 
   function handleToggleUnit() {
     toggleUnit();
@@ -63,7 +65,7 @@ export default function InformationSection({
         </div>
 
         <p className="text-lg font-semibold text-violet-200">
-          Wind Speed: {Math.floor(data?.windspeed)} km/h
+          Wind Speed: {windSpeed} {windUnit}
         </p>
       </div>
 
