@@ -1,5 +1,7 @@
+import type React from "react";
 import { useThemeStore } from "../store/themeStore";
 import { useTemperatureUnitStore } from "../store/temperatureUnitStore";
+import { useModalStore } from "../store/modalStore";
 
 import arrowsIcon from "../assets/arrows.svg";
 import arrowRightIcon from "../assets/arrow-right.svg";
@@ -10,6 +12,7 @@ import SettingsModal from "../features/settings/SettingsModal";
 export default function Settings() {
   const { theme } = useThemeStore();
   const { unit, toggleUnit } = useTemperatureUnitStore();
+  const { isOpen, setOpen, setClose } = useModalStore();
 
   function handleClickFeedback() {
     window.open(
@@ -19,8 +22,13 @@ export default function Settings() {
     );
   }
 
+  function handleOpenModal(e: React.MouseEvent) {
+    e.stopPropagation();
+    setOpen();
+  }
+
   return (
-    <div className="w-full h-full flex flex-col p-4">
+    <div className="w-full h-full flex flex-col p-4" onClick={() => setClose()}>
       <p className="font-bold text-4xl text-violet-950 dark:text-violet-800">
         Settings
       </p>
@@ -53,7 +61,7 @@ export default function Settings() {
           </p>
           <div
             className="flex items-center gap-2 cursor-pointer"
-            onClick={() => {}}
+            onClick={handleOpenModal}
           >
             <span className="text-violet-950 dark:text-violet-800 font-medium">
               Kilometers per hour (km/h)
@@ -65,7 +73,7 @@ export default function Settings() {
             />
           </div>
         </li>
-        {isModalOpen && <SettingsModal />}
+        {isOpen && <SettingsModal />}
       </ul>
 
       <ul className="flex flex-col p-4 mt-8">
