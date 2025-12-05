@@ -5,8 +5,11 @@ import arrowRightIcon from "../assets/arrow-right.svg";
 import arrowsDarkIcon from "../assets/arrows-dark.svg";
 import arrowRightDarkIcon from "../assets/arrow-right-dark.svg";
 import { useTemperatureUnitStore } from "../store/temperatureUnitStore";
+import SettingsModal from "../features/settings/SettingsModal";
+import { useState } from "react";
 
 export default function Settings() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { theme } = useThemeStore();
   const { unit, toggleUnit } = useTemperatureUnitStore();
 
@@ -24,7 +27,7 @@ export default function Settings() {
         Settings
       </p>
 
-      <ul className="flex flex-col p-4 mt-8">
+      <ul className="flex flex-col p-4 mt-8 relative">
         <p className="font-bold text-2xl text-violet-950/80 dark:text-violet-800/80">
           Units
         </p>
@@ -50,7 +53,10 @@ export default function Settings() {
           <p className="text-violet-200 font-semibold text-xl">
             Wind speed units
           </p>
-          <div className="flex items-center gap-2 cursor-pointer">
+          <div
+            className="flex items-center gap-2 cursor-pointer"
+            onClick={() => setIsModalOpen((m) => !m)}
+          >
             <span className="text-violet-950 dark:text-violet-800 font-medium">
               Kilometers per hour (km/h)
             </span>
@@ -61,6 +67,7 @@ export default function Settings() {
             />
           </div>
         </li>
+        {isModalOpen && <SettingsModal />}
       </ul>
 
       <ul className="flex flex-col p-4 mt-8">
