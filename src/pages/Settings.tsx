@@ -4,9 +4,11 @@ import arrowsIcon from "../assets/arrows.svg";
 import arrowRightIcon from "../assets/arrow-right.svg";
 import arrowsDarkIcon from "../assets/arrows-dark.svg";
 import arrowRightDarkIcon from "../assets/arrow-right-dark.svg";
+import { useTemperatureUnitStore } from "../store/temperatureUnitStore";
 
 export default function Settings() {
   const { theme } = useThemeStore();
+  const { unit, toggleUnit } = useTemperatureUnitStore();
 
   function handleClickFeedback() {
     window.open(
@@ -30,9 +32,12 @@ export default function Settings() {
           <p className="text-violet-200 font-semibold text-xl">
             Temperature units
           </p>
-          <div className="flex items-center gap-2 cursor-pointer">
+          <div
+            className="flex items-center gap-2 cursor-pointer"
+            onClick={() => toggleUnit()}
+          >
             <span className="text-violet-950 dark:text-violet-800 font-medium">
-              °C
+              °{unit}
             </span>
             <img
               src={theme === "dark" ? arrowsDarkIcon : arrowsIcon}

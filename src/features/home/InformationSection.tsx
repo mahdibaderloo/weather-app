@@ -1,5 +1,5 @@
 import locationIcon from "../../assets/location.svg";
-import { useToggleUnitValue } from "../../hooks/toggleUnitValue";
+import { useToggleUnitValue } from "../../hooks/useToggleUnitValue";
 import { useWeatherCode } from "../../hooks/useWeatherCode";
 import { useDateStore } from "../../store/dateStore";
 import { useTemperatureUnitStore } from "../../store/temperatureUnitStore";
