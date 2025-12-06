@@ -4,9 +4,19 @@ import profileIcon from "../assets/profile.svg";
 import editIcon from "../assets/edit.svg";
 import locationIcon from "../assets/location.svg";
 import hintIcon from "../assets/hint.svg";
+import Modal from "../components/Modal";
+import { useState } from "react";
 
 export default function Profile() {
+  const [isOpen, setIsOpen] = useState(false);
   const { city } = useLocationStore();
+
+  function handleShowModal() {
+    setIsOpen(true);
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 5000);
+  }
 
   return (
     <div className="w-full h-full flex flex-col p-4">
@@ -31,6 +41,22 @@ export default function Profile() {
           alt="edit"
           className="w-10 rounded-2xl bg-linear-to-l from-violet-500/85 to-violet-900/95 dark:from-violet-950 dark:to-slate-900 p-2 absolute right-4 top-4 cursor-pointer"
         />
+      </div>
+
+      <div className="mt-4 flex items-center justify-between">
+        <div className="w-1/2 flex items-center bg-linear-to-l from-violet-200/75 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-4xl p-8 relative">
+          <img src={locationIcon} alt="icon" className="w-20" />
+          <p className="text-violet-100 font-bold text-3xl truncate">{city}</p>
+          <img
+            src={hintIcon}
+            alt="icon"
+            onClick={handleShowModal}
+            className="w-10 rounded-2xl bg-linear-to-l from-violet-500/85 to-violet-900/95 dark:from-violet-950 dark:to-slate-900 p-2 absolute right-4 top-4 cursor-pointer"
+          />
+          {isOpen && <Modal />}
+        </div>
+
+        <div></div>
       </div>
     </div>
   );
