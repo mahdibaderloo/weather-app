@@ -1,11 +1,13 @@
+import { useState } from "react";
 import { useLocationStore } from "../store/locationStore";
+
+import Modal from "../components/Modal";
 
 import profileIcon from "../assets/profile.svg";
 import editIcon from "../assets/edit.svg";
 import locationIcon from "../assets/location.svg";
 import hintIcon from "../assets/hint.svg";
-import Modal from "../components/Modal";
-import { useState } from "react";
+import logoutIcon from "../assets/logout.svg";
 
 export default function Profile() {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,6 +59,11 @@ export default function Profile() {
         </div>
 
         <div></div>
+      </div>
+
+      <div className="w-fit flex items-center gap-2 py-4 px-8 mt-30 bg-linear-to-l from-violet-200/75 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 hover:bg-violet-900 transition-all shadow rounded-3xl cursor-pointer">
+        <img src={logoutIcon} alt="icon" className="w-10" />
+        <p className="text-red-900 font-bold text-xl">Log Out</p>
       </div>
     </div>
   );
