@@ -5,9 +5,10 @@ import darkIcon from "../assets/dark.svg";
 import profileImage from "../assets/profile.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useThemeStore } from "../store/themeStore";
-import { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function MainHeader() {
+  const inputRef = useRef<HTMLInputElement>(null);
   const { theme, toggleTheme } = useThemeStore();
   const navigate = useNavigate();
 
@@ -27,9 +28,17 @@ export default function MainHeader() {
     navigate(0);
   }
 
+  function handleSubmitSearch(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    console.log(inputRef.current?.value);
+  }
+
   return (
     <header className="flex items-center justify-between w-full mt-8 pr-8">
-      <form className="bg-linear-to-r from-violet-200/85 to-violet-900/85 dark:from-violet-950/85 dark:to-slate-900 flex items-center gap-2 w-[40%] h-14 p-2 rounded-4xl shadow">
+      <form
+        onSubmit={handleSubmitSearch}
+        className="bg-linear-to-r from-violet-200/85 to-violet-900/85 dark:from-violet-950/85 dark:to-slate-900 flex items-center gap-2 w-[40%] h-14 p-2 rounded-4xl shadow"
+      >
         <img
           src={theme === "dark" ? searchIconDark : searchIcon}
           alt="Search icon"
@@ -39,6 +48,7 @@ export default function MainHeader() {
           type="text"
           className="w-full h-full outline-none border-none text-violet-950 dark:text-violet-100 text-lg font-medium"
           placeholder="Search city"
+          ref={inputRef}
         />
       </form>
       <div className="flex items-center gap-4">
