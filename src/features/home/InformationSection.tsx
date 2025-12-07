@@ -38,40 +38,46 @@ export default function InformationSection({
   }
 
   return (
-    <section className="relative z-50 p-4 bg-linear-to-r from-violet-800/60 to-violet-400/35 dark:from-slate-950/95 dark:to-slate-950/50 rounded-4xl w-[49%] h-fit flex justify-between">
+    <section className="lg:relative z-50 p-4 bg-linear-to-r from-violet-800/60 to-violet-400/35 dark:from-slate-950/95 dark:to-slate-950/50 rounded-4xl w-full lg:w-[49%] h-fit flex flex-col lg:flex-row justify-between mt-4 lg:mt-0">
       {/* <div className="absolute blur-sm w-full h-full" /> */}
-      <div className="flex flex-col gap-10">
-        <div className="flex items-center gap-2 bg-violet-950 dark:bg-linear-to-l dark:from-slate-950/95 dark:to-slate-950/30 w-fit rounded-2xl pr-6 pl-1 py-1">
+      <div className="flex flex-col lg:gap-10">
+        <div className="w-full lg:w-fit flex items-center gap-2 bg-violet-950 dark:bg-linear-to-l dark:from-slate-950/95 dark:to-slate-950/30 rounded-2xl pr-6 pl-1 py-1">
           <img src={locationIcon} alt="Location icon" className="w-8" />
           <p className="font-semibold text-lg text-violet-200 w-fit truncate">
             {city || "City"}
           </p>
         </div>
+        <div className="flex flex-col items-center lg:hidden">
+          <img src={icon} alt="Icon" className="w-40" />
+          <p className="font-semibold text-2xl text-violet-950">{weather}</p>
+        </div>
 
         <div>
-          <p className="font-bold text-5xl text-violet-100">{getWeekday()}</p>
-          <span className="text-lg font-semibold text-violet-300">
+          <p className="font-bold text-3xl lg:text-5xl text-violet-100 mt-10 lg:mt-0">
+            {getWeekday()}
+          </p>
+          <span className="lg:text-lg font-semibold text-violet-300">
             {getFormattedDate(selectedDate)}
           </span>
         </div>
 
         <div>
-          <p className="font-bold text-6xl text-violet-100">
+          <p className="font-bold text-4xl lg:text-6xl text-violet-100 mt-6 lg:mt-0">
             {Math.floor(temp)}°{unit}
           </p>
-          <p className="text-lg font-semibold text-violet-300">
+          <p className="lg:text-lg font-semibold text-violet-300">
             High: {Math.floor(maxTemp)} Low: {Math.floor(minTemp)}
           </p>
         </div>
 
-        <p className="text-lg font-semibold text-violet-200">
+        <p className="text-lg font-semibold text-violet-200 mt-6 lg:mt-0">
           Wind Speed: {windSpeed} {windUnit}
         </p>
       </div>
 
       <div className="flex flex-col justify-between items-end gap-10">
         <div
-          className="w-fit flex items-center justify-between bg-violet-200/40 rounded-full cursor-pointer"
+          className="hidden w-fit lg:flex items-center justify-between bg-violet-200/40 rounded-full cursor-pointer"
           onClick={handleToggleUnit}
         >
           <span
@@ -94,7 +100,7 @@ export default function InformationSection({
           </span>
         </div>
 
-        <div className="flex flex-col items-end">
+        <div className="hidden lg:flex flex-col items-end">
           <img src={icon} alt="Icon" className="w-60" />
           <p className="font-semibold text-3xl text-violet-950">{weather}</p>
         </div>
