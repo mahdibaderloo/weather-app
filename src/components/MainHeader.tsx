@@ -5,11 +5,15 @@ import darkIcon from "../assets/dark.svg";
 import profileImage from "../assets/profile.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useThemeStore } from "../store/themeStore";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocationStore } from "../store/locationStore";
+import { useSearchLocation } from "../hooks/useSearchLocation";
 
 export default function MainHeader() {
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [query, setQuery] = useState("");
   const { theme, toggleTheme } = useThemeStore();
+  const { setLocation, setCity } = useLocationStore();
+  const { data } = useSearchLocation(query);
   const navigate = useNavigate();
 
   useEffect(
@@ -30,7 +34,8 @@ export default function MainHeader() {
 
   function handleSubmitSearch(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log(inputRef.current?.value);
+    setLocation(data?.lat, data?.lon);
+    setCity(data?.city);
   }
 
   return (
@@ -48,7 +53,8 @@ export default function MainHeader() {
           type="text"
           className="w-full h-full outline-none border-none text-violet-950 dark:text-violet-100 text-lg font-medium"
           placeholder="Search city"
-          ref={inputRef}
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
         />
       </form>
       <div className="flex items-center gap-4">
