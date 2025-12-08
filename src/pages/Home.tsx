@@ -7,6 +7,7 @@ import { useWeatherCode } from "../hooks/useWeatherCode";
 import { useLocationStore } from "../store/locationStore";
 import { weatherIcon } from "../utils/weatherIcon";
 import { useDateStore } from "../store/dateStore";
+import AirQualityIndex from "./AirQualityIndex";
 
 export default function Home() {
   const { city, lat, lon, addCity } = useLocationStore();
@@ -50,6 +51,9 @@ export default function Home() {
       </div>
 
       <HourlyForecast data={data?.hourly} />
+      <div className="lg:hidden">
+        <AirQualityIndex />
+      </div>
     </div>
   );
 }
