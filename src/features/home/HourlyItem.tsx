@@ -31,7 +31,7 @@ export default function HourlyItem({ data, hour }: HourlyProps) {
         <p className="hidden lg:block bg-violet-300 text-violet-950 dark:bg-violet-950 dark:text-violet-300 font-medium py-1 px-1 rounded-xl lg:w-1/2 text-center">
           {timeAmOrPm(time)}
         </p>
-        <p className="text-violet-950 dark:bg-violet-950 dark:text-violet-300 font-medium py-1 px-1 rounded-xl text-center lg:hidden">
+        <p className="text-violet-950 dark:text-violet-300 font-medium py-1 px-1 rounded-xl text-center lg:hidden">
           {time}
         </p>
       </div>

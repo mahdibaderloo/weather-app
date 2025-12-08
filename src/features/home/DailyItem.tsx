@@ -22,7 +22,7 @@ export default function DailyItem({ data, day }: DailyProps) {
   const minTemp = useToggleUnitValue(data.temperature_2m_min[day]);
 
   return (
-    <li className="flex items-center justify-between text-violet-300 dark:text-slate-400 text-md lg:text-xl font-semibold py-4">
+    <li className="flex items-center justify-between text-violet-100 lg:text-violet-300 dark:text-slate-400 text-md lg:text-xl font-semibold py-4">
       <p className="w-20">{getNextDay(day)}</p>
 
       <div className="flex items-center">
@@ -34,7 +34,7 @@ export default function DailyItem({ data, day }: DailyProps) {
 
       <p>
         {Math.floor(maxTemp)} /{" "}
-        <span className="text-violet-400 dark:text-slate-600">
+        <span className="text-violet-700 lg:text-violet-400 dark:text-slate-600">
           {Math.floor(minTemp)}
         </span>
       </p>
