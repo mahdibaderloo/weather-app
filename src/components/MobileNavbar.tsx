@@ -9,6 +9,7 @@ import mapDark from "../assets/map-dark.svg";
 import settingsImage from "../assets/settings.svg";
 import settingsDark from "../assets/settings-dark.svg";
 import profileImage from "../assets/profile.svg";
+import profileDark from "../assets/profile-dark.svg";
 
 interface Items {
   id: number;
@@ -33,7 +34,7 @@ const items: Items[] = [
     id: 5,
     url: "/profile",
     image: profileImage,
-    dark: profileImage,
+    dark: profileDark,
     title: "Profile",
   },
 ];
@@ -43,8 +44,8 @@ export default function MobileNavbar() {
 
   return (
     <>
-      <div className="w-full h-17 fixed bottom-0 bg-linear-to-r from-violet-900/80 to-violet-500/80 dark:from-slate-950/80 dark:to-violet-950/80" />
-      <nav className="w-full fixed bottom-0 z-50 px-4 pb-1 shadow lg:hidden">
+      <div className="w-full h-17 fixed bottom-0 bg-linear-to-r from-violet-700 to-violet-700 dark:from-violet-950 dark:to-violet-950 blur-xl lg:hidden" />
+      <nav className="w-full fixed bottom-0 z-50 px-4 pb-1 lg:hidden">
         <ul className="w-full h-full flex justify-between pt-2">
           {items.map((item) => (
             <li

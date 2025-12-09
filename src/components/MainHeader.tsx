@@ -1,13 +1,14 @@
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useThemeStore } from "../store/themeStore";
+import { useLocationStore } from "../store/locationStore";
+import { useSearchLocation } from "../hooks/useSearchLocation";
+
 import searchIcon from "../assets/search.svg";
 import searchIconDark from "../assets/search-dark.svg";
 import lightIcon from "../assets/light.svg";
 import darkIcon from "../assets/dark.svg";
-import profileImage from "../assets/profile.svg";
-import { Link, useNavigate } from "react-router-dom";
-import { useThemeStore } from "../store/themeStore";
-import React, { useEffect, useState } from "react";
-import { useLocationStore } from "../store/locationStore";
-import { useSearchLocation } from "../hooks/useSearchLocation";
+import profileImage from "../assets/profile-dark.svg";
 
 export default function MainHeader() {
   const [query, setQuery] = useState("");
