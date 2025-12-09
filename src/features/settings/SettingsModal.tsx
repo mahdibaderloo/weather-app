@@ -25,7 +25,7 @@ export default function SettingsModal() {
   }
 
   return (
-    <ul className="w-fit flex-col mt-2 bg-linear-to-l from-violet-200 to-violet-900 dark:from-slate-950/95 dark:to-violet-950/60 rounded-3xl overflow-hidden absolute right-[50%] top-40">
+    <ul className="w-full lg:w-fit flex-col mt-2 bg-linear-to-l from-violet-200 to-violet-900 dark:from-slate-950/95 dark:to-violet-950 rounded-3xl overflow-hidden absolute lg:right-[50%] top-34 lg:top-40">
       <li
         className={`text-violet-100 font-medium cursor-pointer py-4 px-6 hover:bg-violet-900 ${
           windUnit === "km/h"

@@ -13,7 +13,7 @@ export default function Settings() {
   const { theme } = useThemeStore();
   const { unit, toggleUnit } = useTemperatureUnitStore();
   const { isOpen, setOpen, setClose } = useModalStore();
-  const { windUnitFullName } = useTemperatureUnitStore();
+  const { windUnitFullName, windUnit } = useTemperatureUnitStore();
 
   function handleClickFeedback() {
     window.open(
@@ -30,16 +30,16 @@ export default function Settings() {
 
   return (
     <div className="w-full h-full flex flex-col p-4" onClick={() => setClose()}>
-      <p className="font-bold text-4xl text-violet-950 dark:text-violet-800">
+      <p className="font-bold text-2xl lg:text-4xl text-violet-950 dark:text-violet-800">
         Settings
       </p>
 
-      <ul className="flex flex-col p-4 mt-8 relative">
-        <p className="font-bold text-2xl text-violet-950/80 dark:text-violet-800/80">
+      <ul className="flex flex-col lg:p-4 mt-8 relative">
+        <p className="font-bold text-lg lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
           Units
         </p>
-        <li className="w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4">
-          <p className="text-violet-200 font-semibold text-xl">
+        <li className="lg:w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4">
+          <p className="text-violet-200 font-semibold lg:text-xl">
             Temperature units
           </p>
           <div
@@ -56,16 +56,19 @@ export default function Settings() {
             />
           </div>
         </li>
-        <li className="w-1/2 flex items-center justify-between mt-2 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4">
-          <p className="text-violet-200 font-semibold text-xl">
+        <li className="lg:w-1/2 flex items-center justify-between mt-2 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4">
+          <p className="text-violet-200 font-semibold lg:text-xl">
             Wind speed units
           </p>
           <div
             className="flex items-center gap-2 cursor-pointer select-none"
             onClick={handleOpenModal}
           >
-            <span className="text-violet-950 dark:text-violet-800 font-medium">
+            <span className="text-violet-950 dark:text-violet-800 font-medium hidden lg:block">
               {windUnitFullName}
+            </span>
+            <span className="text-violet-950 dark:text-violet-800 font-medium lg:hidden">
+              {windUnit}
             </span>
             <img
               src={theme === "dark" ? arrowsDarkIcon : arrowsIcon}
@@ -77,23 +80,23 @@ export default function Settings() {
         {isOpen && <SettingsModal />}
       </ul>
 
-      <ul className="flex flex-col p-4 mt-8">
-        <p className="font-bold text-2xl text-violet-950/80 dark:text-violet-800/80">
+      <ul className="flex flex-col lg:p-4 mt-8">
+        <p className="font-bold text-lg lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
           About Weather App
         </p>
         <li
-          className="w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer"
+          className="lg:w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer"
           onClick={handleClickFeedback}
         >
-          <p className="text-violet-200 font-semibold text-xl">Feedback</p>
+          <p className="text-violet-200 font-semibold lg:text-xl">Feedback</p>
           <img
             src={theme === "dark" ? arrowRightDarkIcon : arrowRightIcon}
             alt="Arrow icon"
             className="w-5"
           />
         </li>
-        <li className="w-1/2 flex items-center justify-between mt-2 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer">
-          <p className="text-violet-200 font-semibold text-xl">
+        <li className="lg:w-1/2 flex items-center justify-between mt-2 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer">
+          <p className="text-violet-200 font-semibold lg:text-xl">
             Privacy Policy
           </p>
           <img
@@ -104,16 +107,16 @@ export default function Settings() {
         </li>
       </ul>
 
-      <div className="flex flex-col p-4 mt-8">
-        <p className="font-bold text-2xl text-violet-950/80 dark:text-violet-800/80">
+      <div className="flex flex-col lg:p-4 mt-8">
+        <p className="font-bold text-lg lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
           About Me
         </p>
         <a
           href="https://github.com/mahdibaderloo"
           target="blank"
-          className="w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer"
+          className="lg:w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer"
         >
-          <span className="text-violet-200 font-semibold text-xl">
+          <span className="text-violet-200 font-semibold lg:text-xl">
             Mahdi Baderloo
           </span>
           <img
@@ -123,6 +126,7 @@ export default function Settings() {
           />
         </a>
       </div>
+      <div className="w-full h-30" />
     </div>
   );
 }

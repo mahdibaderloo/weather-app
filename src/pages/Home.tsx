@@ -54,6 +54,7 @@ export default function Home() {
       <div className="lg:hidden">
         <AirQualityIndex />
       </div>
+      <div className="h-30 w-full lg:hidden" />
     </div>
   );
 }
