@@ -63,7 +63,7 @@ export default function Profile() {
         <div></div>
       </div>
 
-      <button className="w-fit flex items-center gap-2 py-2 px-6 lg:py-4 lg:px-8 mt-30 bg-linear-to-l from-violet-200/75 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 hover:bg-violet-900 transition-all shadow rounded-2xl lg:rounded-3xl cursor-pointer">
+      <button className="w-fit flex items-center gap-2 py-2 px-6 lg:py-4 lg:px-8 mt-20 lg:mt-30 bg-linear-to-l from-violet-200/75 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 hover:bg-violet-900 transition-all shadow rounded-2xl lg:rounded-3xl cursor-pointer">
         <img src={logoutIcon} alt="icon" className="w-8 lg:w-10" />
         <p className="text-red-900 font-bold lg:text-xl">Log Out</p>
       </button>
