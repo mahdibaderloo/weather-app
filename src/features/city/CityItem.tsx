@@ -42,7 +42,7 @@ export default function CityItem({ name, lat, lon }: CityProp) {
 
   if (isLoading)
     return (
-      <p className="flex justify-center items-center text-4xl font-bold w-full h-[50%] text-violet-950">
+      <p className="flex justify-center items-center lg:text-4xl font-bold w-full h-[50%] text-violet-950 overflow-hidden">
         Loading...
       </p>
     );
@@ -50,18 +50,18 @@ export default function CityItem({ name, lat, lon }: CityProp) {
   return (
     <li
       onClick={handleSetLocation}
-      className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 flex items-center justify-between rounded-full px-4 py-2 cursor-pointer"
+      className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 flex items-center justify-between gap-4 lg:gap-0 rounded-full px-4 py-2 cursor-pointer overflow-hidden"
     >
-      <p className="text-3xl text-violet-200 font-bold w-80 truncate text-left">
+      <p className="lg:text-3xl text-violet-200 font-bold lg:w-80 truncate text-left">
         {name}
       </p>
       <div className="flex items-center gap-2">
-        <img src={icon?.icon} alt="icon" className="w-14" />
-        <p className="text-xl text-violet-950 font-semibold">{weather}</p>
+        <img src={icon?.icon} alt="icon" className="w-8 lg:w-14" />
+        <p className="lg:text-xl text-violet-950 font-semibold">{weather}</p>
       </div>
       <img
         src={theme === "dark" ? deleteIconDark : deleteIcon}
-        className="w-10 z-20"
+        className="hidden lg:block w-10 z-20"
         alt="delete icon"
         onClick={handleDeleteCity}
       />
