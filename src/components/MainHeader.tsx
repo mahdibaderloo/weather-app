@@ -64,11 +64,11 @@ export default function MainHeader() {
         <img
           src={theme === "dark" ? searchIconDark : searchIcon}
           alt="Search icon"
-          className="w-16"
+          className="w-12 lg:w-16"
         />
         <input
           type="text"
-          className="w-full h-full outline-none border-none text-violet-950 dark:text-violet-100 text-lg font-medium"
+          className="w-full h-full outline-none border-none text-violet-950 dark:text-violet-100 lg:text-lg font-medium"
           placeholder="Search city"
           value={error ? error : query}
           disabled={error.length !== 0}

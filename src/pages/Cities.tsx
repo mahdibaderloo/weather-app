@@ -7,7 +7,7 @@ export default function Cities() {
 
   return (
     <div className="w-full lg:h-full flex flex-col p-2 gap-8">
-      <div className="flex justify-between items-center p-4">
+      <div className="flex justify-between items-center lg:p-4">
         <p className="font-bold text-2xl lg:text-4xl text-violet-950 dark:text-violet-800">
           City List
         </p>
@@ -43,6 +43,7 @@ export default function Cities() {
       >
         + Add City
       </Link>
+      <div className="w-full h-30" />
     </div>
   );
 }
