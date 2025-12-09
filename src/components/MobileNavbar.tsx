@@ -42,33 +42,39 @@ export default function MobileNavbar() {
   const { theme } = useThemeStore();
 
   return (
-    <nav className="w-full h-fit fixed bottom-0 z-50 bg-linear-to-r from-violet-900/40 to-violet-500/40 dark:from-slate-950/40 dark:to-violet-950/40 px-4 pb-2 shadow lg:hidden">
-      <ul className="w-full h-full flex justify-between pt-2">
-        {items.map((item) => (
-          <li
-            className="flex flex-col items-center justify-center"
-            key={item.id}
-          >
-            <NavLink
-              to={item.url}
-              className={({ isActive }) =>
-                isActive
-                  ? `bg-linear-to-r from-violet-500 to-violet-800 dark:bg-linear-to-t dark:from-slate-950 dark:to-violet-900/70 p-2 w-14 ${
-                      item.id === 3 ? "w-18" : ""
-                    } rounded-full shadow`
-                  : `bg-linear-to-r from-violet-500 to-violet-300 dark:bg-linear-to-t dark:from-violet-700 dark:to-slate-900 p-2 w-14 ${
-                      item.id === 3 ? "w-18" : ""
-                    } rounded-full transition-all delay-150`
-              }
+    <>
+      <div className="w-full h-17 fixed bottom-0 bg-linear-to-r from-violet-900/80 to-violet-500/80 dark:from-slate-950/80 dark:to-violet-950/80" />
+      <nav className="w-full fixed bottom-0 z-50 px-4 pb-1 shadow lg:hidden">
+        <ul className="w-full h-full flex justify-between pt-2">
+          {items.map((item) => (
+            <li
+              className="flex flex-col items-center justify-center"
+              key={item.id}
             >
-              <img src={theme === "dark" ? item.dark : item.image} alt="Logo" />
-            </NavLink>
-            <span className="text-violet-950 dark:text-violet-100/60 text-sm font-medium mt-1">
-              {item.title}
-            </span>
-          </li>
-        ))}
-      </ul>
-    </nav>
+              <NavLink
+                to={item.url}
+                className={({ isActive }) =>
+                  isActive
+                    ? `bg-linear-to-r from-violet-500 to-violet-800 dark:bg-linear-to-t dark:from-slate-950 dark:to-violet-900/70 p-2 w-15 ${
+                        item.id === 3 ? "w-20 p-3" : ""
+                      } rounded-full shadow`
+                    : `bg-linear-to-r from-violet-500 to-violet-300 dark:bg-linear-to-t dark:from-violet-700 dark:to-slate-900 p-2 w-15 ${
+                        item.id === 3 ? "w-20 p-3" : ""
+                      } rounded-full transition-all delay-150`
+                }
+              >
+                <img
+                  src={theme === "dark" ? item.dark : item.image}
+                  alt="Logo"
+                />
+              </NavLink>
+              <span className="text-violet-950 dark:text-violet-100/60 text-sm font-medium mt-1">
+                {item.title}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </>
   );
 }
