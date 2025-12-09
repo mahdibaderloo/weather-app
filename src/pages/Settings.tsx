@@ -1,4 +1,5 @@
 import type React from "react";
+import { useNavigate } from "react-router-dom";
 import { useThemeStore } from "../store/themeStore";
 import { useTemperatureUnitStore } from "../store/temperatureUnitStore";
 import { useModalStore } from "../store/modalStore";
@@ -8,12 +9,15 @@ import arrowRightIcon from "../assets/arrow-right.svg";
 import arrowsDarkIcon from "../assets/arrows-dark.svg";
 import arrowRightDarkIcon from "../assets/arrow-right-dark.svg";
 import SettingsModal from "../features/settings/SettingsModal";
+import lightIcon from "../assets/light.svg";
+import darkIcon from "../assets/dark.svg";
 
 export default function Settings() {
-  const { theme } = useThemeStore();
+  const { theme, toggleTheme } = useThemeStore();
   const { unit, toggleUnit } = useTemperatureUnitStore();
   const { isOpen, setOpen, setClose } = useModalStore();
   const { windUnitFullName, windUnit } = useTemperatureUnitStore();
+  const navigate = useNavigate();
 
   function handleClickFeedback() {
     window.open(
@@ -28,11 +32,32 @@ export default function Settings() {
     setOpen();
   }
 
+  function handleToggleTheme() {
+    toggleTheme();
+    navigate(0);
+  }
+
   return (
     <div className="w-full h-full flex flex-col p-4" onClick={() => setClose()}>
       <p className="font-bold text-2xl lg:text-4xl text-violet-950 dark:text-violet-800">
         Settings
       </p>
+
+      <div className="flex flex-col lg:p-4 mt-8 relative">
+        <p className="font-bold text-lg lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
+          Theme
+        </p>
+        <div
+          className="w-14 h-14 mt-4 flex items-center justify-center bg-linear-to-l from-violet-500/85 to-violet-900/95 dark:from-violet-950 dark:to-slate-900 rounded-full cursor-pointer shadow"
+          onClick={handleToggleTheme}
+        >
+          <img
+            src={theme === "light" ? lightIcon : darkIcon}
+            alt="Theme icon"
+            className="w-8"
+          />
+        </div>
+      </div>
 
       <ul className="flex flex-col lg:p-4 mt-8 relative">
         <p className="font-bold text-lg lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
