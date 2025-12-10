@@ -43,7 +43,7 @@ export default function Settings() {
         Settings
       </p>
 
-      <div className="flex flex-col lg:p-4 mt-8 relative">
+      <div className="flex flex-col lg:p-4 mt-8 relative lg:hidden">
         <p className="font-bold text-lg lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
           Theme
         </p>

@@ -44,7 +44,7 @@ export default function MobileNavbar() {
 
   return (
     <>
-      <div className="w-full h-17 fixed bottom-0 bg-linear-to-r from-violet-700 to-violet-700 dark:from-violet-950 dark:to-violet-950 blur-xl lg:hidden" />
+      <div className="w-full h-17 fixed z-50 bottom-0 bg-linear-to-r from-violet-700 to-violet-700 dark:from-violet-950 dark:to-violet-950 blur-xl lg:hidden" />
       <nav className="w-full fixed bottom-0 z-50 px-4 pb-1 lg:hidden">
         <ul className="w-full h-full flex justify-between pt-2">
           {items.map((item) => (
