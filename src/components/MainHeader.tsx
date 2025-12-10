@@ -59,7 +59,7 @@ export default function MainHeader() {
           error
             ? "from-red-200/85 to-red-900/85 dark:from-red-950/85 dark:to-red-900"
             : "from-violet-200/85 to-violet-900/85 dark:from-violet-950/85 dark:to-slate-900"
-        } flex items-center gap-2 w-full lg:w-[40%] h-14 p-2 rounded-4xl shadow`}
+        } flex items-center gap-2 w-full lg:w-[40%] h-14 p-2 md:mx-8 rounded-4xl shadow`}
       >
         <img
           src={theme === "dark" ? searchIconDark : searchIcon}
