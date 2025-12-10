@@ -8,12 +8,12 @@ export default function Cities() {
   return (
     <div className="w-full lg:h-full flex flex-col p-2 gap-8">
       <div className="flex justify-between items-center lg:p-4">
-        <p className="font-bold text-2xl lg:text-4xl text-violet-950 dark:text-violet-800">
+        <p className="font-bold text-2xl md:text-3xl lg:text-4xl text-violet-950 dark:text-violet-800">
           City List
         </p>
         <Link
           to="/map"
-          className="hidden lg:block bg-linear-to-r from-violet-900/90 to-violet-950 dark:from-violet-900/90 dark:to-slate-950/30 text-violet-100 text-lg font-medium w-fit px-8 py-3 rounded-4xl cursor-pointer shadow hover:bg-violet-950 transition-all"
+          className="hidden md:block bg-linear-to-r from-violet-900/90 to-violet-950 dark:from-violet-900/90 dark:to-slate-950/30 text-violet-100 text-lg font-medium w-fit px-8 py-3 rounded-4xl cursor-pointer shadow hover:bg-violet-950 transition-all"
         >
           + Add City
         </Link>
@@ -39,7 +39,7 @@ export default function Cities() {
       </ul>
       <Link
         to="/map"
-        className="lg:hidden bg-linear-to-r from-violet-900/90 to-violet-950 dark:from-violet-900/90 dark:to-slate-900/90 text-violet-100 font-medium w-full text-center px-8 py-3 rounded-4xl cursor-pointer shadow hover:bg-violet-950 transition-all"
+        className="md:hidden bg-linear-to-r from-violet-900/90 to-violet-950 dark:from-violet-900/90 dark:to-slate-900/90 text-violet-100 font-medium w-full text-center px-8 py-3 rounded-4xl cursor-pointer shadow hover:bg-violet-950 transition-all"
       >
         + Add City
       </Link>
