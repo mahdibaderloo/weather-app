@@ -102,7 +102,7 @@ export default function InformationSection({
 
         <div className="hidden md:flex flex-col items-end">
           <img src={icon} alt="Icon" className="md:w-40 lg:w-60" />
-          <p className="font-semibold text-2xl lg:text-3xl text-violet-950">
+          <p className="font-semibold text-2xl md:text-xl lg:text-3xl text-violet-950">
             {weather}
           </p>
         </div>
