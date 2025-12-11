@@ -18,7 +18,7 @@ export default function Map() {
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row gap-4 lg:gap-0 justify-between items-center">
+      <div className="flex flex-col md:flex-row gap-4 lg:gap-0 justify-between items-center">
         <button
           onClick={handleGetLocation}
           className="w-full text-center bg-linear-to-r from-violet-900/90 to-violet-800/65 dark:from-violet-900/90 dark:to-slate-900/90 lg:from-violet-900/90 lg:to-violet-800/65 lg:dark:from-violet-900/90 lg:dark:to-slate-950/30 text-violet-100 lg:text-lg font-medium lg:w-fit px-8 py-3 rounded-4xl cursor-pointer shadow hover:bg-violet-950 transition-all"
