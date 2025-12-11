@@ -39,38 +39,38 @@ export default function Settings() {
 
   return (
     <div className="w-full h-full flex flex-col p-4" onClick={() => setClose()}>
-      <p className="font-bold text-2xl lg:text-4xl text-violet-950 dark:text-violet-800">
+      <p className="font-bold text-2xl md:text-3xl lg:text-4xl text-violet-950 dark:text-violet-800">
         Settings
       </p>
 
       <div className="flex flex-col lg:p-4 mt-8 relative lg:hidden">
-        <p className="font-bold text-lg lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
+        <p className="font-bold text-lg md:text-xl lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
           Theme
         </p>
         <div
-          className="w-14 h-14 mt-4 flex items-center justify-center bg-linear-to-l from-violet-500/85 to-violet-900/95 dark:from-violet-950 dark:to-slate-900 rounded-full cursor-pointer shadow"
+          className="w-14 h-14 md:w-16 md:h-16 mt-4 flex items-center justify-center bg-linear-to-l from-violet-500/85 to-violet-900/95 dark:from-violet-950 dark:to-slate-900 rounded-full cursor-pointer shadow"
           onClick={handleToggleTheme}
         >
           <img
             src={theme === "light" ? lightIcon : darkIcon}
             alt="Theme icon"
-            className="w-8"
+            className="w-8 md:w-10"
           />
         </div>
       </div>
 
       <ul className="flex flex-col lg:p-4 mt-8 relative">
-        <p className="font-bold text-lg lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
+        <p className="font-bold text-lg md:text-xl lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
           Units
         </p>
-        <li className="lg:w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4">
-          <p className="text-violet-200 font-semibold lg:text-xl">
+        <li
+          className="lg:w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4"
+          onClick={() => toggleUnit()}
+        >
+          <p className="text-violet-200 font-semibold md:text-lg lg:text-xl">
             Temperature units
           </p>
-          <div
-            className="flex items-center gap-2 cursor-pointer"
-            onClick={() => toggleUnit()}
-          >
+          <div className="flex items-center gap-2 cursor-pointer">
             <span className="text-violet-950 dark:text-violet-800 font-medium">
               °{unit}
             </span>
@@ -81,14 +81,14 @@ export default function Settings() {
             />
           </div>
         </li>
-        <li className="lg:w-1/2 flex items-center justify-between mt-2 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4">
-          <p className="text-violet-200 font-semibold lg:text-xl">
+        <li
+          className="lg:w-1/2 flex items-center justify-between mt-2 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4"
+          onClick={handleOpenModal}
+        >
+          <p className="text-violet-200 font-semibold md:text-lg lg:text-xl">
             Wind speed units
           </p>
-          <div
-            className="flex items-center gap-2 cursor-pointer select-none"
-            onClick={handleOpenModal}
-          >
+          <div className="flex items-center gap-2 cursor-pointer select-none">
             <span className="text-violet-950 dark:text-violet-800 font-medium hidden lg:block">
               {windUnitFullName}
             </span>
@@ -106,14 +106,16 @@ export default function Settings() {
       </ul>
 
       <ul className="flex flex-col lg:p-4 mt-8">
-        <p className="font-bold text-lg lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
+        <p className="font-bold text-lg md:text-xl lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
           About Weather App
         </p>
         <li
           className="lg:w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer"
           onClick={handleClickFeedback}
         >
-          <p className="text-violet-200 font-semibold lg:text-xl">Feedback</p>
+          <p className="text-violet-200 font-semibold md:text-lg lg:text-xl">
+            Feedback
+          </p>
           <img
             src={theme === "dark" ? arrowRightDarkIcon : arrowRightIcon}
             alt="Arrow icon"
@@ -121,7 +123,7 @@ export default function Settings() {
           />
         </li>
         <li className="lg:w-1/2 flex items-center justify-between mt-2 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer">
-          <p className="text-violet-200 font-semibold lg:text-xl">
+          <p className="text-violet-200 font-semibold md:text-lg lg:text-xl">
             Privacy Policy
           </p>
           <img
@@ -133,7 +135,7 @@ export default function Settings() {
       </ul>
 
       <div className="flex flex-col lg:p-4 mt-8">
-        <p className="font-bold text-lg lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
+        <p className="font-bold text-lg md:text-xl lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
           About Me
         </p>
         <a
@@ -141,7 +143,7 @@ export default function Settings() {
           target="blank"
           className="lg:w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer"
         >
-          <span className="text-violet-200 font-semibold lg:text-xl">
+          <span className="text-violet-200 font-semibold md:text-lg lg:text-xl">
             Mahdi Baderloo
           </span>
           <img

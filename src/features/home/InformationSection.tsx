@@ -53,7 +53,7 @@ export default function InformationSection({
         </div>
 
         <div>
-          <p className="font-bold text-3xl lg:text-5xl text-violet-100 mt-10 md:mt-8 lg:mt-0">
+          <p className="font-bold text-3xl lg:text-5xl text-violet-100 mt-10 md:mt-9 lg:mt-0">
             {getWeekday()}
           </p>
           <span className="lg:text-lg font-semibold text-violet-300">
@@ -70,7 +70,7 @@ export default function InformationSection({
           </p>
         </div>
 
-        <p className="text-lg font-semibold text-violet-200 mt-6 lg:mt-0">
+        <p className="lg:text-lg font-semibold text-violet-200 mt-6 lg:mt-0">
           Wind Speed: {windSpeed} {windUnit}
         </p>
       </div>
@@ -102,7 +102,7 @@ export default function InformationSection({
 
         <div className="hidden md:flex flex-col items-end md:mb-8 lg:mb-0">
           <img src={icon} alt="Icon" className="md:w-40 lg:w-60" />
-          <p className="font-semibold text-2xl md:text-lg lg:text-3xl text-violet-950">
+          <p className="font-semibold text-2xl lg:text-3xl text-violet-950">
             {weather}
           </p>
         </div>
