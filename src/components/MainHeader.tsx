@@ -68,7 +68,7 @@ export default function MainHeader() {
         />
         <input
           type="text"
-          className="w-full h-full outline-none border-none text-violet-950 dark:text-violet-100 lg:text-lg font-medium"
+          className="w-full h-full outline-none border-none text-violet-950 dark:text-violet-100 md:text-lg font-medium"
           placeholder="Search city"
           value={error ? error : query}
           disabled={error.length !== 0}
