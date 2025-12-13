@@ -26,8 +26,8 @@ export default function DailyItem({ data, day }: DailyProps) {
       <p className="w-20">{getNextDay(day)}</p>
 
       <div className="flex items-center">
-        <img src={icon} alt="icon" className="w-10 lg:w-14 mr-2" />
-        <span className="dark:text-violet-800 lg:text-shadow-[0_0_2px] text-shadow-violet-700">
+        <img src={icon} alt="icon" className="w-10 xl:w-14 mr-2" />
+        <span className="dark:text-violet-800 xl:text-shadow-[0_0_2px] text-shadow-violet-700">
           {weatherName === "Partly Cloudy" ? "Cloudy" : weatherName}
         </span>
       </div>
