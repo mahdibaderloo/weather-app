@@ -32,14 +32,14 @@ export default function Home() {
   }
 
   return (
-    <div className="w-full h-full lg:relative p-2 md:p-8">
+    <div className="w-[86%] h-full lg:relative p-2 md:p-8 lg:p-4 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30">
       <img
         src={weatherIcon(weather)?.image}
         alt="Background"
-        className="w-[99%] rounded-4xl shadow lg:blur-[1px] lg:absolute inset-0 object-cover"
+        className="lg:w-[99%] rounded-4xl shadow lg:blur-[1px] lg:absolute inset-0 object-cover"
       />
 
-      <div className="w-full flex flex-col md:flex-row justify-between gap-1 md:gap-2">
+      <div className="w-full flex flex-col md:flex-row justify-between gap-1 md:gap-2 lg:gap-1">
         <InformationSection
           city={city}
           data={data?.current}
