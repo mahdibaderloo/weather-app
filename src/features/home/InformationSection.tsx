@@ -81,7 +81,7 @@ export default function InformationSection({
           onClick={handleToggleUnit}
         >
           <span
-            className={`w-8 h-8 rounded-full font-medium flex justify-center items-center transition-all ${
+            className={`md:w-6 w-8 md:h-6 h-8 rounded-full font-medium flex justify-center items-center transition-all ${
               unit === "F"
                 ? "bg-violet-950 text-violet-200 dark:bg-linear-to-r dark:from-slate-950/95 dark:to-slate-950/30"
                 : "text-violet-950 dark:text-slate-950"
@@ -90,7 +90,7 @@ export default function InformationSection({
             F
           </span>
           <span
-            className={`w-8 h-8 rounded-full font-medium flex justify-center items-center transition-all ${
+            className={`md:w-6 w-8 md:h-6 h-8 rounded-full font-medium flex justify-center items-center transition-all ${
               unit === "C"
                 ? "bg-violet-950 text-violet-200 dark:bg-linear-to-r dark:from-slate-950/95 dark:to-slate-950/30"
                 : "text-violet-950 dark:text-slate-950"
