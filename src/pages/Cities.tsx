@@ -6,9 +6,9 @@ export default function Cities() {
   const { cityList } = useLocationStore();
 
   return (
-    <div className="w-full lg:h-full flex flex-col p-2 gap-8">
+    <div className="lg:w-[86%] lg:h-full flex flex-col p-2 gap-8 lg:p-4 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-22">
       <div className="flex justify-between items-center lg:p-4">
-        <p className="font-bold text-2xl md:text-3xl lg:text-4xl text-violet-950 dark:text-violet-800">
+        <p className="font-bold text-2xl md:text-3xl xl:text-4xl text-violet-950 dark:text-violet-800">
           City List
         </p>
         <Link
@@ -31,7 +31,7 @@ export default function Cities() {
         ) : (
           <li
             key="there is no city"
-            className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 text-red-800 rounded-full flex items-center justify-center py-5 lg:text-2xl font-bold"
+            className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 text-red-800 rounded-full flex items-center justify-center py-5 xl:text-2xl font-bold"
           >
             No cities added!
           </li>
@@ -43,7 +43,7 @@ export default function Cities() {
       >
         + Add City
       </Link>
-      <div className="w-full h-30" />
+      <div className="w-full h-30 lg:h-2" />
     </div>
   );
 }
