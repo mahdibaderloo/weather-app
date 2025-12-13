@@ -36,7 +36,7 @@ export default function WeatherMap() {
           className={
             theme === "dark"
               ? `h-[50%] lg:h-[60%] lg:w-[85%] lg:ml-30 rounded-2xl filter invert-90 hue-rotate-180 brightness-75 contrast-125`
-              : ""
+              : "h-[50%] lg:h-[60%] lg:w-[85%] lg:ml-30"
           }
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />

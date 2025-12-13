@@ -49,6 +49,10 @@ export default function MainHeader() {
     setError("");
     setLocation(data.lat, data.lon);
     setCity(data.city);
+    navigate("/");
+    setTimeout(() => {
+      setQuery("");
+    }, 1000);
   }
 
   return (
