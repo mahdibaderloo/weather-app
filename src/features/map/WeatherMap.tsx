@@ -32,10 +32,10 @@ export default function WeatherMap() {
         <MapContainer
           center={[lat, lon]}
           zoom={16}
-          style={{ height: "50%", borderRadius: "2rem" }}
+          style={{ borderRadius: "2rem" }}
           className={
             theme === "dark"
-              ? `h-[50%] rounded-2xl filter invert-90 hue-rotate-180 brightness-75 contrast-125`
+              ? `h-[50%] lg:h-[60%] lg:w-[85%] lg:ml-30 rounded-2xl filter invert-90 hue-rotate-180 brightness-75 contrast-125`
               : ""
           }
         >
