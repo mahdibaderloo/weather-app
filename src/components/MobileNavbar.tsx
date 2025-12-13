@@ -46,7 +46,7 @@ export default function MobileNavbar() {
     <>
       <div className="w-full h-17 fixed z-50 bottom-0 bg-linear-to-r from-violet-700 to-violet-700 dark:from-violet-950 dark:to-violet-950 blur-xl lg:hidden" />
       <nav className="w-full fixed bottom-0 z-50 px-4 pb-1 lg:hidden">
-        <ul className="w-full h-full flex justify-between pt-2">
+        <ul className="w-full h-full flex justify-between md:justify-around md:px-10 pt-2">
           {items.map((item) => (
             <li
               className="flex flex-col items-center justify-center"
@@ -56,11 +56,11 @@ export default function MobileNavbar() {
                 to={item.url}
                 className={({ isActive }) =>
                   isActive
-                    ? `bg-linear-to-r from-violet-500 to-violet-800 dark:bg-linear-to-t dark:from-slate-950 dark:to-violet-900/70 p-2 w-15 ${
-                        item.id === 3 ? "w-20 p-3" : ""
+                    ? `bg-linear-to-r from-violet-500 to-violet-800 dark:bg-linear-to-t dark:from-slate-950 dark:to-violet-900/70 p-2 w-15 md:w-18 ${
+                        item.id === 3 ? "w-20 md:w-26 p-3 md:p-4" : ""
                       } rounded-full shadow`
-                    : `bg-linear-to-r from-violet-500 to-violet-300 dark:bg-linear-to-t dark:from-violet-700 dark:to-slate-900 p-2 w-15 ${
-                        item.id === 3 ? "w-20 p-3" : ""
+                    : `bg-linear-to-r from-violet-500 to-violet-300 dark:bg-linear-to-t dark:from-violet-700 dark:to-slate-900 p-2 w-15 md:w-18 ${
+                        item.id === 3 ? "w-20 md:w-26 p-3 md:p-4" : ""
                       } rounded-full transition-all delay-150`
                 }
               >
