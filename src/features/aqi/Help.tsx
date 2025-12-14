@@ -16,14 +16,14 @@ const helpIndexes = [0, 50, 100, 150, 200, 300];
 
 export default function Help() {
   return (
-    <div className="hidden mt-16 lg:flex flex-col justify-center items-center">
-      <ul className="w-[85%] grid grid-cols-6 rounded-3xl overflow-hidden">
+    <div className="hidden lg:mt-8 xl:mt-16 lg:flex flex-col justify-center items-center">
+      <ul className="xl:w-[85%] grid grid-cols-6 rounded-3xl overflow-hidden">
         {helpTitles.map((t) => {
           if (t.desc) {
             return (
               <li
                 key={t.id}
-                className={`flex justify-center items-center text-white text-lg font-medium px-2 py-1 ${t.class}`}
+                className={`flex justify-center items-center text-white xl:text-lg font-medium xl:px-2 py-1 ${t.class}`}
               >
                 Unhealthy{" "}
                 <span className="text-sm">(for sensitive groups)</span>
@@ -33,7 +33,7 @@ export default function Help() {
             return (
               <li
                 key={t.id}
-                className={`flex justify-center items-center text-white text-lg font-medium px-2 py-1 ${t.class}`}
+                className={`flex justify-center items-center text-white xl:text-lg font-medium xl:px-2 py-1 ${t.class}`}
               >
                 {t.title}
               </li>

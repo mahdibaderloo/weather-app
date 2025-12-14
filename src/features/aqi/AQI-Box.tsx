@@ -22,7 +22,7 @@ export default function AQIBox({ data, fetchTime }: AQIBoxProps) {
 
   return (
     <div
-      className={`w-full lg:w-[35%] flex flex-col bg-linear-to-b ${
+      className={`w-full lg:w-[40%] flex flex-col bg-linear-to-b ${
         getAqiStatus(aqi).color
       } to-violet-400/45 dark:to-slate-900 text-violet-50 dark:text-slate-950 rounded-4xl p-8`}
     >
