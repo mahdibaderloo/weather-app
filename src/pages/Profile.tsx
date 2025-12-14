@@ -33,10 +33,10 @@ export default function Profile() {
           className="w-16 h-16 md:w-24 md:h-24 xl:w-40 xl:h-40 bg-linear-to-r from-violet-200/75 to-violet-700/65 dark:from-slate-950/95 dark:to-violet-700/30 rounded-3xl lg:rounded-4xl shadow p-2"
         />
         <div className="flex flex-col gap-4">
-          <p className="text-violet-100 font-bold md:text-xl xl:text-3xl">
+          <p className="text-violet-100 font-bold text-[16px] md:text-xl xl:text-3xl">
             Username
           </p>
-          <p className="text-violet-100/60 font-semibold md:text-lg xl:text-2xl">
+          <p className="text-violet-100/60 font-semibold text-[14px] md:text-lg xl:text-2xl">
             user.email@example.com
           </p>
         </div>
