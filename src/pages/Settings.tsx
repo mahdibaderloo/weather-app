@@ -38,8 +38,11 @@ export default function Settings() {
   }
 
   return (
-    <div className="w-full h-full flex flex-col p-4" onClick={() => setClose()}>
-      <p className="font-bold text-2xl md:text-3xl lg:text-4xl text-violet-950 dark:text-violet-800">
+    <div
+      className="lg:w-[86%] xl:w-full h-full flex flex-col p-4 lg:p-0 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30"
+      onClick={() => setClose()}
+    >
+      <p className="font-bold text-2xl md:text-3xl lg:hidden xl:block xl:text-4xl text-violet-950 dark:text-violet-800">
         Settings
       </p>
 
@@ -59,12 +62,12 @@ export default function Settings() {
         </div>
       </div>
 
-      <ul className="flex flex-col lg:p-4 mt-8 relative">
+      <ul className="flex flex-col lg:p-4 xl:mt-8 relative">
         <p className="font-bold text-lg md:text-xl lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
           Units
         </p>
         <li
-          className="lg:w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4"
+          className="lg:w-[60%] xl:w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4"
           onClick={() => toggleUnit()}
         >
           <p className="text-violet-200 font-semibold md:text-lg lg:text-xl">
@@ -82,7 +85,7 @@ export default function Settings() {
           </div>
         </li>
         <li
-          className="lg:w-1/2 flex items-center justify-between mt-2 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4"
+          className="lg:w-[60%] xl:w-1/2 flex items-center justify-between mt-2 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4"
           onClick={handleOpenModal}
         >
           <p className="text-violet-200 font-semibold md:text-lg lg:text-xl">
@@ -105,12 +108,12 @@ export default function Settings() {
         {isOpen && <SettingsModal />}
       </ul>
 
-      <ul className="flex flex-col lg:p-4 mt-8">
+      <ul className="flex flex-col lg:p-4 xl:mt-8">
         <p className="font-bold text-lg md:text-xl lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
           About Weather App
         </p>
         <li
-          className="lg:w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer"
+          className="lg:w-[60%] xl:w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer"
           onClick={handleClickFeedback}
         >
           <p className="text-violet-200 font-semibold md:text-lg lg:text-xl">
@@ -122,7 +125,7 @@ export default function Settings() {
             className="w-5"
           />
         </li>
-        <li className="lg:w-1/2 flex items-center justify-between mt-2 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer">
+        <li className="lg:w-[60%] xl:w-1/2 flex items-center justify-between mt-2 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer">
           <p className="text-violet-200 font-semibold md:text-lg lg:text-xl">
             Privacy Policy
           </p>
@@ -134,14 +137,14 @@ export default function Settings() {
         </li>
       </ul>
 
-      <div className="flex flex-col lg:p-4 mt-8">
+      <div className="flex flex-col lg:p-4 xl:mt-8">
         <p className="font-bold text-lg md:text-xl lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
           About Me
         </p>
         <a
           href="https://github.com/mahdibaderloo"
           target="blank"
-          className="lg:w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer"
+          className="lg:w-[60%] xl:w-1/2   flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer"
         >
           <span className="text-violet-200 font-semibold md:text-lg lg:text-xl">
             Mahdi Baderloo
@@ -153,7 +156,7 @@ export default function Settings() {
           />
         </a>
       </div>
-      <div className="w-full h-30" />
+      <div className="w-full h-30 lg:h-1" />
     </div>
   );
 }
