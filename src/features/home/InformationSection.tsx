@@ -47,7 +47,7 @@ export default function InformationSection({
             {city || "City"}
           </p>
         </div>
-        <div className="flex flex-col items-center md:hidden">
+        <div className="flex flex-col items-center mt-6 md:hidden">
           <img src={icon} alt="Icon" className="w-40" />
           <p className="font-semibold text-2xl text-violet-950">{weather}</p>
         </div>
