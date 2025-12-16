@@ -24,12 +24,12 @@ export default function AirQualityIndex() {
   }
 
   return (
-    <div className="lg:w-[86%] xl:w-full h-full flex flex-col lg:p-0 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30">
+    <div className="lg:w-[86%] xl:w-[84%] h-full flex flex-col lg:p-0 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30">
       <h3 className="hidden font-bold xl:text-4xl text-violet-950 dark:text-violet-800 xl:block">
         Air Quality Index
       </h3>
 
-      <div className="w-full flex lg:gap-4 mt-4 lg:mt-4 xl:mt-8 justify-center">
+      <div className="w-full flex lg:gap-4 mt-4 lg:mt-4 xl:mt-16 justify-center">
         <AQIBox data={data?.hourly} fetchTime={dataUpdatedAt} />
       </div>
 
