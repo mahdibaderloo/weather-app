@@ -40,7 +40,7 @@ export default function InformationSection({
   return (
     <section className="lg:relative lg:z-50 p-4 bg-linear-to-r from-violet-800/60 to-violet-400/35 dark:from-slate-950/95 dark:to-slate-950/50 rounded-4xl w-full lg:w-[49%] h-fit flex flex-col md:flex-row justify-between mt-4 lg:mt-0">
       {/* <div className="absolute blur-sm w-full h-full" /> */}
-      <div className="flex flex-col lg:gap-6 xl:gap-10">
+      <div className="flex flex-col lg:gap-6 2xl:gap-10">
         <div className="w-full lg:w-fit flex items-center gap-2 bg-violet-950 dark:bg-linear-to-l dark:from-slate-950/95 dark:to-slate-950/30 rounded-2xl pr-6 pl-1 py-1">
           <img src={locationIcon} alt="Location icon" className="w-8" />
           <p className="font-semibold text-lg text-violet-200 w-fit truncate">
@@ -53,7 +53,7 @@ export default function InformationSection({
         </div>
 
         <div>
-          <p className="font-bold text-3xl xl:text-5xl text-violet-100 mt-10 md:mt-9 lg:mt-0">
+          <p className="font-bold text-3xl xl:text-4xl text-violet-100 mt-10 md:mt-9 lg:mt-0">
             {getWeekday()}
           </p>
           <span className="xl:text-lg font-semibold text-violet-300">
@@ -62,7 +62,7 @@ export default function InformationSection({
         </div>
 
         <div>
-          <p className="font-bold text-4xl xl:text-6xl text-violet-100 mt-6 lg:mt-0">
+          <p className="font-bold text-4xl xl:text-5xl text-violet-100 mt-6 lg:mt-0">
             {Math.floor(temp)}°{unit}
           </p>
           <p className="xl:text-lg font-semibold text-violet-300">
@@ -75,7 +75,7 @@ export default function InformationSection({
         </p>
       </div>
 
-      <div className="flex flex-col justify-between items-end lg:gap-10">
+      <div className="flex flex-col justify-between items-end lg:gap-10 xl:gap-6">
         <div
           className="hidden w-fit md:flex items-center justify-between bg-violet-200/40 rounded-full cursor-pointer"
           onClick={handleToggleUnit}
@@ -101,7 +101,7 @@ export default function InformationSection({
         </div>
 
         <div className="hidden md:flex flex-col items-end md:mb-8 lg:mb-0">
-          <img src={icon} alt="Icon" className="md:w-40 xl:w-60" />
+          <img src={icon} alt="Icon" className="md:w-40 xl:w-50" />
           <p className="font-semibold text-2xl xl:text-3xl text-violet-950 md:mt-4 lg:mt-0">
             {weather}
           </p>
