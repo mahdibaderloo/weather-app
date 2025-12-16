@@ -22,14 +22,14 @@ export default function AQIBox({ data, fetchTime }: AQIBoxProps) {
 
   return (
     <div
-      className={`w-full lg:w-[40%] flex flex-col bg-linear-to-b ${
+      className={`w-full lg:w-[40%] 2xl:w-[50%] flex flex-col bg-linear-to-b ${
         getAqiStatus(aqi).color
       } to-violet-400/45 dark:to-slate-900 text-violet-50 dark:text-slate-950 rounded-4xl p-8`}
     >
       <p className="font-semibold text-xl md:text-2xl pb-4 border-b-2 border-white/20">
         Air quality index now
       </p>
-      <p className="mt-4 mx-auto text-6xl md:text-7xl lg:text-8xl font-bold">
+      <p className="mt-4 2xl:mt-8 mx-auto text-6xl md:text-7xl lg:text-8xl font-bold">
         {aqi}
       </p>
       <p className="md:text-lg font-medium mt-4 text-white/80 dark:text-slate-950/80">
