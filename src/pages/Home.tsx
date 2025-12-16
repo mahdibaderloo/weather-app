@@ -32,7 +32,7 @@ export default function Home() {
   }
 
   return (
-    <div className="lg:w-[86%] xl:w-[78%] xl:mx-auto h-full lg:relative p-2 md:p-8 lg:p-4 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30">
+    <div className="lg:w-[86%] xl:w-[78%] xl:mx-auto h-full lg:relative p-2 md:p-8 lg:p-4 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30 2xl:mt-0 2xl:w-full 2xl:ml-0">
       <img
         src={weatherIcon(weather)?.image}
         alt="Background"
