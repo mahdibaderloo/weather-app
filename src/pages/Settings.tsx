@@ -39,7 +39,7 @@ export default function Settings() {
 
   return (
     <div
-      className="lg:w-[86%] xl:w-full h-full flex flex-col p-4 lg:p-0 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30"
+      className="lg:w-[86%] xl:w-full h-full flex flex-col p-4 lg:p-0 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30 2xl:mt-0 2xl:w-full 2xl:ml-0"
       onClick={() => setClose()}
     >
       <p className="font-bold text-2xl md:text-3xl hidden xl:block xl:text-4xl text-violet-950 dark:text-violet-800">
@@ -67,13 +67,13 @@ export default function Settings() {
           Units
         </p>
         <li
-          className="lg:w-[60%] xl:w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4"
+          className="lg:w-[60%] xl:w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer"
           onClick={() => toggleUnit()}
         >
           <p className="text-violet-200 font-semibold md:text-lg lg:text-xl">
             Temperature units
           </p>
-          <div className="flex items-center gap-2 cursor-pointer">
+          <div className="flex items-center gap-2">
             <span className="text-violet-950 dark:text-violet-800 font-medium">
               °{unit}
             </span>
@@ -85,13 +85,13 @@ export default function Settings() {
           </div>
         </li>
         <li
-          className="lg:w-[60%] xl:w-1/2 flex items-center justify-between mt-2 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4"
+          className="lg:w-[60%] xl:w-1/2 flex items-center justify-between mt-2 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 px-4 cursor-pointer"
           onClick={handleOpenModal}
         >
           <p className="text-violet-200 font-semibold md:text-lg lg:text-xl">
             Wind speed units
           </p>
-          <div className="flex items-center gap-2 cursor-pointer select-none">
+          <div className="flex items-center gap-2 select-none">
             <span className="text-violet-950 dark:text-violet-800 font-medium hidden lg:block">
               {windUnitFullName}
             </span>
