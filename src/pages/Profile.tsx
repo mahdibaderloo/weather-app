@@ -21,7 +21,7 @@ export default function Profile() {
   }
 
   return (
-    <div className="lg:w-[86%] xl:w-[88%] h-full flex flex-col p-4 lg:p-0 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30 xl:ml-32">
+    <div className="lg:w-[86%] xl:w-[88%] h-full flex flex-col p-4 lg:p-0 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30 xl:ml-32 2xl:mt-0 2xl:w-full 2xl:ml-0">
       <p className="font-bold text-2xl md:text-3xl lg:hidden xl:block xl:text-4xl text-violet-950 dark:text-violet-800">
         Profile
       </p>
