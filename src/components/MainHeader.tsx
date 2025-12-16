@@ -41,6 +41,7 @@ export default function MainHeader() {
       setError("City not found!");
       setTimeout(() => {
         setError("");
+        setQuery("");
       }, 3000);
 
       return;
