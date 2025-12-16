@@ -21,8 +21,12 @@ export default function HourlyItem({ data, hour }: HourlyProps) {
   const temp = useToggleUnitValue(data?.temperature_2m[hour]);
 
   return (
-    <li className="flex flex-col items-center gap-4 bg-linear-to-b from-violet-400/75 to-violet-600/40 dark:from-slate-950/30 dark:to-slate-950/95 rounded-2xl w-[20%] p-2 lg:p-1 xl:p-2">
-      <img src={icon} alt="icon" className="w-10 md:w-18 lg:w-16 xl:w-20" />
+    <li className="flex flex-col items-center gap-4 2xl:gap-6 bg-linear-to-b from-violet-400/75 to-violet-600/40 dark:from-slate-950/30 dark:to-slate-950/95 rounded-2xl w-[20%] p-2 lg:p-1 xl:p-2">
+      <img
+        src={icon}
+        alt="icon"
+        className="w-10 md:w-18 lg:w-16 xl:w-20 2xl:w-24"
+      />
 
       <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-2 text-sm md:text-[16px] 2xl:text-lg">
         <p className="bg-violet-300 text-violet-950 dark:bg-violet-950 dark:text-violet-300 font-medium py-1 px-2 rounded-xl lg:w-1/2 xl:truncate text-center">

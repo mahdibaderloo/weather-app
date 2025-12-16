@@ -53,7 +53,7 @@ export default function InformationSection({
         </div>
 
         <div>
-          <p className="font-bold text-3xl xl:text-4xl text-violet-100 mt-10 md:mt-9 lg:mt-0">
+          <p className="font-bold text-3xl xl:text-4xl 2xl:text-5xl text-violet-100 mt-10 md:mt-9 lg:mt-0">
             {getWeekday()}
           </p>
           <span className="xl:text-lg font-semibold text-violet-300">
@@ -62,7 +62,7 @@ export default function InformationSection({
         </div>
 
         <div>
-          <p className="font-bold text-4xl xl:text-5xl text-violet-100 mt-6 lg:mt-0">
+          <p className="font-bold text-4xl xl:text-5xl 2xl:text-6xl text-violet-100 mt-6 lg:mt-0">
             {Math.floor(temp)}°{unit}
           </p>
           <p className="xl:text-lg font-semibold text-violet-300">
