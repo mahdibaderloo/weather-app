@@ -32,7 +32,7 @@ export const useLocationStore = create<LocationState>()(
       lon: 51.389,
       city: "Tehran",
       cityList: [],
-      liveLocation: { lat: 0, lon: 0 },
+      liveLocation: { lat: 35.6892, lon: 51.389 },
 
       setLocation: (lat, lon) => set({ lat, lon }),
       setCity: (city) => set({ city }),

@@ -1,35 +1,30 @@
 export function useWeatherCode(weatherCode: number, windSpeed?: number) {
-  const map: Record<number, string> = {
-    0: "Sunny",
-    1: "Sunny",
-    2: "Partly Cloudy",
-    3: "Cloudy",
-
-    45: "Fog",
-    48: "Fog",
-
-    51: "Rainy",
-    53: "Rainy",
-    55: "Rainy",
-
-    61: "Rainy",
-    63: "Rainy",
-    65: "Rainy",
-
-    71: "Snowy",
-    73: "Snowy",
-    75: "Snowy",
-
-    80: "Stormy",
-    81: "Stormy",
-    82: "Stormy",
-
-    95: "Stormy",
-    96: "Stormy",
-    99: "Stormy",
-  };
-
   if (windSpeed && windSpeed > 15) return "Windy";
 
-  return map[weatherCode] || "Unspecified";
+  if (weatherCode === 0 || weatherCode === 1) return "Sunny";
+  if (weatherCode === 2) return "Partly Cloudy";
+  if (weatherCode === 3) return "Cloudy";
+
+  if (weatherCode >= 45 && weatherCode <= 48) return "Fog";
+
+  if (
+    (weatherCode >= 51 && weatherCode <= 55) ||
+    (weatherCode >= 61 && weatherCode <= 65)
+  )
+    return "Rainy";
+
+  if (
+    (weatherCode >= 71 && weatherCode <= 75) ||
+    weatherCode === 85 ||
+    weatherCode === 86
+  )
+    return "Snowy";
+
+  if (
+    (weatherCode >= 80 && weatherCode <= 82) ||
+    (weatherCode >= 95 && weatherCode <= 99)
+  )
+    return "Stormy";
+
+  return "Cloudy";
 }
