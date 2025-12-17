@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocationStore } from "../store/locationStore";
 
 import Modal from "../components/Modal";
@@ -9,11 +9,17 @@ import locationIcon from "../assets/location.svg";
 import hintIcon from "../assets/hint.svg";
 import logoutIcon from "../assets/logout.svg";
 import { useCity } from "../hooks/useCity";
+import { useGeolocation } from "../hooks/useGeoLocation";
 
 export default function Profile() {
   const [isOpen, setIsOpen] = useState(false);
-  const { liveLocation } = useLocationStore();
-  const { data: city } = useCity(liveLocation.lat, liveLocation.lon);
+  const { liveLocation, city } = useLocationStore();
+  const { getLocation } = useGeolocation();
+  const { data: liveCity } = useCity(liveLocation.lat, liveLocation.lon);
+
+  useEffect(() => {
+    getLocation();
+  }, []);
 
   function handleShowModal() {
     setIsOpen(true);
@@ -53,7 +59,7 @@ export default function Profile() {
         <div className="w-full lg:w-1/2 flex gap-2 lg:gap-0 items-center bg-linear-to-l from-violet-200/75 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-3xl lg:rounded-4xl p-4 lg:p-8 xl:p-6 relative">
           <img src={locationIcon} alt="icon" className="w-10 xl:w-16" />
           <p className="text-violet-100 font-bold md:text-xl xl:text-2xl truncate">
-            {city}
+            {liveCity ? liveCity : city}
           </p>
           <img
             src={hintIcon}
