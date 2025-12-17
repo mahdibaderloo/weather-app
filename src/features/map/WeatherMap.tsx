@@ -9,6 +9,7 @@ import MarkerWithPopup from "./MarkerWithoutPopup";
 import { useLocationStore } from "../../store/locationStore";
 import { useEffect } from "react";
 import { useThemeStore } from "../../store/themeStore";
+import Loading from "../../components/Loading";
 
 const DefaultIcon = L.icon({ iconUrl: markerIcon, shadowUrl: markerShadow });
 L.Marker.prototype.options.icon = DefaultIcon;
@@ -25,9 +26,7 @@ export default function WeatherMap() {
   return (
     <>
       {isLoading ? (
-        <p className="flex justify-center items-center text-4xl font-bold w-full h-[50%] text-violet-950">
-          Loading...
-        </p>
+        <Loading />
       ) : (
         <MapContainer
           center={[lat, lon]}

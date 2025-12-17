@@ -1,3 +1,4 @@
+import Loading from "../components/Loading";
 import AQIBox from "../features/aqi/AQI-Box";
 import Help from "../features/aqi/Help";
 import { useAQI } from "../hooks/useAQI";
@@ -8,11 +9,7 @@ export default function AirQualityIndex() {
   const { data, isLoading, dataUpdatedAt } = useAQI({ lat, lon });
 
   if (isLoading) {
-    return (
-      <p className="flex justify-center items-center text-4xl font-bold w-full h-[50%] text-violet-950">
-        Loading...
-      </p>
-    );
+    return <Loading />;
   }
 
   if (!data) {

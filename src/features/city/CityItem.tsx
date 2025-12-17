@@ -11,6 +11,7 @@ import { useThemeStore } from "../../store/themeStore";
 
 import deleteIcon from "../../assets/delete.svg";
 import deleteIconDark from "../../assets/delete-dark.svg";
+import Loading from "../../components/Loading";
 
 interface CityProp {
   name: string;
@@ -85,12 +86,7 @@ export default function CityItem({ name, lat, lon }: CityProp) {
     touchStartX.current = null;
   }
 
-  if (isLoading)
-    return (
-      <p className="flex justify-center items-center lg:text-4xl font-bold w-full h-[50%] text-violet-950 overflow-hidden">
-        Loading...
-      </p>
-    );
+  if (isLoading) return <Loading />;
 
   return (
     <li
