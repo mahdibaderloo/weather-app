@@ -1,35 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import WeatherMap from "../features/map/WeatherMap";
-import { useLocationStore } from "../store/locationStore";
+import { useGeolocation } from "../hooks/useGeoLocation";
 
 export default function Map() {
-  const navigate = useNavigate();
-  const { setLocation, setLiveLocation } = useLocationStore();
+  const { getLocation } = useGeolocation();
 
   function handleGetLocation() {
-    if (!navigator.geolocation) {
-      alert("Your browser does not support location!");
-      return;
-    }
-
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const { latitude, longitude } = pos.coords;
-
-        setLocation(latitude, longitude);
-        setLiveLocation({ lat: latitude, lon: longitude });
-
-        navigate("/");
-      },
-      (error) => {
-        alert("Location access denied");
-        console.error(error);
-      },
-      {
-        enableHighAccuracy: true,
-        timeout: 10000,
-      }
-    );
+    getLocation();
   }
 
   return (

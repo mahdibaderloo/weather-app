@@ -8,9 +8,11 @@ import { useLocationStore } from "../store/locationStore";
 import { weatherIcon } from "../utils/weatherIcon";
 import { useDateStore } from "../store/dateStore";
 import AirQualityIndex from "./AirQualityIndex";
+import { useGeolocation } from "../hooks/useGeoLocation";
 
 export default function Home() {
   const { city, lat, lon, addCity } = useLocationStore();
+  const { getLocation } = useGeolocation();
   const { selectedDate } = useDateStore();
   const { data, isLoading } = useWeather({ lat, lon, startDate: selectedDate });
   const weather = useWeatherCode(
@@ -20,6 +22,7 @@ export default function Home() {
 
   useEffect(() => {
     if (!city) return;
+    getLocation();
     addCity({ name: city, lat, lon });
   }, [city, lat, lon, addCity]);
 

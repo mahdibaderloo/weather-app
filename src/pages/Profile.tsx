@@ -8,10 +8,12 @@ import editIcon from "../assets/edit.svg";
 import locationIcon from "../assets/location.svg";
 import hintIcon from "../assets/hint.svg";
 import logoutIcon from "../assets/logout.svg";
+import { useCity } from "../hooks/useCity";
 
 export default function Profile() {
   const [isOpen, setIsOpen] = useState(false);
-  const { city } = useLocationStore();
+  const { liveLocation } = useLocationStore();
+  const { data: city } = useCity(liveLocation.lat, liveLocation.lon);
 
   function handleShowModal() {
     setIsOpen(true);

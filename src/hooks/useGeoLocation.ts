@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { useLocationStore } from "../store/locationStore";
+import { useLocation, useNavigate } from "react-router-dom";
 
 interface GeoError {
   code: number;
@@ -8,6 +9,8 @@ interface GeoError {
 
 export function useGeolocation() {
   const { setLocation, setLiveLocation } = useLocationStore();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -29,6 +32,7 @@ export function useGeolocation() {
         setLiveLocation({ lat: latitude, lon: longitude });
 
         setLoading(false);
+        if (location.pathname !== "/") navigate("/");
       },
       (err: GeoError) => {
         setError(err.message || "Location access denied");
