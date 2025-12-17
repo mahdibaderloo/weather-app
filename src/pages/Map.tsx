@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import WeatherMap from "../features/map/WeatherMap";
 import { useLocationStore } from "../store/locationStore";
 
 export default function Map() {
-  const setLocation = useLocationStore((state) => state.setLocation);
+  const navigate = useNavigate();
+  const { setLocation, setLiveLocation } = useLocationStore();
 
   function handleGetLocation() {
     if (!navigator.geolocation) {
@@ -11,9 +12,24 @@ export default function Map() {
       return;
     }
 
-    navigator.geolocation.getCurrentPosition((pos) => {
-      setLocation(pos.coords.latitude, pos.coords.longitude);
-    });
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const { latitude, longitude } = pos.coords;
+
+        setLocation(latitude, longitude);
+        setLiveLocation({ lat: latitude, lon: longitude });
+
+        navigate("/");
+      },
+      (error) => {
+        alert("Location access denied");
+        console.error(error);
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+      }
+    );
   }
 
   return (
