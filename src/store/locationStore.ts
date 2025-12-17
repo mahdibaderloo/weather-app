@@ -7,15 +7,22 @@ interface CityItem {
   lon: number;
 }
 
+type Coordinates = {
+  lat: number;
+  lon: number;
+};
+
 interface LocationState {
   lat: number;
   lon: number;
   city?: string;
   cityList: CityItem[];
+  liveLocation: { lat: number; lon: number };
   setLocation: (lat: number, lon: number) => void;
   setCity: (city: string) => void;
   addCity: (item: CityItem) => void;
   removeCity: (city: string) => void;
+  setLiveLocation: (location: Coordinates) => void;
 }
 
 export const useLocationStore = create<LocationState>()(
@@ -25,6 +32,7 @@ export const useLocationStore = create<LocationState>()(
       lon: 51.389,
       city: "Tehran",
       cityList: [],
+      liveLocation: { lat: 0, lon: 0 },
 
       setLocation: (lat, lon) => set({ lat, lon }),
       setCity: (city) => set({ city }),
@@ -42,6 +50,8 @@ export const useLocationStore = create<LocationState>()(
             cityList: state.cityList.filter((item) => item.name !== city),
           };
         }),
+
+      setLiveLocation: (location) => set({ liveLocation: location }),
     }),
     {
       name: "cities",
