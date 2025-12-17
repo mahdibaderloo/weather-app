@@ -11,7 +11,7 @@ import { useThemeStore } from "../../store/themeStore";
 
 import deleteIcon from "../../assets/delete.svg";
 import deleteIconDark from "../../assets/delete-dark.svg";
-import Loading from "../../components/Loading";
+import sunIcon from "../../assets/sunny.svg";
 
 interface CityProp {
   name: string;
@@ -86,7 +86,16 @@ export default function CityItem({ name, lat, lon }: CityProp) {
     touchStartX.current = null;
   }
 
-  if (isLoading) return <Loading />;
+  if (isLoading)
+    return (
+      <li className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 flex items-center justify-center gap-4 rounded-full px-4 py-2 cursor-pointer overflow-hidden">
+        <img
+          src={sunIcon}
+          alt="loading"
+          className="w-8 md:w-10 xl:w-14 animate-spin"
+        />
+      </li>
+    );
 
   return (
     <li
@@ -99,10 +108,7 @@ export default function CityItem({ name, lat, lon }: CityProp) {
         transition: touchStartX.current ? "none" : "transform 0.3s ease",
         backgroundColor: touchStartX.current ? "#9f0712" : "",
       }}
-      className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85
-             dark:from-slate-950/95 dark:to-violet-950/60
-             flex items-center justify-between gap-4 rounded-full
-             px-4 py-2 cursor-pointer overflow-hidden "
+      className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 flex items-center justify-between gap-4 rounded-full px-4 py-2 cursor-pointer overflow-hidden "
     >
       <p className="md:text-xl xl:text-3xl text-violet-200 font-bold md:w-60 xl:w-80 truncate text-left">
         {touchStartX.current ? "Swipe to remove" : name}
