@@ -25,8 +25,8 @@ export default function CityItem({ name, lat, lon }: CityProp) {
   const [translateX, setTranslateX] = useState(0);
 
   const navigate = useNavigate();
-  const { setLocation, setCity, removeCity } = useLocationStore();
   const { selectedDate } = useDateStore();
+  const { setLocation, setCity, removeCity, cityList } = useLocationStore();
   const { data, isLoading } = useWeather({ lat, lon, startDate: selectedDate });
   const { theme } = useThemeStore();
   const weather = useWeatherCode(
@@ -34,6 +34,19 @@ export default function CityItem({ name, lat, lon }: CityProp) {
     data?.current.windspeed
   );
   const icon = weatherIcon(weather);
+
+  function setLastCity() {
+    const lastCity = cityList[cityList.length - 2];
+
+    if (!lastCity) {
+      setCity("Tehran");
+      setLocation(35.6892, 51.389);
+    }
+
+    const { name, lat, lon } = lastCity;
+    setCity(name);
+    setLocation(lat, lon);
+  }
 
   function handleSetLocation() {
     setLocation(lat, lon);
@@ -44,6 +57,7 @@ export default function CityItem({ name, lat, lon }: CityProp) {
   function handleDeleteCity(e: React.MouseEvent) {
     e.stopPropagation();
     removeCity(name);
+    setLastCity();
   }
 
   function handleTouchStart(e: React.TouchEvent) {
@@ -64,6 +78,7 @@ export default function CityItem({ name, lat, lon }: CityProp) {
   function handleTouchEnd() {
     if (translateX < -SWIPE_THRESHOLD) {
       removeCity(name);
+      setLastCity();
     }
 
     setTranslateX(0);
