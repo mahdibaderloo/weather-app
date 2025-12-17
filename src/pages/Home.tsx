@@ -9,6 +9,7 @@ import { weatherIcon } from "../utils/weatherIcon";
 import { useDateStore } from "../store/dateStore";
 import AirQualityIndex from "./AirQualityIndex";
 import { useGeolocation } from "../hooks/useGeoLocation";
+import Loading from "../components/Loading";
 
 export default function Home() {
   const { city, lat, lon, addCity } = useLocationStore();
@@ -28,9 +29,10 @@ export default function Home() {
 
   if (isLoading) {
     return (
-      <p className="flex justify-center items-center text-4xl font-bold w-full h-[50%] text-violet-950">
-        Loading...
-      </p>
+      // <p className="flex justify-center items-center text-4xl font-bold w-full h-[50%] text-violet-950">
+      //   Loading...
+      // </p>
+      <Loading />
     );
   }
 
