@@ -32,7 +32,8 @@ export function useGeolocation() {
         setLiveLocation({ lat: latitude, lon: longitude });
 
         setLoading(false);
-        if (location.pathname !== "/") navigate("/");
+        if (location.pathname !== "/" && location.pathname !== "/")
+          navigate("/");
       },
       (err: GeoError) => {
         setError(err.message || "Location access denied");
