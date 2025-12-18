@@ -27,13 +27,14 @@ export default function Home() {
     addCity({ name: city, lat, lon });
   }, [city, lat, lon, addCity]);
 
+  // if (!data || !weather) {
+  //   return (
+  //     <p className="flex justify-center items-center text-4xl font-bold w-full h-[50%] text-violet-950"></p>
+  //   );
+  // }
+
   if (isLoading) {
-    return (
-      // <p className="flex justify-center items-center text-4xl font-bold w-full h-[50%] text-violet-950">
-      //   Loading...
-      // </p>
-      <Loading />
-    );
+    return <Loading />;
   }
 
   return (

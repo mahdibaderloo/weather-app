@@ -7,10 +7,12 @@ import Settings from "./pages/Settings";
 import AppLayout from "./AppLayout";
 import Profile from "./pages/Profile";
 import AirQualityIndex from "./pages/AirQualityIndex";
+import RouteError from "./components/RouteError";
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    errorElement: <RouteError />,
     children: [
       { path: "/", element: <Home /> },
       { path: "/cities", element: <Cities /> },
