@@ -13,13 +13,15 @@ import { useGeolocation } from "../hooks/useGeoLocation";
 
 export default function Profile() {
   const [isOpen, setIsOpen] = useState(false);
-  const { liveLocation, city } = useLocationStore();
+  const { liveLocation, city, lat, lon } = useLocationStore();
   const { getLocation } = useGeolocation();
   const { data: liveCity } = useCity(liveLocation.lat, liveLocation.lon);
 
   useEffect(() => {
-    getLocation();
-  }, []);
+    if (!lat || !lon) {
+      getLocation();
+    }
+  }, [lat, lon, getLocation]);
 
   function handleShowModal() {
     setIsOpen(true);
