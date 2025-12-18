@@ -8,7 +8,7 @@
 
 > 🌤 **Weather App** is a modern, fast, and responsive weather application built with **React** and **TypeScript**. It uses **React Query** for efficient data fetching and caching, **Zustand** for state management, and **Leaflet** to select cities directly from an interactive map.
 >
-> 🚀 Live Demo: [Weather App](#)
+> 🚀 Live Demo: [Weather App](https://weather-application-mb.netlify.app)
 
 <br>
 
