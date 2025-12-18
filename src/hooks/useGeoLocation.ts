@@ -32,7 +32,7 @@ export function useGeolocation() {
         setLiveLocation({ lat: latitude, lon: longitude });
 
         setLoading(false);
-        if (location.pathname !== "/" && location.pathname !== "/")
+        if (location.pathname !== "/" && location.pathname !== "/profile")
           navigate("/");
       },
       (err: GeoError) => {
