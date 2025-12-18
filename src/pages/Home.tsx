@@ -47,6 +47,7 @@ export default function Home() {
         src={weatherIcon(weather)?.image}
         alt="Background"
         className="lg:w-[99%] rounded-4xl shadow lg:blur-[1px] lg:absolute inset-0 object-cover"
+        loading="lazy"
       />
 
       <div className="w-full flex flex-col md:flex-row justify-between gap-1 md:gap-2 lg:gap-1">
