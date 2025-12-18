@@ -4,7 +4,6 @@ import errorIcon from "../assets/error.png";
 
 export default function RouteError() {
   const error = useRouteError();
-  console.error(error);
 
   return (
     <div className="h-screen flex flex-col justify-center items-center bg-linear-to-r from-violet-400 to-violet-300/85 dark:from-slate-900 dark:to-slate-950">

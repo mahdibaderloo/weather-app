@@ -34,7 +34,11 @@ export default function Home() {
   // }
 
   if (isLoading) {
-    return <Loading />;
+    return (
+      <div className="w-full 2xl:h-[70%] h-full flex justify-center items-center">
+        <Loading />
+      </div>
+    );
   }
 
   return (
