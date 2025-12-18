@@ -25,7 +25,7 @@ export default function Home() {
     if (!city) return;
     getLocation();
     addCity({ name: city, lat, lon });
-  }, [city, lat, lon, addCity]);
+  }, [city, lat, lon, addCity, getLocation]);
 
   // if (!data || !weather) {
   //   return (
