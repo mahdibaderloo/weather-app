@@ -9,7 +9,11 @@ export default function AirQualityIndex() {
   const { data, isLoading, dataUpdatedAt } = useAQI({ lat, lon });
 
   if (isLoading) {
-    return <Loading />;
+    return (
+      <div className="w-full 2xl:h-[70%] h-full flex justify-center items-center">
+        <Loading />
+      </div>
+    );
   }
 
   if (!data) {
