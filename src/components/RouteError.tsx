@@ -1,10 +1,8 @@
-import { Link, useRouteError } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import errorIcon from "../assets/error.png";
 
 export default function RouteError() {
-  const error = useRouteError();
-
   return (
     <div className="h-screen flex flex-col justify-center items-center bg-linear-to-r from-violet-400 to-violet-300/85 dark:from-slate-900 dark:to-slate-950">
       <div className="2xl:max-w-7xl 2xl:mx-auto flex flex-col justify-center items-center">
