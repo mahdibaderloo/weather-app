@@ -22,8 +22,13 @@ export default function Home() {
   );
 
   useEffect(() => {
+    if (!lat || !lon) {
+      getLocation();
+    }
+  }, [lat, lon, getLocation]);
+
+  useEffect(() => {
     if (!city) return;
-    getLocation();
     addCity({ name: city, lat, lon });
   }, [city, lat, lon, addCity]);
 
