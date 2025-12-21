@@ -75,13 +75,13 @@ export default function InformationSection({
         </p>
       </div>
 
-      <div className="flex flex-col justify-between items-end lg:gap-10 xl:gap-6">
+      <div className="flex flex-col justify-between items-end md:gap-10 xl:gap-6">
         <div
           className="hidden w-fit md:flex items-center justify-between bg-violet-200/40 rounded-full cursor-pointer"
           onClick={handleToggleUnit}
         >
           <span
-            className={`w-8 md:w-6 lg:w-8 h-8 md:h-6 lg:h-8 rounded-full font-medium flex justify-center items-center transition-all ${
+            className={`w-8 h-8 rounded-full font-medium flex justify-center items-center transition-all ${
               unit === "F"
                 ? "bg-violet-950 text-violet-200 dark:bg-linear-to-r dark:from-slate-950/95 dark:to-slate-950/30"
                 : "text-violet-950 dark:text-slate-950"
@@ -90,7 +90,7 @@ export default function InformationSection({
             F
           </span>
           <span
-            className={`w-8 md:w-6 lg:w-8 h-8 md:h-6 lg:h-8 rounded-full font-medium flex justify-center items-center transition-all ${
+            className={`w-8 h-8 rounded-full font-medium flex justify-center items-center transition-all ${
               unit === "C"
                 ? "bg-violet-950 text-violet-200 dark:bg-linear-to-r dark:from-slate-950/95 dark:to-slate-950/30"
                 : "text-violet-950 dark:text-slate-950"
@@ -100,9 +100,9 @@ export default function InformationSection({
           </span>
         </div>
 
-        <div className="hidden md:flex flex-col items-end md:mb-8 lg:mb-0">
+        <div className="hidden md:flex flex-col items-end lg:mb-0">
           <img src={icon} alt="Icon" className="md:w-40 xl:w-50" />
-          <p className="font-semibold text-2xl xl:text-3xl text-violet-950 md:mt-4 lg:mt-0">
+          <p className="font-semibold text-2xl xl:text-3xl text-violet-950 lg:mt-0">
             {weather}
           </p>
         </div>

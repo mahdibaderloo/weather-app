@@ -47,7 +47,7 @@ export default function Home() {
   }
 
   return (
-    <div className="lg:w-[86%] xl:w-[78%] xl:mx-auto h-full lg:relative p-2 md:p-8 lg:p-4 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30 2xl:mt-0 2xl:w-full 2xl:ml-0">
+    <div className="lg:w-[86%] xl:w-[78%] xl:mx-auto h-full lg:relative p-2 md:p-2 lg:p-4 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30 2xl:mt-0 2xl:w-full 2xl:ml-0">
       <img
         src={weatherIcon(weather)?.image}
         alt="Background"
@@ -55,7 +55,7 @@ export default function Home() {
         loading="lazy"
       />
 
-      <div className="w-full flex flex-col md:flex-row justify-between gap-1 md:gap-2 lg:gap-1">
+      <div className="w-full flex flex-col lg:flex-row justify-between gap-1 md:gap-2 lg:gap-1">
         <InformationSection
           city={city}
           data={data?.current}
