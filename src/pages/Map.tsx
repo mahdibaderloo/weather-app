@@ -22,7 +22,7 @@ export default function Map() {
           to="/"
           className="w-full text-center bg-linear-to-r from-violet-900/90 to-violet-800/65 dark:from-slate-900/90 dark:to-violet-900/90 lg:from-violet-900/90 lg:to-violet-800/65 lg:dark:from-slate-950/30 lg:dark:to-violet-900/90 text-violet-100 xl:text-lg font-medium lg:w-fit px-8 py-3 rounded-4xl cursor-pointer shadow hover:bg-violet-950 transition-all"
         >
-          Get Information About This City
+          Get Weather
         </Link>
       </div>
 
