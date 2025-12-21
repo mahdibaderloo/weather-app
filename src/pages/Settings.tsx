@@ -39,7 +39,7 @@ export default function Settings() {
 
   return (
     <div
-      className="lg:w-[86%] xl:w-full h-full flex flex-col p-4 lg:p-0 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30 2xl:mt-0 2xl:w-full 2xl:ml-0"
+      className="lg:w-[86%] xl:w-full flex flex-col p-4 lg:p-0 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30 2xl:mt-0 2xl:w-full 2xl:ml-0"
       onClick={() => setClose()}
     >
       <p className="font-bold text-2xl md:text-3xl hidden xl:block xl:text-4xl text-violet-950 dark:text-violet-800">
@@ -156,7 +156,8 @@ export default function Settings() {
           />
         </a>
       </div>
-      <div className="w-full h-30 lg:h-1" />
+
+      <div className="w-full h-30 md:h-36 lg:h-1" />
     </div>
   );
 }
