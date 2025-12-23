@@ -20,13 +20,13 @@ export default function NavbarItem({ item, theme }: NavbarItemProp) {
         to={url}
         className={({ isActive }) =>
           isActive
-            ? "bg-linear-to-r from-violet-500 to-violet-800 dark:bg-linear-to-b dark:from-slate-950 dark:to-violet-900 p-4 lg:w-15 xl:w-18 rounded-full shadow"
-            : "bg-linear-to-r from-violet-500 to-violet-300 dark:from-violet-700 dark:to-slate-900 p-4 lg:w-15 xl:w-18 rounded-full transition-all delay-150"
+            ? "bg-linear-to-r from-violet-500 to-violet-800 dark:bg-linear-to-b dark:from-slate-950 dark:to-violet-900 p-3 lg:w-12 xl:w-18 rounded-full shadow"
+            : "bg-linear-to-r from-violet-500 to-violet-300 dark:from-violet-700 dark:to-slate-900 p-3 lg:w-12 xl:w-18 rounded-full transition-all delay-150"
         }
       >
         <img src={theme === "dark" ? dark : image} alt="Logo" />
       </NavLink>
-      <span className="text-violet-950 dark:text-violet-100 font-medium mt-1 lg:text-sm">
+      <span className="text-violet-950 dark:text-violet-100 font-medium mt-1 lg:text-[14px] xl:text-sm">
         {title}
       </span>
     </li>
