@@ -31,7 +31,7 @@ export default function Profile() {
   }
 
   return (
-    <div className="lg:w-[86%] xl:w-[88%] h-full flex flex-col p-4 lg:p-0 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30 xl:ml-32 2xl:mt-0 2xl:w-full 2xl:ml-0">
+    <div className="lg:w-[86%] xl:w-[88%] h-full flex flex-col p-4 md:p-2 lg:p-0 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30 xl:ml-32 2xl:mt-0 2xl:w-full 2xl:ml-0">
       <p className="font-bold text-2xl md:text-3xl lg:hidden xl:block xl:text-4xl text-violet-950 dark:text-violet-800">
         Profile
       </p>
@@ -75,7 +75,7 @@ export default function Profile() {
         <div></div>
       </div>
 
-      <button className="w-fit flex items-center gap-2 py-2 px-6 lg:py-4 lg:px-8 mt-20 lg:mt-12 xl:mt-20 bg-linear-to-l from-violet-200/75 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 hover:bg-violet-900 transition-all shadow rounded-2xl lg:rounded-3xl cursor-pointer">
+      <button className="w-fit flex items-center gap-2 py-2 px-6 lg:py-4 lg:px-8 mt-20 md:mt-16 lg:mt-12 xl:mt-20 bg-linear-to-l from-violet-200/75 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 hover:bg-violet-900 transition-all shadow rounded-2xl lg:rounded-3xl cursor-pointer">
         <img src={logoutIcon} alt="icon" className="w-8 md:w-9 xl:w-10" />
         <p className="text-red-900 font-bold md:text-lg xl:text-xl">Log Out</p>
       </button>
