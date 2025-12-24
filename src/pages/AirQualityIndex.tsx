@@ -25,7 +25,7 @@ export default function AirQualityIndex() {
   }
 
   return (
-    <div className="lg:w-[86%] xl:w-[84%] h-full flex flex-col lg:p-0 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30 2xl:mt-0 2xl:w-full 2xl:ml-0">
+    <div className="lg:w-[86%] xl:w-[84%] h-full flex flex-col lg:p-0 lg:pr-6 lg:mr-4 lg:ml-18 lg:mt-18 2xl:mt-0 2xl:w-full 2xl:ml-0">
       <h3 className="hidden font-bold xl:text-4xl text-violet-950 dark:text-violet-800 xl:block">
         Air Quality Index
       </h3>

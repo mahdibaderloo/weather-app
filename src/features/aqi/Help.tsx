@@ -16,7 +16,7 @@ const helpIndexes = [0, 50, 100, 150, 200, 300];
 
 export default function Help() {
   return (
-    <div className="hidden lg:mt-8 xl:mt-16 lg:flex flex-col justify-center items-center">
+    <div className="hidden lg:mt-8 xl:mt-16 xl:flex flex-col justify-center items-center">
       <ul className="xl:w-[90%] grid grid-cols-6 rounded-3xl overflow-hidden">
         {helpTitles.map((t) => {
           if (t.desc) {
