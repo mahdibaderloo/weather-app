@@ -57,7 +57,7 @@ export default function MainHeader() {
   }
 
   return (
-    <header className="flex items-center justify-between w-full mt-2 lg:pr-2 lg:fixed lg:mx-14 lg:w-[90%] 2xl:static 2xl:w-full 2xl:mx-0">
+    <header className="flex items-center justify-between w-full mt-4 lg:mt-2 lg:pr-2 lg:fixed lg:mx-14 lg:w-[90%] 2xl:static 2xl:w-full 2xl:mx-0">
       <form
         onSubmit={handleSubmitSearch}
         className={`bg-linear-to-r ${
