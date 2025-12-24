@@ -8,12 +8,12 @@ export default function Cities() {
   return (
     <div className="lg:w-[86%] lg:h-full flex flex-col p-2 gap-8 lg:p-4 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-22 2xl:mt-0 2xl:w-full 2xl:ml-0">
       <div className="flex justify-between items-center lg:p-4">
-        <p className="font-bold text-2xl md:text-3xl xl:text-4xl text-violet-950 dark:text-violet-800">
+        <p className="font-bold text-2xl lg:text-3xl xl:text-4xl text-violet-950 dark:text-violet-800">
           City List
         </p>
         <Link
           to="/map"
-          className="hidden md:block bg-linear-to-r from-violet-900/90 to-violet-950 dark:from-violet-900/90 dark:to-slate-950/30 text-violet-100 text-lg font-medium w-fit px-8 py-3 rounded-4xl cursor-pointer shadow hover:bg-violet-950 transition-all"
+          className="hidden md:block bg-linear-to-r from-violet-900/90 to-violet-950 dark:from-violet-900/90 dark:to-slate-950/30 text-violet-100 lg:text-lg font-medium w-fit px-8 py-3 md:py-2 rounded-4xl cursor-pointer shadow hover:bg-violet-950 transition-all"
         >
           + Add City
         </Link>
