@@ -56,11 +56,11 @@ export default function MobileNavbar() {
                 to={item.url}
                 className={({ isActive }) =>
                   isActive
-                    ? `bg-linear-to-r from-violet-500 to-violet-800 dark:bg-linear-to-t dark:from-slate-950 dark:to-violet-900/70 p-2 w-15 md:w-18 ${
-                        item.id === 3 ? "w-20 md:w-26 p-3 md:p-4" : ""
+                    ? `bg-linear-to-r from-violet-500 to-violet-800 dark:bg-linear-to-t dark:from-slate-950 dark:to-violet-900/70 p-2 w-15 md:w-16 ${
+                        item.id === 3 ? "w-20 md:w-22 p-3" : ""
                       } rounded-full shadow`
-                    : `bg-linear-to-r from-violet-500 to-violet-300 dark:bg-linear-to-t dark:from-violet-700 dark:to-slate-900 p-2 w-15 md:w-18 ${
-                        item.id === 3 ? "w-20 md:w-26 p-3 md:p-4" : ""
+                    : `bg-linear-to-r from-violet-500 to-violet-300 dark:bg-linear-to-t dark:from-violet-700 dark:to-slate-900 p-2 w-15 md:w-16 ${
+                        item.id === 3 ? "w-20 md:w-22 p-3" : ""
                       } rounded-full transition-all delay-150`
                 }
               >
