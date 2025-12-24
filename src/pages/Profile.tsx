@@ -32,7 +32,7 @@ export default function Profile() {
 
   return (
     <div className="lg:w-[86%] xl:w-[88%] h-full flex flex-col p-4 md:p-2 lg:p-0 lg:pr-6 lg:mr-4 lg:ml-30 lg:mt-30 xl:ml-32 2xl:mt-0 2xl:w-full 2xl:ml-0">
-      <p className="font-bold text-2xl md:text-3xl lg:hidden xl:block xl:text-4xl text-violet-950 dark:text-violet-800">
+      <p className="font-bold text-2xl lg:text-3xl lg:hidden xl:block xl:text-4xl text-violet-950 dark:text-violet-800">
         Profile
       </p>
 
@@ -53,7 +53,7 @@ export default function Profile() {
         <img
           src={editIcon}
           alt="edit"
-          className="w-8 md:w-9 lg:w-10 rounded-xl lg:rounded-2xl bg-linear-to-l from-violet-500/85 to-violet-900/95 dark:from-violet-950 dark:to-slate-900 p-2 absolute right-4 top-4 cursor-pointer"
+          className="w-8 lg:w-10 rounded-xl lg:rounded-2xl bg-linear-to-l from-violet-500/85 to-violet-900/95 dark:from-violet-950 dark:to-slate-900 p-2 absolute right-4 top-4 cursor-pointer"
         />
       </div>
 
@@ -67,7 +67,7 @@ export default function Profile() {
             src={hintIcon}
             alt="icon"
             onClick={handleShowModal}
-            className="w-8 md:w-9 lg:w-10 rounded-xl lg:rounded-2xl bg-linear-to-l from-violet-500/85 to-violet-900/95 dark:from-violet-950 dark:to-slate-900 p-2 absolute right-4 top-4 cursor-pointer"
+            className="w-8 lg:w-10 rounded-xl lg:rounded-2xl bg-linear-to-l from-violet-500/85 to-violet-900/95 dark:from-violet-950 dark:to-slate-900 p-2 absolute right-4 top-4 cursor-pointer"
           />
           {isOpen && <Modal />}
         </div>
