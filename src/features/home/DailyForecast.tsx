@@ -13,10 +13,12 @@ const days = [1, 2, 3];
 
 export default function DailyForecast({ data }: DataProp) {
   return (
-    <section className="lg:relative lg:z-50 p-4 bg-linear-to-l lg:bg-linear-to-r from-violet-400/35 to-violet-800/60 dark:from-slate-950/50 dark:to-slate-950/95 rounded-4xl w-full lg:w-[49%] h-fit flex flex-col mt-3 md:mt-4 lg:mt-0">
-      <p className="font-semibold text-xl text-violet-200">3-Day Forecast</p>
+    <section className="lg:relative lg:z-50 p-4 bg-linear-to-l lg:bg-linear-to-r from-violet-400/35 to-violet-800/60 dark:from-slate-950/50 dark:to-slate-950/95 rounded-4xl w-full lg:w-1/2 h-fit lg:h-full flex flex-col mt-3 md:mt-4 lg:mt-0">
+      <p className="font-semibold text-xl lg:text-sm xl:text-xl text-violet-200">
+        3-Day Forecast
+      </p>
 
-      <ul className="mt-6 lg:mt-4 xl:mt-2 2xl:mt-4 divide-y-2 divide-violet-950 dark:divide-slate-900 xl:mb-3 2xl:mb-4">
+      <ul className="mt-6 lg:mt-1 xl:mt-2 2xl:mt-4 divide-y-2 divide-violet-950 dark:divide-slate-900 xl:mb-3 2xl:mb-4">
         {days.map((day) => {
           return <DailyItem key={day} data={data} day={day} />;
         })}
