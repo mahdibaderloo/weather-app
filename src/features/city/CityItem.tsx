@@ -89,11 +89,7 @@ export default function CityItem({ name, lat, lon }: CityProp) {
   if (isLoading)
     return (
       <li className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 flex items-center justify-center gap-4 rounded-full px-4 py-2 cursor-pointer overflow-hidden">
-        <img
-          src={sunIcon}
-          alt="loading"
-          className="w-8 md:w-10 xl:w-14 animate-spin"
-        />
+        <img src={sunIcon} alt="loading" className="w-8 xl:w-14 animate-spin" />
       </li>
     );
 
