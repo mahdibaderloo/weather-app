@@ -10,7 +10,7 @@ export default function Map() {
   }
 
   return (
-    <div className="lg:w-[88%] lg:h-full flex flex-col p-2 gap-4 lg:p-4 lg:pr-1.5 lg:mr-4 lg:ml-18 lg:mt-8 2xl:mt-0 2xl:w-full 2xl:ml-0">
+    <div className="lg:w-[88%] h-full lg:h-full flex flex-col p-2 gap-4 lg:p-4 lg:pr-1.5 lg:mr-4 lg:ml-18 lg:mt-8 2xl:mt-0 2xl:w-full 2xl:ml-0">
       <div className="w-full flex flex-col md:flex-row gap-4 lg:gap-0 justify-between items-center lg:p-4">
         <button
           onClick={handleGetLocation}
