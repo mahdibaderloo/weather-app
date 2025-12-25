@@ -25,9 +25,9 @@ export default function SettingsModal() {
   }
 
   return (
-    <ul className="w-full lg:w-fit flex-col mt-2 bg-linear-to-l from-violet-200 to-violet-900 dark:from-slate-950/95 dark:to-violet-950 rounded-3xl overflow-hidden absolute lg:right-[50%] top-34 lg:top-40">
+    <ul className="w-full lg:w-[60%] flex-col mt-2 bg-linear-to-l from-violet-200 to-violet-900 dark:from-slate-950/95 dark:to-violet-950 rounded-3xl overflow-hidden absolute lg:right-[31%] top-34 lg:top-25.5">
       <li
-        className={`text-violet-100 font-medium cursor-pointer py-4 px-6 hover:bg-violet-900 ${
+        className={`text-violet-100 font-medium lg:text-sm cursor-pointer py-4 lg:py-2 px-6 hover:bg-violet-900 ${
           windUnit === "km/h"
             ? "bg-linear-to-l from-violet-800/85 to-violet-950/85"
             : ""
@@ -37,7 +37,7 @@ export default function SettingsModal() {
         Kilometers per hour (km/h)
       </li>
       <li
-        className={`text-violet-100 font-medium cursor-pointer py-4 px-6 hover:bg-violet-900 ${
+        className={`text-violet-100 font-medium lg:text-sm cursor-pointer py-4 lg:py-2 px-6 hover:bg-violet-900 ${
           windUnit === "m/s"
             ? "bg-linear-to-l from-violet-800/85 to-violet-950/85"
             : ""
@@ -47,7 +47,7 @@ export default function SettingsModal() {
         Meters per second (m/s)
       </li>
       <li
-        className={`text-violet-100 font-medium cursor-pointer py-4 px-6 hover:bg-violet-900 ${
+        className={`text-violet-100 font-medium lg:text-sm cursor-pointer py-4 lg:py-2 px-6 hover:bg-violet-900 ${
           windUnit === "mph"
             ? "bg-linear-to-l from-violet-800/85 to-violet-950/85"
             : ""
