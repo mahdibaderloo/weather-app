@@ -34,8 +34,8 @@ export default function WeatherMap() {
           style={{ borderRadius: "2rem" }}
           className={
             theme === "dark"
-              ? `h-[50%] lg:h-[70%] lg:w-full 2xl:w-full 2xl:h-[50%] rounded-2xl filter invert-90 hue-rotate-180 brightness-75 contrast-125`
-              : "h-[50%] lg:h-[70%] lg:w-full 2xl:w-full 2xl:h-[50%]"
+              ? `h-[50%] lg:h-[70%] lg:w-full xl:w-[98%] 2xl:w-full 2xl:h-[50%] rounded-2xl filter invert-90 hue-rotate-180 brightness-75 contrast-125`
+              : "h-[50%] lg:h-[70%] lg:w-full xl:w-[98%] 2xl:w-full 2xl:h-[50%]"
           }
         >
           <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
