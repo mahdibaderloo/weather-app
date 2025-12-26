@@ -106,16 +106,16 @@ export default function CityItem({ name, lat, lon }: CityProp) {
       }}
       className="w-full bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 flex items-center justify-between gap-4 rounded-full px-4 py-2 cursor-pointer overflow-hidden "
     >
-      <p className="xl:text-3xl text-violet-200 font-bold md:w-60 xl:w-80 truncate text-left">
+      <p className="xl:text-lg text-violet-200 font-bold md:w-60 xl:w-70 truncate text-left">
         {touchStartX.current ? "Swipe to remove" : name}
       </p>
       <div className="flex items-center md:w-50 gap-2">
-        <img src={icon?.icon} alt="icon" className="w-8 xl:w-14" />
+        <img src={icon?.icon} alt="icon" className="w-8 xl:w-10" />
         <p className="xl:text-xl text-violet-950 font-semibold">{weather}</p>
       </div>
       <img
         src={theme === "dark" ? deleteIconDark : deleteIcon}
-        className="hidden lg:block lg:w-5.5 xl:w-10 z-20"
+        className="hidden lg:block lg:w-5.5 xl:w-7 z-20"
         alt="delete icon"
         onClick={handleDeleteCity}
       />

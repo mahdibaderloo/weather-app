@@ -6,9 +6,9 @@ export default function Cities() {
   const { cityList } = useLocationStore();
 
   return (
-    <div className="lg:w-[88%] lg:h-full flex flex-col p-2 gap-8 lg:p-4 lg:pr-6 lg:mr-4 lg:ml-18 lg:mt-8 2xl:mt-0 2xl:w-full 2xl:ml-0">
+    <div className="lg:w-[88%] xl:w-[92%] lg:h-full flex flex-col p-2 gap-8 lg:p-4 lg:pr-6 lg:mr-4 lg:ml-18 lg:mt-8 xl:mt-10 2xl:mt-0 2xl:w-full 2xl:ml-0">
       <div className="flex justify-between items-center lg:p-4">
-        <p className="font-bold text-2xl xl:text-4xl text-violet-950 dark:text-violet-800">
+        <p className="font-bold text-2xl text-violet-950 dark:text-violet-800">
           City List
         </p>
         <Link
