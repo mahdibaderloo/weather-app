@@ -55,7 +55,7 @@ export default function Home() {
         loading="lazy"
       />
 
-      <div className="w-full h-[56%] flex flex-col lg:flex-row justify-between gap-1 md:gap-2">
+      <div className="w-full flex flex-col lg:flex-row justify-between gap-1 md:gap-2">
         <InformationSection
           city={city}
           data={data?.current}
