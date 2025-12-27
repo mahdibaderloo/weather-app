@@ -39,14 +39,14 @@ export default function Settings() {
 
   return (
     <div
-      className="lg:w-[88%] xl:w-full flex flex-col p-4 lg:p-4 lg:ml-20 lg:mt-10 xl:mt-5 2xl:mt-0 2xl:w-full 2xl:ml-0"
+      className="lg:w-[88%] xl:w-full flex flex-col p-4 lg:p-4 lg:ml-20 lg:mt-10 xl:mt-5 2xl:mt-0 2xl:p-1 2xl:w-full 2xl:ml-6"
       onClick={() => setClose()}
     >
-      <p className="font-bold text-2xl md:text-3xl hidden 2xl:block xl:text-4xl text-violet-950 dark:text-violet-800">
+      <p className="font-bold text-2xl md:text-3xl hidden 2xl:block xl:text-3xl text-violet-950 dark:text-violet-800">
         Settings
       </p>
 
-      <div className="flex flex-col lg:p-4 relative lg:hidden">
+      <div className="flex flex-col lg:p-4 2xl:ml-8 relative lg:hidden">
         <p className="font-bold text-lg md:text-xl lg:text-2xl text-violet-950/80 dark:text-violet-800/80">
           Theme
         </p>
@@ -62,7 +62,7 @@ export default function Settings() {
         </div>
       </div>
 
-      <ul className="flex flex-col lg:p-2 mt-8 lg:mt-0 xl:mt-8 relative">
+      <ul className="flex flex-col lg:p-2 2xl:ml-8 mt-8 lg:mt-0 xl:mt-8 relative">
         <p className="font-bold text-lg md:text-xl lg:text-sm xl:text-xl text-violet-950/80 dark:text-violet-800/80">
           Units
         </p>
@@ -108,7 +108,7 @@ export default function Settings() {
         {isOpen && <SettingsModal />}
       </ul>
 
-      <ul className="flex flex-col lg:p-2 mt-8 lg:mt-0 xl:mt-4">
+      <ul className="flex flex-col lg:p-2 2xl:ml-8 mt-8 lg:mt-0 xl:mt-4">
         <p className="font-bold text-lg md:text-xl lg:text-sm xl:text-xl text-violet-950/80 dark:text-violet-800/80">
           About Weather App
         </p>
@@ -137,7 +137,7 @@ export default function Settings() {
         </li>
       </ul>
 
-      <div className="flex flex-col lg:p-2 mt-8 lg:mt-0 xl:mt-4">
+      <div className="flex flex-col lg:p-2 2xl:ml-8 mt-8 lg:mt-0 xl:mt-4">
         <p className="font-bold text-lg md:text-xl lg:text-sm xl:text-xl text-violet-950/80 dark:text-violet-800/80">
           About Me
         </p>
