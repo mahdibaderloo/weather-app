@@ -23,7 +23,7 @@ export default function Help() {
             return (
               <li
                 key={t.id}
-                className={`flex justify-center items-center text-white xl:text-lg font-medium xl:px-2 py-1 ${t.class}`}
+                className={`flex justify-center items-center text-white text-sm font-medium xl:px-2 py-1 ${t.class}`}
               >
                 Unhealthy{" "}
                 <span className="text-sm">(for sensitive groups)</span>
@@ -33,7 +33,7 @@ export default function Help() {
             return (
               <li
                 key={t.id}
-                className={`flex justify-center items-center text-white xl:text-lg font-medium xl:px-2 py-1 ${t.class}`}
+                className={`flex justify-center items-center text-white text-sm font-medium xl:px-2 py-1 ${t.class}`}
               >
                 {t.title}
               </li>
@@ -42,11 +42,11 @@ export default function Help() {
         })}
       </ul>
 
-      <ul className="w-[85%] grid grid-cols-6 mt-4">
+      <ul className="w-[86%] grid grid-cols-6 mt-4 mr-6">
         {helpIndexes.map((i) => (
           <li
             key={i}
-            className="text-violet-200 dark:text-violet-950 text-lg font-medium"
+            className="text-violet-200 dark:text-violet-950 text-sm font-medium"
           >
             {i === 300 ? "+300" : i}
           </li>
