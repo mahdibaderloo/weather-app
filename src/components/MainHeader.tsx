@@ -57,14 +57,14 @@ export default function MainHeader() {
   }
 
   return (
-    <header className="flex items-center justify-between w-full mt-4 lg:mt-2 lg:pr-2 lg:fixed lg:mx-14 lg:w-[90%] 2xl:static 2xl:w-full 2xl:mx-0 z-20">
+    <header className="flex items-center justify-between w-full mt-4 2xl:mt-4 lg:mt-2 lg:pr-2 lg:fixed lg:mx-14 lg:w-[90%] 2xl:static 2xl:w-full 2xl:mx-0 z-20">
       <form
         onSubmit={handleSubmitSearch}
         className={`bg-linear-to-r ${
           error
             ? "from-red-200/85 to-red-900/85 dark:from-red-950/85 dark:to-red-900"
             : "from-violet-200/85 to-violet-900/85 dark:from-violet-950/85 dark:to-slate-900"
-        } flex items-center gap-1 w-full lg:w-[50%] 2xl:w-1/2 h-10 p-2 md:mx-8 2xl:mx-0 rounded-4xl shadow`}
+        } flex items-center gap-1 w-full lg:w-[50%] 2xl:w-[40%] h-10 p-2 md:mx-8 2xl:mx-0 rounded-4xl shadow`}
       >
         <img
           src={theme === "dark" ? searchIconDark : searchIcon}
