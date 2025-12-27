@@ -47,9 +47,9 @@ export default function Navbar() {
   const { theme } = useThemeStore();
 
   return (
-    <nav className="hidden lg:w-fit xl:w-16 lg:h-fit 2xl:h-[852px] bg-linear-to-r from-violet-900/75 to-violet-500/50 dark:from-slate-900 dark:to-violet-950/60 p-2 xl:px-4 lg:pb-3 xl:pb-14 rounded-full ml-2 mt-2 shadow lg:block fixed 2xl:static">
+    <nav className="hidden lg:w-fit xl:w-16 lg:h-fit bg-linear-to-r from-violet-900/75 to-violet-500/50 dark:from-slate-900 dark:to-violet-950/60 p-2 xl:px-4 lg:pb-3 xl:pb-14 rounded-full ml-2 mt-2 2xl:mt-4 shadow lg:block fixed 2xl:static">
       <div className="blur-2xl" />
-      <ul className="w-full h-full flex flex-col gap-2 xl:gap-4">
+      <ul className="w-full h-full flex flex-col gap-2 xl:gap-4 2xl:gap-6">
         {items.map((item) => (
           <NavbarItem key={item.id} item={item} theme={theme} />
         ))}
