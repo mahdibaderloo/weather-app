@@ -18,7 +18,7 @@ export default function DailyForecast({ data }: DataProp) {
         3-Day Forecast
       </p>
 
-      <ul className="mt-6 lg:mt-1 xl:mt-2 2xl:mt-4 divide-y-2 divide-violet-950 dark:divide-slate-900 xl:mb-0 2xl:mb-4">
+      <ul className="mt-6 lg:mt-1 xl:mt-0 2xl:mt-4 divide-y-2 divide-violet-950 dark:divide-slate-900 xl:mb-0 2xl:mb-4">
         {days.map((day) => {
           return <DailyItem key={day} data={data} day={day} />;
         })}

@@ -25,22 +25,22 @@ export default function HourlyItem({ data, hour }: HourlyProps) {
       <img
         src={icon}
         alt="icon"
-        className="w-10 md:w-14 lg:w-8.5 xl:w-20 2xl:w-24"
+        className="w-10 md:w-14 lg:w-8.5 xl:w-14 2xl:w-24"
       />
 
       <div className="w-full flex flex-col lg:flex-row items-center justify-center gap-2 text-sm md:text-[16px] 2xl:text-lg">
         <p className="bg-violet-300 text-violet-950 dark:bg-violet-950 dark:text-violet-300 font-medium py-1 lg:py-0.5 px-2 rounded-xl md:text-sm lg:text-[14px] lg:w-1/2 xl:truncate text-center">
           {weatherName === "Partly Cloudy" ? "Cloudy" : weatherName}
         </p>
-        <p className="hidden xl:block bg-violet-300 text-violet-950 dark:bg-violet-950 dark:text-violet-300 font-medium py-1 px-1 rounded-xl lg:w-1/2 text-center">
+        <p className="hidden 2xl:block bg-violet-300 text-violet-950 dark:bg-violet-950 dark:text-violet-300 font-medium py-1 px-1 rounded-xl lg:w-1/2 text-center">
           {timeAmOrPm(time)}
         </p>
-        <p className="text-violet-950 dark:text-violet-300 md:bg-violet-300 md:text-violet-950 md:dark:bg-violet-950 md:dark:text-violet-300 font-medium md:text-sm lg:text-[14px] lg:w-1/2 py-1 lg:py-0.5 px-2 rounded-xl text-center xl:hidden">
+        <p className="text-violet-950 dark:text-violet-300 md:bg-violet-300 md:text-violet-950 md:dark:bg-violet-950 md:dark:text-violet-300 font-medium md:text-sm lg:text-[14px] lg:w-1/2 py-1 lg:py-0.5 px-2 rounded-xl text-center 2xl:hidden">
           {time}
         </p>
       </div>
 
-      <p className="text-violet-300 dark:text-slate-400 font-bold text-xl md:text-2xl lg:text-xl xl:text-5xl">
+      <p className="text-violet-300 dark:text-slate-400 font-bold text-xl md:text-2xl lg:text-xl xl:text-3xl">
         {Math.floor(temp)}°
       </p>
     </li>
