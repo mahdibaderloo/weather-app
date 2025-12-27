@@ -70,7 +70,7 @@ export default function Settings() {
           className="lg:w-[70%] xl:w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 lg:py-1 xl:py-2 px-4 cursor-pointer"
           onClick={() => toggleUnit()}
         >
-          <p className="text-violet-200 font-semibold md:text-lg lg:text-sm">
+          <p className="text-violet-200 font-semibold md:text-lg lg:text-sm 2xl:text-lg">
             Temperature units
           </p>
           <div className="flex items-center gap-2">
@@ -80,7 +80,7 @@ export default function Settings() {
             <img
               src={theme === "dark" ? arrowsDarkIcon : arrowsIcon}
               alt="Arrow icon"
-              className="w-5 lg:w-3.5"
+              className="w-5 lg:w-3.5 2xl:w-4"
             />
           </div>
         </li>
@@ -88,7 +88,7 @@ export default function Settings() {
           className="lg:w-[70%] xl:w-1/2 flex items-center justify-between mt-2 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 lg:py-1 xl:py-2 px-4 cursor-pointer"
           onClick={handleOpenModal}
         >
-          <p className="text-violet-200 font-semibold md:text-lg lg:text-sm 2xl:text-xl">
+          <p className="text-violet-200 font-semibold md:text-lg lg:text-sm 2xl:text-lg">
             Wind speed units
           </p>
           <div className="flex items-center gap-2 select-none">
@@ -101,7 +101,7 @@ export default function Settings() {
             <img
               src={theme === "dark" ? arrowsDarkIcon : arrowsIcon}
               alt="Arrow icon"
-              className="w-5 lg:w-3.5"
+              className="w-5 lg:w-3.5 2xl:w-4"
             />
           </div>
         </li>
@@ -116,23 +116,23 @@ export default function Settings() {
           className="lg:w-[70%] xl:w-1/2 flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 lg:py-1 xl:py-2 px-4 cursor-pointer"
           onClick={handleClickFeedback}
         >
-          <p className="text-violet-200 font-semibold md:text-lg lg:text-sm 2xl:text-xl">
+          <p className="text-violet-200 font-semibold md:text-lg lg:text-sm 2xl:text-lg">
             Feedback
           </p>
           <img
             src={theme === "dark" ? arrowRightDarkIcon : arrowRightIcon}
             alt="Arrow icon"
-            className="w-5 lg:w-3.5"
+            className="w-5 lg:w-3.5 2xl:w-4"
           />
         </li>
         <li className="lg:w-[70%] xl:w-1/2 flex items-center justify-between mt-2 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 lg:py-1 xl:py-2 px-4 cursor-pointer">
-          <p className="text-violet-200 font-semibold md:text-lg lg:text-sm 2xl:text-xl">
+          <p className="text-violet-200 font-semibold md:text-lg lg:text-sm 2xl:text-lg">
             Privacy Policy
           </p>
           <img
             src={theme === "dark" ? arrowRightDarkIcon : arrowRightIcon}
             alt="Arrow icon"
-            className="w-5 lg:w-3.5"
+            className="w-5 lg:w-3.5 2xl:w-4"
           />
         </li>
       </ul>
@@ -146,13 +146,13 @@ export default function Settings() {
           target="blank"
           className="lg:w-[70%] xl:w-1/2   flex items-center justify-between mt-4 bg-linear-to-l from-violet-200/85 to-violet-900/85 dark:from-slate-950/95 dark:to-violet-950/60 rounded-full py-2 lg:py-1 xl:py-2 px-4 cursor-pointer"
         >
-          <span className="text-violet-200 font-semibold md:text-lg lg:text-sm 2xl:text-xl">
+          <span className="text-violet-200 font-semibold md:text-lg lg:text-sm 2xl:text-lg">
             Mahdi Baderloo
           </span>
           <img
             src={theme === "dark" ? arrowRightDarkIcon : arrowRightIcon}
             alt="Arrow icon"
-            className="w-5 lg:w-3.5"
+            className="w-5 lg:w-3.5 2xl:w-4"
           />
         </a>
       </div>
